@@ -1,0 +1,57 @@
+// TODO: Try to clean up CSS so we don't need to disable these linting rules
+// scss-lint:disable PlaceholderInExtend, QualifyingElement
+
+.tabs {
+	@extend .flex-row;
+	@extend .font-smaller;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	border-top: $border-width solid $border-color-gray;
+	border-right: 0;
+	border-bottom: $border-width solid $border-color-gray;
+	border-left: 0;
+
+	li {
+		padding: 0;
+		margin: 0;
+	}
+
+	dt,
+	li,
+	li:not(:last-child) {
+		@extend .flex-box;
+		max-width: $scaleup-11;
+		margin: 0;
+		font-family: $colfax-medium;
+		line-height: 57px;
+		text-align: center;
+		white-space: nowrap;
+
+		a,
+		span.link {
+			display: block;
+			padding: 0 30px;
+			font-family: $colfax-medium;
+			color: $slate-60;
+			border-top: 3px transparent solid;
+			border-bottom: 3px transparent solid;
+		}
+
+		&.current a:hover,
+		&.active a:hover,
+		a:hover {
+			color: $sg-blue;
+		}
+
+		&.active a,
+		&.current a {
+			color: $sg-blue;
+			border-bottom-color: $sg-blue;
+		}
+	}
+}

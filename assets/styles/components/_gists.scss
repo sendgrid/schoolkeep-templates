@@ -1,0 +1,253 @@
+// TODO: Try to clean up CSS so we don't need to disable these linting rules
+// scss-lint:disable SelectorDepth, NestingDepth, QualifyingElement
+
+.gist {
+	border-bottom: none !important;
+
+	.gist-file {
+		width: 100%;
+		margin-bottom: $scale-0;
+		font-family: Menlo, "Liberation Mono", Courier, monospace;
+		border: none !important;
+
+		&:last-child {
+			margin-bottom: 0 !important;
+		}
+	}
+
+	.gist-data {
+		border: 1px solid $border-color-gray !important;
+		border-radius: $border-radius * 2 !important;
+	}
+
+	.gist-file .gist-meta {
+		display: none;
+	}
+
+	.gist-file .gist-data .line-pre {
+		font-family: "Menlo", "Liberation Mono", Courier, monospace;
+	}
+
+	.highlight {
+		tbody {
+			border: 0;
+		}
+
+		tr {
+			&:last-child {
+				height: 100%;
+			}
+
+			td {
+				font-family: Menlo, "Liberation Mono", Courier, monospace !important;
+				font-size: 12px;
+
+				&.blob-code {
+					padding: $scaledown-7 $scale-0 !important;
+				}
+
+				&.blob-num {
+					min-width: rem-calc(36px);
+					padding: $scaledown-7 $scaledown-2 !important;
+					background: $background-color-gray;
+					border: 0;
+
+					&:first-child {
+						padding-top: $scaledown-1;
+					}
+				}
+			}
+
+			&:first-child td {
+				padding-top: $scaledown-1 !important;
+			}
+
+			&:last-child td {
+				padding-bottom: $scaledown-1 !important;
+			}
+		}
+
+		tr:nth-child(odd),
+		tr:nth-child(even) {
+			background: $background-color-gray-light;
+		}
+
+		//
+		// Syntax Highlighting
+		//
+
+		// Comments
+		.pl-c,
+		.pl-c span {
+			font-style: italic;
+			color: $stack;
+		}
+
+		// Constant, Storage, Variable
+		.pl-c1,
+		.pl-s,
+		.pl-v {
+			color: $emperor-blue;
+		}
+
+		// Entity, Entity.Name
+		.pl-e,
+		.pl-en {
+			color: $hot-pink;
+		}
+
+		// Entity.Name.Tag
+		.pl-ent {
+			color: $broccoli;
+		}
+
+		// Keyword
+		.pl-k {
+			color: $curious-blue;
+		}
+
+		// Storage, String, Punctuation.Definition.String, etc.
+		.pl-s,
+		.pl-s1,
+		.pl-pds,
+		.pl-s .pl-pse .pl-s1,
+		.pl-s1 .pl-pse .pl-s2,
+		.pl-sr,
+		.pl-sr .pl-cce,
+		.pl-sr .pl-sra,
+		.pl-sr .pl-sre {
+			color: $jungle-green;
+		}
+
+		// Variable
+		.pl-v {
+			color: $burnt-sienna;
+		}
+
+		.pl-sr .pl-cce {
+			font-weight: bold;
+			color: $broccoli;
+		}
+
+		// Markup.List
+		.pl-ml {
+			color: $pirate-gold;
+		}
+
+		// Markup.Heading, Markup.Heading Entity.Name
+		.pl-mh,
+		.pl-mh .pl-en,
+		.pl-ms {
+			font-weight: bold;
+			color: $curious-blue;
+		}
+
+		// Markup.Quote
+		.pl-mq {
+			color: $jungle-green;
+		}
+
+		// Markup.Italic
+		.pl-mi {
+			font-style: italic;
+			color: $mine-shaft;
+		}
+
+		// Markup.Bold
+		.pl-mb {
+			font-weight: bold;
+			color: $mine-shaft;
+		}
+
+		//Meta.Diff, Meta.Diff.Header
+		.pl-md,
+		.pl-mdh {
+			color: $milano-red;
+		}
+
+		.pl-mi1 {
+			color: $apple;
+		}
+
+		// Meta.Diff.Range
+		.pl-mdr {
+			font-weight: bold;
+			color: $periwinkle;
+		}
+
+		// Meta.Output
+		.pl-mo {
+			color: $curious-blue;
+		}
+	}
+}
+
+// Tabbed Gists
+.gist-container {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+
+	@include breakpoint(medium down) {
+		padding-top: 0;
+		margin: 0 auto;
+	}
+
+	&.image-right {
+
+		@include breakpoint(large) {
+			margin-left: 0;
+		}
+	}
+
+	&.image-left {
+
+		@include breakpoint(large) {
+			margin-right: 0;
+		}
+	}
+
+	.language-tab {
+		display: inline-block;
+		padding: $scaledown-7 $scaledown-3;
+		margin-bottom: $scaledown-1;
+		font-size: $scaledown-1;
+		background: transparent;
+		border: 1px solid transparent;
+
+		&.selected {
+			color: $white;
+			background: $sg-blue-80;
+			border: 1px solid $sg-blue;
+			border-radius: $border-radius;
+		}
+	}
+
+	.language-tab-code {
+		display: none;
+
+		&.selected {
+			display: block;
+		}
+
+		.gist-data {
+			height: 500px;
+			max-height: 500px;
+			min-height: 500px;
+			border-radius: $border-radius * 2 !important;
+		}
+
+		table.highlight {
+			height: 498px;
+			overflow: auto;
+		}
+	}
+
+	[data-language="node"]::after {
+		content: ".js";
+	}
+
+	[data-language="c"]::after {
+		content: "\0023";
+	}
+}

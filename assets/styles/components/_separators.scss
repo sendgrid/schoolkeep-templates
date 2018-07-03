@@ -1,0 +1,13 @@
+.separator {
+	width: $scaleup-3;
+	height: rem-calc(3px);
+	margin-top: $scaleup-3;
+	margin-bottom: $scaleup-3;
+	background: $slate-20;
+}
+
+.separator-dot {
+	display: inline-block;
+	padding-right: $scaledown-6;
+	padding-left: $scaledown-6;
+}

@@ -1,0 +1,26 @@
+// TODO: Try to clean up CSS so we don't need to disable these linting rules
+// scss-lint:disable QualifyingElement
+
+.header-crumbs {
+	a.crumb {
+		display: inline-block;
+		padding: 12px 0 0;
+		font-size: 0.9em;
+		text-decoration: none;
+	}
+
+	a.crumb:not(:first-of-type)::before {
+		content: "\0203A\00a0\00a0";
+	}
+
+	a.crumb:hover {
+		color: $white;
+	}
+}
+
+.strip-quote {
+	svg,
+	img {
+		max-width: 100%;
+	}
+}

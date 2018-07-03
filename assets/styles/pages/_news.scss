@@ -1,0 +1,190 @@
+.section-press,
+.section-news {
+
+
+	main {
+		position: relative;
+		background-color: $white;
+	}
+
+	header h2 {
+		margin-bottom: 0;
+	}
+
+	.share-column {
+		position: absolute;
+		left: 0;
+		padding-top: 4.25rem;
+		z-index: 0;
+	}
+
+	.article-title a {
+		color: $slate;
+		&:hover {
+			color: $sg-blue;
+		}
+	}
+
+	.article-source {
+
+		.avatar, .author, .categories {
+			display: none;
+		}
+
+		.date::before {
+			content: "";
+		}
+
+	}
+
+	.page-header {
+
+		h1 {
+			padding-bottom: 0;
+			text-align: center;
+		}
+
+		sub.header-sub {
+			font-size: 1.5rem;
+			line-height: 1.85rem;
+			margin: 2.5rem 0 0;
+			display: block;
+			font-family: $colfax-light;
+		}
+
+		sub.dateline {
+			font-family: $colfax-medium;
+			font-size: $scaledown-1;
+			display: block;
+			margin: 3rem 0 0;
+		}
+
+		h1 ~ sub {
+			font-family: $colfax-light;
+		}
+
+	}
+
+	.dateline {
+		font-family: $colfax-medium;
+		color: $slate-60;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+
+	&.single {
+
+		.page-header {
+
+			padding-bottom: 0;
+
+			* {
+				text-align: left;
+				margin-left: 0;
+			}
+
+			h1 { line-height: 45px; }
+
+			.dateline {
+				font-weight: 400;
+			}
+
+		}
+
+		article {
+			margin-top: 2rem;
+		}
+
+	}
+
+	@include breakpoint(small down) {
+
+		.article-summary .image {
+			display: none;
+		}
+
+	}
+
+	center {
+		.addtoany_share_save_container {
+			@include breakpoint(medium) {
+				display: none !important;
+			}
+		}
+	}
+
+	&.multiple {
+
+		article.column {
+			padding-bottom: 0;
+			border-bottom: none;
+			margin-bottom: $scaleup-6;
+
+			h1 {
+				margin: 0;
+
+				.summary {
+					margin: 1rem 0;
+				}
+
+			}
+
+		}
+
+	}
+
+	.section-news.page-news {
+
+		article.column {
+			min-width: 50%;
+		}
+
+	}
+
+	.article-thumbnail {
+		height: 54px;
+		margin-bottom: $scaleup-2;
+		max-width: 135px;
+	}
+
+	.article-thumbnail a {
+		align-items: center;
+		display: flex;
+		height: 100%;
+		position: relative;
+	}
+
+	.article-thumbnail img {
+		max-width: 100%;
+		width: 100%;
+		max-height: 100%;
+		display: -ms-flexbox;
+		display: flex;
+		margin: 0 auto;
+		object-fit: contain;
+	}
+
+	.tabs li {
+		display: table;
+		max-width: 150px;
+		margin: 0;
+	}
+
+	&.term-media-resources .dateline,
+	.media-resources .dateline {
+		display: none;
+	}
+
+	h2 a {
+		font-family: $colfax-regular;
+		font-size: 1rem;
+		display: inline-block;
+		padding: 0 1.2rem;
+		line-height: 2.25rem;
+	}
+
+	.investors-list li {
+		margin-bottom: 2rem;
+	}
+
+}

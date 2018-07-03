@@ -1,0 +1,128 @@
+// Sidebar
+.side {
+
+	aside {
+		font-size: $scaledown-1;
+	}
+
+	header {
+		font-family: $colfax-medium;
+		color: $slate-60;
+		font-size: $scaledown-1;
+		letter-spacing: 1px;
+		padding-bottom: $scaledown-2;
+		text-transform: uppercase;
+	}
+
+	center {
+		font-size: $scaledown-1;
+		line-height: $scaleup-1;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+	}
+
+	.widget {
+		font-size: $scaledown-1;
+		padding-bottom: $scaleup-3;
+		color: $slate-80;
+		p, li, .textwidget {
+			line-height: $scaleup-2;
+		}
+	}
+
+	.widget li a {
+		color: $sg-blue-80;
+		font-weight: 400;
+	}
+
+	.widget li a:hover {
+		color: $sg-blue;
+	}
+
+	.widget ul {
+		padding: 0;
+		margin: 0;
+	}
+
+	.widget li {
+		list-style: none;
+	}
+
+	// Share Aside
+
+	ul.socialize li {
+		display: inline-block;
+		margin-right: 5px;
+	}
+
+	ul.socialize li a {
+		color: rgba(26,130,226,0.8);
+		display: block;
+		width: 25px;
+		height: 25px;
+		padding-top: 3px;
+		box-sizing: border-box;
+		text-align: center;
+		transition: box-shadow 0.3s ease-in-out 0s;
+		box-shadow: 0 0 0 5px rgba(130, 146, 163, 0);
+	}
+
+	ul.socialize li svg {
+		width: 17px;
+		height: 17px;
+	}
+
+	ul.socialize .channel-title {
+		display: none;
+	}
+
+	.icon-facebook:before {
+		content: url('data:image/svg+xml;utf8,<svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="18px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"> <path id="Facebook" fill="#A9B5C0" d="M38.078,22.431c0,2.268,0,12.391,0,12.391H29v15.152h9.078V95h18.649V49.975h12.513 c0,0,1.172-7.265,1.74-15.209c-1.629,0-14.183,0-14.183,0s0-8.815,0-10.36c0-1.548,2.033-3.631,4.043-3.631c2.006,0,6.239,0,10.16,0 c0-2.063,0-9.191,0-15.774c-5.235,0-11.189,0-13.814,0C37.617,5,38.078,20.167,38.078,22.431z"/> </svg> ');
+	}
+	.icon-twitter:before {
+		content: url('data:image/svg+xml;utf8,<svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="18px" viewBox="0 2 10 11" style="enable-background:new 0 0 100 100;" xml:space="preserve"> <path id="Twitter__x28_alt_x29_" fill="#A9B5C0" d="M11,4.167 C10.6010515,4.3485 10.2648369,4.3545 9.90803778,4.175 C10.3682499,3.894 10.3893245,3.697 10.5554714,3.1655 C10.1251559,3.426 9.64828016,3.6155 9.14101764,3.718 C8.73520763,3.2765 8.15589913,3 7.51581714,3 C6.28564427,3 5.28876314,4.018 5.28876314,5.272 C5.28876314,5.4505 5.30836749,5.624 5.34610586,5.79 C3.49496525,5.6955 1.85408127,4.7905 0.755747639,3.4155 C0.564115131,3.7515 0.45384067,4.142 0.45384067,4.5585 C0.45384067,5.347 0.847397968,6.042 1.44484049,6.4495 C1.0797095,6.4375 0.736633399,6.3355 0.436196756,6.1655 C0.435706648,6.175 0.435706648,6.184 0.435706648,6.194 C0.435706648,7.295 1.203707,8.213 2.22264302,8.422 C1.89623062,8.5125 1.5521743,8.5265 1.21644983,8.461 C1.50022278,9.3635 2.3226252,10.0205 3.29696133,10.039 C2.34418998,10.801 1.16253787,11.1185 0,10.9795 C0.985608626,11.624 2.15598824,12 3.4136072,12 C7.51042595,12 9.74973267,8.538 9.74973267,5.5355 C9.74973267,5.4365 9.74826234,5.3395 9.74385136,5.2415 C10.1785778,4.9215 10.7015238,4.623 11,4.167"/> </svg> ');
+	}
+	.icon-rss:before {
+		content: url('data:image/svg+xml;utf8,<svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="18px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"> <path id="RSS" fill="#A9B5C0" d="M25.4,74.569c2.18,2.177,3.506,5.131,3.514,8.42c-0.008,3.283-1.334,6.237-3.506,8.406L25.4,91.399 c-2.176,2.166-5.148,3.49-8.453,3.49c-3.301,0-6.266-1.328-8.441-3.494C6.336,89.227,5,86.276,5,82.989 c0-3.289,1.336-6.25,3.506-8.423v0.003c2.176-2.168,5.141-3.502,8.441-3.502C20.252,71.067,23.221,72.404,25.4,74.569z M25.4,74.566 v0.003c0.004,0,0.004,0,0.004,0L25.4,74.566z M8.506,91.399c0,0,0,0,0-0.004c-0.004,0-0.004,0-0.004,0L8.506,91.399z M5.01,35.604 v17.185c11.219,0.007,21.83,4.414,29.771,12.367c7.939,7.928,12.328,18.555,12.346,29.813h0.006V95h17.256 c-0.014-16.37-6.668-31.198-17.426-41.964C36.203,42.272,21.381,35.614,5.01,35.604z M5.041,5v17.177 C45.145,22.206,77.746,54.858,77.773,95H95c-0.012-24.81-10.096-47.288-26.393-63.596C52.305,15.101,29.842,5.011,5.041,5z"/> </svg> ');
+	}
+	.icon-linkedin:before {
+		content: url('data:image/svg+xml;utf8,<svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="18px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"> <path id="LinkedIn" fill="#A9B5C0" d="M95,59.727V93H75.71V61.955c0-7.799-2.79-13.121-9.773-13.121c-5.33,0-8.502,3.587-9.897,7.056 c-0.509,1.241-0.64,2.967-0.64,4.704V93H36.104c0,0,0.26-52.58,0-58.028h19.295v8.225c-0.039,0.062-0.09,0.128-0.127,0.188h0.127 v-0.188c2.563-3.948,7.141-9.588,17.388-9.588C85.483,33.609,95,41.903,95,59.727z M15.919,7C9.318,7,5,11.33,5,17.024 c0,5.57,4.193,10.031,10.663,10.031h0.129c6.729,0,10.914-4.46,10.914-10.031C26.579,11.33,22.521,7,15.919,7z M6.146,93h19.289 V34.972H6.146V93z"/> </svg> ');
+	}
+	.icon-googleplus:before {
+		content: url('data:image/svg+xml;utf8,<svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="18px" viewBox="0 20 100 20" style="enable-background:new 0 0 100 100;" xml:space="preserve"> <path id="Google-Plus-Icon" fill="#A9B5C0" d="M31.8052961,29.039361 L31.8052961,40.4211308 L49.7510925,40.4211308 C49.0278362,45.305807 44.3266704,54.7431909 31.8052961,54.7431909 C21.0016555,54.7431909 12.1869697,45.353231 12.1869697,33.781765 C12.1869697,22.210299 21.0016555,12.820339 31.8052961,12.820339 C37.9529745,12.820339 42.0664946,15.5709334 44.4170774,17.9421354 L53.0057456,9.26353593 C47.4909166,3.85719528 40.3487609,0.58493644 31.8052961,0.58493644 C14.311535,0.58493644 0.162834093,15.4286612 0.162834093,33.781765 C0.162834093,52.1348688 14.311535,66.9785935 31.8052961,66.9785935 C50.0675171,66.9785935 62.1820595,53.5101662 62.1820595,34.5405497 C62.1820595,32.3590438 61.9560421,30.6992024 61.6848209,29.039361 L31.8052961,29.039361 L31.8052961,29.039361 L31.8052961,29.039361 Z"/> <polyline fill="#A9B5C0" id="Shape" points="99.6105722 29.039361 90.5698686 29.039361 90.5698686 19.5545528 81.5291651 19.5545528 81.5291651 29.039361 72.4884615 29.039361 72.4884615 38.5241691 81.5291651 38.5241691 81.5291651 48.0089773 90.5698686 48.0089773 90.5698686 38.5241691 99.6105722 38.5241691"></polyline> </svg> ');
+	}
+
+}
+
+.aside-menu {
+	list-style: none;
+	margin-left: 0;
+
+	li {
+		padding-bottom: 0;
+		margin-bottom: $scaleup-2;
+		line-height: $scaleup-1;
+	}
+
+	.active {
+		padding-left: 10px;
+		border-left: 4px solid $sg-blue;
+
+	}
+
+	.active a {
+		color: $slate-80;
+		font-family: $colfax-medium;
+	}
+}
+
+@include breakpoint(medium down) {
+
+	.side {
+		margin-top: $scaleup-3;
+	}
+
+}

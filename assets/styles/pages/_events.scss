@@ -1,0 +1,709 @@
+.events {
+
+	#tribe_events_filters_reset {
+		display: none;
+	}
+
+	.tribe-events-list h2.tribe-events-page-header__title {
+		text-align: left;
+		margin-bottom: $scaleup-1;
+		a {
+			font-family: $colfax-medium;
+			color: $sg-blue-80;
+			text-decoration: none;
+			&:hover {
+				color: $sg-blue;
+			}
+		}
+	}
+
+	.tribe-events-list-separator-month {
+		color: $slate;
+		display: block;
+		font-size: 1rem;
+		line-height: 20px;
+		margin-bottom: $scaleup-2;
+		font-family: $colfax-medium;
+	}
+
+	.event {
+		@extend %border--gray;
+		@extend %box-shadow--gray;
+		border-radius: $border-radius;
+		margin-bottom: $scaleup-5;
+		padding: 0;
+	}
+
+	// Notices
+	.events-notices {
+		text-align: center;
+	}
+
+	.tribe-events-notices {
+		background-color: transparent;
+		border: none;
+		color: $slate;
+		font-size: 20px;
+		font-family: $colfax-regular;
+		padding: 0;
+	}
+
+	// Hide Export Calendar button
+	.tribe-events-ical {
+		display: none;
+	}
+
+	.reset-filters-link {
+		display: block;
+		font-size: $scaledown-1;
+		margin-top: $scaledown-3;
+		text-align: right;
+	}
+
+}
+
+.events-filter-bar {
+
+	background-color: $slate-2;
+	border-color: $border-color-gray;
+	border-radius: 2px 2px 0 0;
+	border-width: 1px;
+	border-style: solid;
+	font-size: 13px;
+	padding: $scaleup-1 0;
+	position: relative;
+
+	&::before {
+		border-color: #E9ECEF;
+		border-style: solid;
+		border-width: 0 0 1px 0;
+		box-sizing: border-box;
+		color: $sg-blue;
+		content: "Find Events";
+		display: none;
+		line-height: 40px;
+		padding-left: 0.9375rem;
+		padding-right: 0.9375rem;
+		height: 40px;
+	}
+
+	&:hover::before {
+		cursor: pointer;
+	}
+
+	@include breakpoint(medium down) {
+
+		padding-right: 0;
+		padding-top: 0;
+
+		&::before {
+			display: block;
+		}
+
+		&::after {
+			content: "";
+			height: 5px;
+			width: 5px;
+			border-color: $sg-blue;
+			border-width: 0 1px 1px 0;
+			border-style: solid;
+			position: absolute;
+			right: 1.125rem;
+			top: 17px;
+			transform: rotate(45deg);
+		}
+
+	}
+
+	label {
+		display: block;
+		color: $slate-60;
+		@extend %font-smaller;
+	}
+
+	input[type="text"] {
+		background: transparent;
+		border-color: $slate-20;
+		border-style: solid;
+		border-width: 0 0 1px 0;
+		box-shadow: none;
+		width: 100%;
+		@extend %font-small;
+		height: auto;
+		margin-bottom: 1px;
+		padding: .2rem 0;
+		z-index: 100;
+	}
+
+	input[type="text"]:focus {
+		border-color: $sg-blue;
+		border-width: 0 0 2px 0;
+		margin-bottom: 0px;
+	}
+
+	.btn {
+		line-height: 1rem;
+	}
+
+	.label-tribe-bar-date::after {
+		background-size: auto 100%;
+		display: inline;
+		width: 20px;
+		height: 20px;
+		content: "";
+		position: absolute;
+		z-index: 1000;
+	}
+
+	.tribe-bar-date-filter,
+	.tribe-bar-search-filter {
+		position: relative;
+	}
+
+	@include breakpoint(medium down) {
+		#tribe-bar-form .column {
+			margin-top: $scaleup-1;
+			flex: 0 0 100%;
+
+			.btn {
+				width: 100%;
+			}
+
+		}
+	}
+
+	.tribe-bar-search-filter input {
+		background-size: 16px;
+		background-image: url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 15 15" style="enable-background:new 0 0 15 15;" xml:space="preserve"><style type="text/css">.st0{fill:#B1BCC4;}</style><g id="Blog-1.1"><g id="Post" transform="translate(-1095.000000, -435.000000)"><g id="Main" transform="translate(170.000000, 415.000000)"><g id="Sidebar" transform="translate(720.000000, 19.000000)"><g id="Search"><g transform="translate(206.000000, 2.000000)"><path class="st0" d="M5.5,10.9c-3.2,0-5.8-2.5-5.8-5.6c0-3.1,2.6-5.6,5.8-5.6s5.8,2.5,5.8,5.6C11.3,8.4,8.7,10.9,5.5,10.9z
+	M5.5,0.8c-2.6,0-4.8,2-4.8,4.6c0,2.5,2.1,4.6,4.8,4.6c2.6,0,4.8-2,4.8-4.6C10.3,2.8,8.2,0.8,5.5,0.8z"/><path class="st0" d="M13.7,13.7c-0.1,0-0.2,0-0.3-0.1L8.9,9.3c-0.2-0.2-0.2-0.5,0-0.7c0.2-0.2,0.5-0.2,0.7,0l4.5,4.3,c0.2,0.2,0.2,0.5,0,0.7C14,13.7,13.8,13.7,13.7,13.7z"/></g></g></g></g></g></g></svg>');
+		background-position: right center;
+		background-repeat: no-repeat;
+	}
+
+	.tribe-bar-search-filter input:focus {
+		background-image: url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 15 15" style="enable-background:new 0 0 15 15;" xml:space="preserve"><style type="text/css">.st0{fill:#1A82E2;}</style><g id="Blog-1.1"><g id="Post" transform="translate(-1095.000000, -435.000000)"><g id="Main" transform="translate(170.000000, 415.000000)"><g id="Sidebar" transform="translate(720.000000, 19.000000)"><g id="Search"><g transform="translate(206.000000, 2.000000)"><path class="st0" d="M5.5,10.9c-3.2,0-5.8-2.5-5.8-5.6c0-3.1,2.6-5.6,5.8-5.6s5.8,2.5,5.8,5.6C11.3,8.4,8.7,10.9,5.5,10.9z
+									 M5.5,0.8c-2.6,0-4.8,2-4.8,4.6c0,2.5,2.1,4.6,4.8,4.6c2.6,0,4.8-2,4.8-4.6C10.3,2.8,8.2,0.8,5.5,0.8z"/><path class="st0" d="M13.7,13.7c-0.1,0-0.2,0-0.3-0.1L8.9,9.3c-0.2-0.2-0.2-0.5,0-0.7c0.2-0.2,0.5-0.2,0.7,0l4.5,4.3
+									c0.2,0.2,0.2,0.5,0,0.7C14,13.7,13.8,13.7,13.7,13.7z"/></g></g></g></g></g></g></svg>');
+		background-position: right center;
+		background-repeat: no-repeat;
+	}
+
+	.tribe-bar-date-filter input {
+		background-size: 16px;
+		background-image: url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve">
+<style type="text/css">.st0{fill:#B1BCC4;}</style><g><path class="st0" d="M15.7,1.3h-2.3v-1C13.3,0.2,13.2,0,13,0h-2c-0.2,0-0.3,0.1-0.3,0.3v1H5.3v-1C5.3,0.2,5.2,0,5,0H3
+		C2.8,0,2.7,0.2,2.7,0.3v1H0.3C0.1,1.3,0,1.5,0,1.7v14C0,15.9,0.1,16,0.3,16h15.3c0.2,0,0.3-0.1,0.3-0.3v-14
+		C16,1.5,15.9,1.3,15.7,1.3z M11.3,0.7h1.3v2h-1.3V0.7z M3.3,0.7h1.3v2H3.3V0.7z M2.7,2v1c0,0.2,0.1,0.3,0.3,0.3h2
+		c0.2,0,0.3-0.1,0.3-0.3V2h5.3v1c0,0.2,0.1,0.3,0.3,0.3h2c0.2,0,0.3-0.1,0.3-0.3V2h2v2.7H0.7V2H2.7z M0.7,15.3v-10h14.7v10H0.7z"/>
+	<path class="st0" d="M7.7,12.7h-1v-5c0-0.1-0.1-0.3-0.2-0.3c-0.1-0.1-0.3,0-0.4,0.1L4.8,8.8c-0.1,0.1-0.1,0.3,0,0.5
+		c0.1,0.1,0.3,0.1,0.5,0L6,8.5v4.2H5c-0.2,0-0.3,0.1-0.3,0.3c0,0.2,0.1,0.3,0.3,0.3h2.7C7.9,13.3,8,13.2,8,13
+		C8,12.8,7.9,12.7,7.7,12.7z"/>
+	<path class="st0" d="M11.7,7.3H8.3C8.1,7.3,8,7.5,8,7.7v0.7c0,0.2,0.1,0.3,0.3,0.3c0.2,0,0.3-0.1,0.3-0.3V8h2.5l-0.7,2H9
+		c-0.2,0-0.3,0.1-0.3,0.3s0.1,0.3,0.3,0.3h1.2l-0.8,2.2c-0.1,0.2,0,0.4,0.2,0.4c0,0,0.1,0,0.1,0c0.1,0,0.3-0.1,0.3-0.2l0.9-2.5H11
+		c0.2,0,0.3-0.1,0.3-0.3c0-0.1-0.1-0.3-0.2-0.3L12,7.8c0-0.1,0-0.2,0-0.3C11.9,7.4,11.8,7.3,11.7,7.3z"/>
+</g>
+</svg>');
+		background-position: right center;
+		background-repeat: no-repeat;
+		//color: #D4DADF; B6C2CC #1A82E2
+	}
+
+	.tribe-bar-date-filter input:focus {
+		background-image: url('data:image/svg+xml;utf8,<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve"><style type="text/css">.st0{fill:#1A82E2;}</style><g><path class="st0" d="M15.7,1.3h-2.3v-1C13.3,0.2,13.2,0,13,0h-2c-0.2,0-0.3,0.1-0.3,0.3v1H5.3v-1C5.3,0.2,5.2,0,5,0H3
+		C2.8,0,2.7,0.2,2.7,0.3v1H0.3C0.1,1.3,0,1.5,0,1.7v14C0,15.9,0.1,16,0.3,16h15.3c0.2,0,0.3-0.1,0.3-0.3v-14
+		C16,1.5,15.9,1.3,15.7,1.3z M11.3,0.7h1.3v2h-1.3V0.7z M3.3,0.7h1.3v2H3.3V0.7z M2.7,2v1c0,0.2,0.1,0.3,0.3,0.3h2
+		c0.2,0,0.3-0.1,0.3-0.3V2h5.3v1c0,0.2,0.1,0.3,0.3,0.3h2c0.2,0,0.3-0.1,0.3-0.3V2h2v2.7H0.7V2H2.7z M0.7,15.3v-10h14.7v10H0.7z"/><path class="st0" d="M7.7,12.7h-1v-5c0-0.1-0.1-0.3-0.2-0.3c-0.1-0.1-0.3,0-0.4,0.1L4.8,8.8c-0.1,0.1-0.1,0.3,0,0.5
+		c0.1,0.1,0.3,0.1,0.5,0L6,8.5v4.2H5c-0.2,0-0.3,0.1-0.3,0.3c0,0.2,0.1,0.3,0.3,0.3h2.7C7.9,13.3,8,13.2,8,13
+		C8,12.8,7.9,12.7,7.7,12.7z"/><path class="st0" d="M11.7,7.3H8.3C8.1,7.3,8,7.5,8,7.7v0.7c0,0.2,0.1,0.3,0.3,0.3c0.2,0,0.3-0.1,0.3-0.3V8h2.5l-0.7,2H9
+		c-0.2,0-0.3,0.1-0.3,0.3s0.1,0.3,0.3,0.3h1.2l-0.8,2.2c-0.1,0.2,0,0.4,0.2,0.4c0,0,0.1,0,0.1,0c0.1,0,0.3-0.1,0.3-0.2l0.9-2.5H11
+		c0.2,0,0.3-0.1,0.3-0.3c0-0.1-0.1-0.3-0.2-0.3L12,7.8c0-0.1,0-0.2,0-0.3C11.9,7.4,11.8,7.3,11.7,7.3z"/></g></svg>');
+	}
+
+	.tribe-bar-geoloc-filter input {
+		background-size: 16px;
+		background-position: right center;
+		background-repeat: no-repeat;
+		background-image: url('data:image/svg+xml;utf8,<svg width="13px" height="16px" viewBox="0 0 13 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>location-icon</title>
+		    <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+		        <g id="accelerate-home" transform="translate(-380.000000, -2994.000000)" stroke="#B1BCC4" stroke-width="1">
+		            <g id="Team" transform="translate(0.000000, 2491.000000)">
+		                <g id="Event-card" transform="translate(335.000000, 171.000000)">
+		                    <g id="Location" transform="translate(46.000000, 330.000000)">
+		                        <path d="M11,8.7826087 C11,13.0434783 5.5,17 5.5,17 C5.5,17 0,13.0434783 0,8.7826087 C0,5.5893913 2.2935,3 5.5,3 C8.70588889,3 11,5.5893913 11,8.7826087 Z M5.5,11.5217391 C7.18753674,11.5217391 8.55555556,10.1591275 8.55555556,8.47826087 C8.55555556,6.79739424 7.18753674,5.43478261 5.5,5.43478261 C3.81246326,5.43478261 2.44444444,6.79739424 2.44444444,8.47826087 C2.44444444,10.1591275 3.81246326,11.5217391 5.5,11.5217391 Z" id="location-icon"></path>
+		                    </g>
+		                </g>
+		            </g>
+		        </g>
+		    </g>
+		</svg>')
+	}
+
+	.tribe-bar-geoloc-filter input:focus {
+		background-size: 16px;
+		background-image: url('data:image/svg+xml;utf8,<svg width="13px" height="16px" viewBox="0 0 13 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>location-icon</title>
+				<g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+						<g id="accelerate-home" transform="translate(-380.000000, -2994.000000)" stroke="#1A82E2" stroke-width="1">
+								<g id="Team" transform="translate(0.000000, 2491.000000)">
+										<g id="Event-card" transform="translate(335.000000, 171.000000)">
+												<g id="Location" transform="translate(46.000000, 330.000000)">
+														<path d="M11,8.7826087 C11,13.0434783 5.5,17 5.5,17 C5.5,17 0,13.0434783 0,8.7826087 C0,5.5893913 2.2935,3 5.5,3 C8.70588889,3 11,5.5893913 11,8.7826087 Z M5.5,11.5217391 C7.18753674,11.5217391 8.55555556,10.1591275 8.55555556,8.47826087 C8.55555556,6.79739424 7.18753674,5.43478261 5.5,5.43478261 C3.81246326,5.43478261 2.44444444,6.79739424 2.44444444,8.47826087 C2.44444444,10.1591275 3.81246326,11.5217391 5.5,11.5217391 Z" id="location-icon"></path>
+												</g>
+										</g>
+								</g>
+						</g>
+				</g>
+		</svg>')
+	}
+
+}
+
+.tribe_events_filters {
+
+	#tribe_events_filters_form {
+		display: block !important;
+	}
+
+}
+
+@include breakpoint(medium down) {
+
+	.events-filters {
+		&:not(.open) #tribe-bar-form,
+		&:not(.open) .tribe_events_filters {
+			display: none;
+		}
+	}
+
+	.events-filters:not(.open) .events-filter-bar {
+		padding-bottom: 0;
+	}
+
+	.events-filters:not(.open) .events-filter-bar::before {
+		border-bottom-width: 0;
+	}
+
+	.open .events-filter-bar::after {
+		border-width: 1px 0 0 1px;
+	}
+
+}
+
+.events .tribe-events-filters-group {
+
+	border-color: $border-color-gray;
+	border-width: 0 0 1px 0;
+	display: block;
+}
+
+.events .tribe_events_filter_item.closed div {
+	display: block;
+}
+
+.events .tribe_events_filters label input[type=checkbox],
+.events .tribe_events_filters label input[type=radio] {
+	width: auto;
+	display: none;
+}
+
+.events .tribe-events-filters-group-heading {
+	display: none;
+}
+
+.tribe_events_filters {
+
+	.tribe-events-filter-group {
+		border-width: 0 1px 1px 1px;
+		border-radius: 0 0 2px 2px;
+		border-color: $border-color-gray;
+		border-style: solid;
+		border-width: 0 1px 1px 1px;
+		display: block;
+		max-height: auto;
+		overflow-x: auto;
+		padding: $scale-0 0;
+		white-space: nowrap;
+	}
+
+	input[type="submit"] { visibility: hidden; }
+
+	ul {
+
+		margin: 0;
+
+		li {
+
+			display: inline-block;
+			background: transparent;
+			margin-bottom: 0;
+
+			&:first-of-type {
+				margin-left: $scale-0;
+			}
+
+			label {
+
+				background-color: white;
+				border-radius: 2px;
+				border: 1px $sg-blue-40 solid;
+				color: $sg-blue;
+				font-weight: 400;
+				padding: 3px 9px;
+				@extend %font-small;
+
+				&.active {
+					background-color: $sg-blue;
+					color: white;
+					border-color: $sg-blue;
+					transition: all .3s;
+				}
+
+				&:hover {
+					cursor: pointer;
+
+				}
+
+				&:not(.active):hover {
+					background-color: #E8F2FC;
+					transition: all .3s;
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+#tribe-bar-dates {}
+
+.datepicker:not(#x) {
+
+	background-color: white;
+	border-radius: 0 0 2px 2px;
+	border: 1px solid #E9ECEF;
+	box-shadow: 0 2px 6px 0 rgba(41,70,97,0.09);
+	font-family: $colfax-regular;
+	left: calc(0.9375rem - 1px ) !important;
+	padding: 0;
+	position: absolute;
+	right: calc(0.9375rem - 1px ) !important;
+	top: calc(100% - 1px) !important;
+	z-index: 100;
+
+	&::before {
+		border: none;
+		content: "";
+		display: block;
+		background-color: $sg-blue;
+		background-image: none;
+		height: 2px;
+		left: 0px;
+		right: 0px;
+		top: -2px;
+	}
+
+	&.datepicker-dropdown::after {
+		display: none;
+	}
+
+	thead {
+		border-width: 0 0 1px 0;
+	}
+
+	th {
+		background-color: transparent;
+		font-family: $colfax-medium;
+	}
+
+	thead {
+		background-color: transparent;
+	}
+
+	th.datepicker-switch {
+		text-transform: uppercase;
+		padding-top: 9px;
+	}
+
+	th.prev,
+	th.next {
+		position: relative;
+		text-indent: -9999px;
+	}
+
+	th.prev::after,
+	th.next::after {
+		content: "";
+		left: calc(50% - 2px);
+		height: 7px;
+		position: absolute;
+		top: calc( 50% - 2px );
+		transform: rotate(45deg);
+		width: 7px;
+		border-color: $slate;
+		border-style: solid;
+		border-width: 0 0 1px 1px;
+		background: 0px;
+	}
+
+	th.next::after {
+		border-width: 1px 1px 0 0;
+		left: calc(50% - 4px);
+	}
+
+	th.prev:hover::after,
+	th.next:hover::after {
+		border-color: $sg-blue;
+	}
+
+	td.active {
+		background-color: $sg-blue;
+		background-image: none;
+		color: white;
+	}
+
+	table {
+
+		padding: 0;
+
+		tbody {
+
+		border: none;
+		color: $slate-60;
+
+			tr:nth-child(even) {
+			background-color: transparent;
+
+			}
+
+		}
+
+		span.month {
+			border-radius: 0;
+
+			&:hover,
+			&.active {
+				background-color: $sg-blue;
+				background-image: none;
+				color: white;
+			}
+		}
+
+		td {
+
+			border-radius: 0;
+			cellspacing: 0;
+
+			&.day:not(.active):hover {
+				background-color: #E8F2FC;
+			}
+
+		}
+
+	}
+
+}
+
+// Ajax Loader
+
+@keyframes fragment_loader {
+  0%,80%,to { opacity: 0; }
+  40%  { opacity: 1; }
+}
+
+#tribe-events-content .tribe-events-ajax-loading {
+
+  @extend .fragment-loader;
+
+	img {
+		display: none;
+	}
+  
+	~ h2,
+	~ article {
+		opacity: .25;
+	}
+
+}
+
+article.event {
+
+	&#post-0 {
+		display: none;
+	}
+
+	@extend %border--gray;
+	@extend %box-shadow--gray;
+	@extend %font-smaller;
+	padding: 0;
+	margin-bottom: $scaleup-5;
+
+	header sup {
+		font-family: $colfax-medium;
+		color: #7F91A1;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-size: $scaledown-2;
+	}
+
+	header sup a {
+		color: #7F91A1;
+		pointer-events: none;
+	}
+
+	h3 a { color: $slate;	}
+	h3 a:hover { color: $sg-blue; }
+
+	.details {
+		order: 1;
+
+		dt,
+		dd {
+			display: block;
+			float: left;
+		}
+
+		dt {
+			background-position: left center;
+			background-repeat: no-repeat;
+			clear: both;
+			height: 1.5rem;
+			overflow: hidden;
+			text-indent: -1000px;
+			width: 1.5rem;
+		}
+
+		dt.time { background-image: url("assets/images/icons/time-icon.svg"); }
+		dd.time-end::before { content: "\00a0to\00a0"; }
+		dt.date { background-image: url("assets/images/icons/date-icon.svg"); }
+		dd.date-end::before { content: "\00a0to\00a0"; }
+		dt.city-state { background-image: url("assets/images/icons/location-icon.svg"); }
+		dd.state::before { content: ",\00a0"; }
+
+	}
+
+	.read-more {
+
+	}
+
+	figure {
+
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		margin: 0;
+		min-height: 500px;
+		order: 0;
+
+		@include breakpoint(medium) {
+	    order: 2;
+	  }
+
+	}
+
+}
+
+.accelerate-events {
+
+	.row.event {
+		margin: 0;
+	}
+
+	.slides {
+		position: relative;
+	}
+
+	.slide {
+		padding: 5px;
+		outline: none;
+	}
+
+	.slick-prev,
+	.slick-next {
+		height: 30px;
+		outline: none;
+		overflow: hidden;
+		position: absolute;
+		text-indent: -3000px;
+		top: calc( 50% - 30px );
+		width: 30px;
+		//background: pink;
+	}
+
+	.slick-prev {
+		right: calc( 100% + 10px );
+		z-index: 100;
+	}
+
+	.slick-next {
+		left: calc( 100% + 10px );
+	}
+
+	.slick-prev::before,
+	.slick-next::before {
+		border-color: $slate-20;
+		border-width: 2px 2px 0 0;
+		border-style: solid;
+		color: gray;
+		content: "";
+		display: block;
+		content: "›";
+		height: 15px;
+		left: 25%;
+		position: absolute;
+		top: 25%;
+		transform: rotate(45deg);
+		width: 15px;
+	}
+
+	.slick-prev::before  {
+		border-width: 0 0 2px 2px;
+	}
+
+	ul.slick-dots {
+
+		list-style: none;
+		text-align: center;
+		width: 100%;
+
+		li {
+
+			display: inline-block;
+
+			button {
+
+				display: block;
+				outline: none;
+				overflow: hidden;
+				padding: .75rem;
+				position: relative;
+				text-indent: -3000px;
+
+				&::before {
+					content: "";
+					background: white;
+					border: 1px $sg-blue solid;
+					border-radius: 50%;
+					display: block;
+					height: 8px;
+					position: absolute;
+					left: calc(50% - 4px);
+					top: calc(50% - 4px);
+					width: 8px;
+				}
+
+			}
+
+			&:hover button::before,
+			&.slick-active button::before {
+				background: $sg-blue;
+			}
+
+
+		}
+
+	}
+
+}

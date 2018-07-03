@@ -1,0 +1,158 @@
+.term-inbox-expertise {
+
+	.resource-section {
+	background-image: linear-gradient(to bottom, $white, $white 4rem, $sg-blue-5 4rem);
+	position: relative;
+
+	&::before {
+		background: $sg-blue-5;
+		content: '';
+		height: 50%;
+		left: 0;
+		position: absolute;
+		top: 3rem;
+		transform: rotate(-5deg);
+		transform-origin: left top;
+		width: 150%;
+	}
+
+	.row {
+
+		position: relative;
+		z-index: 1;
+
+		@media (min-width: 1100px) {
+
+		max-width: 73rem;
+
+		}
+
+	}
+
+	.resource-tile__thumbnail {
+		border: 0;
+		height: auto;
+		padding: $scaleup-1 $scaleup-1 0;
+		position: relative;
+		text-align: center;
+	}
+
+	}
+
+	.resource-section-row-2 {
+
+		.resource-tile-column:nth-child(3) {
+
+			@media (min-width: 992px) {
+
+				article {
+					background-image: url('/wp-content/themes/sgdotcom/assets/images/resources/crop-email.png');
+					background-position: right center;
+					background-repeat: no-repeat;
+					background-size: 100px;
+				}
+
+				.resource-tile__copy {
+
+					max-width: 85%;
+
+				}
+
+			}
+
+		}
+
+	}
+
+	@media (min-width: 992px) {
+
+		.featured-inbox-expertise .resource-tile-wrapper {
+			height: 34.063rem;
+		}
+
+		.small-12.resource-tile-column .resource-tile-wrapper {
+			height: 16.125rem;
+		}
+
+		.resource-tile__copy {
+			padding: $scaleup-3;
+		}
+
+	}
+
+  @media (min-width: 1100px) {
+
+	.featured-inbox-expertise .resource-tile-wrapper {
+	  height: 40.063rem;
+	}
+
+	.small-12.resource-tile-column .resource-tile-wrapper {
+	  height: 19.125rem;
+	}
+
+	.article-title {
+	  font-size: 1.56rem;
+	  line-height: 1.9375rem;
+	  margin-bottom: .7rem;
+	}
+
+	.featured-inbox-expertise .resource-tile__copy {
+	  padding: 1rem 2.6rem 2rem 1.5rem;
+	}
+
+	.resource-tile__copy p {
+	  font-size: inherit;
+	  line-height: 1.875rem;
+	}
+
+  }
+
+  @media (max-width: 992px) {
+
+	.featured-inbox-expertise .resource-tile-wrapper {
+	  margin-bottom: 2rem;
+	}
+
+	.resource-tile__copy p {
+	  font-size: inherit;
+	  line-height: 1.875rem;
+	}
+
+  }
+
+  .resource-tag {
+	margin-bottom: .7rem;
+  }
+
+  .resource-tag-text {
+	margin-left: 0;
+  }
+
+  .article-title {
+	margin-bottom: .7rem;
+  }
+
+  .resource-tile__cta-link.cta-link.small {
+	text-align: right;
+  }
+
+  .floating-tile {
+	box-shadow: 0 0 0 0 $sg-blue-10, 8px 8px 3px $sg-blue-10;
+  }
+
+  .floating-tile:hover,
+  .floating-tile:active {
+	box-shadow: 0 0 0 0 $sg-blue-10, 12px 12px 3px $sg-blue-10;
+  }
+
+}
+
+// Even padding on Email Expertise tiles
+.resource-tile--inbox .article-title {
+	font-size: $scaleup-2;
+
+	@include breakpoint(large only) {
+		font-size: $scaleup-1;
+		line-height: $scaleup-2;
+	}
+}

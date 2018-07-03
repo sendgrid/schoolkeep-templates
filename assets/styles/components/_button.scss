@@ -1,0 +1,299 @@
+// TODO: Try to clean up CSS so we don't need to disable these linting rules
+// scss-lint:disable QualifyingElement, SelectorFormat, PlaceholderInExtend
+
+@mixin btn-shadow {
+	box-shadow: 0 1px 4px 0 rgba($slate, 0.2);
+}
+
+// Keep 12px space between btns in btn-lists
+.btn-list > .btn + .btn {
+	margin-top: $scaledown-1;
+
+	@include breakpoint(medium) {
+		margin-top: 0;
+		margin-left: $scaledown-1;
+	}
+}
+
+.btn {
+	position: relative;
+	display: block;
+	width: 100%;
+	padding: $scaledown-1 $scaleup-3;
+	font-family: $colfax-regular;
+	font-size: $scale-0;
+	line-height: $scaleup-2;
+	text-align: center;
+	text-decoration: none;
+	cursor: pointer;
+	border-style: solid;
+	border-width: 1px;
+	border-radius: $border-radius;
+	transition: all 0.3s;
+
+	@include breakpoint(medium) {
+		display: inline-block;
+		width: auto;
+	}
+
+	&:active,
+	&:focus {
+		text-decoration: none;
+		outline: none;
+	}
+}
+
+.btn-primary,
+.blog .btn-primary {
+	color: $white;
+	background: $sg-blue-80;
+	border-color: $sg-blue;
+
+	&:hover,
+	&:focus,
+	&.is-active {
+		color: $white;
+		background: $sg-blue;
+	}
+
+	&:active {
+		@include btn-shadow;
+	}
+
+	&.is-disabled {
+		cursor: not-allowed;
+		background: rgba($steel, 0.8);
+		border-color: $steel;
+	}
+
+	&.is-disabled:hover {
+		background: rgba($steel, 0.8);
+		border-color: $steel;
+	}
+}
+
+.btn-secondary {
+	color: $sg-blue;
+	background: transparent;
+	border-color: $sg-blue-40;
+
+	&:hover,
+	&:focus,
+	&.is-active {
+		color: $sg-blue;
+		background: $sg-blue-10;
+	}
+
+	&:active {
+		@include btn-shadow;
+	}
+}
+
+.btn-disabled {
+	color: $white;
+	cursor: default;
+	background: rgba($steel, 0.8);
+	border-color: $steel;
+
+	// no change for hover and active states
+	&:hover {
+		background: rgba($steel, 0.8);
+	}
+
+	&:active {
+		box-shadow: none;
+	}
+
+	&.btn-secondary {
+		color: $steel;
+		background: $white;
+		border-color: $steel;
+	}
+}
+
+.btn-medium {
+	font-size: $scaledown-1;
+	line-height: $scaleup-1;
+}
+
+.btn-small {
+	padding: $scaledown-2 $scale-0;
+	font-size: $scaledown-1;
+	line-height: $scaleup-2;
+}
+
+.btn-xsmall {
+	padding: $scaledown-5 $scaledown-1;
+	font-size: $scaledown-1;
+	line-height: $scaleup-1;
+}
+
+.btn-dropdown {
+	// TODO: Add chevron
+	padding-right: 18px;
+	padding-left: 18px;
+}
+
+.btn-on-dark.btn-primary {
+	color: $sg-blue;
+	background: rgba($white, 0.95);
+	border-color: $white;
+
+	&:hover {
+		background: rgba($white, 1);
+		border-color: $white;
+	}
+
+	&.is-btn-disabled {
+		color: $steel;
+		border-color: $steel;
+
+		&:hover {
+			background: inherit;
+		}
+	}
+}
+
+.btn-on-dark.btn-secondary {
+	color: $white;
+	background: transparent;
+	border-color: rgba($white, 0.6);
+
+	&:hover {
+		background: rgba($white, 0.1);
+		border-color: $white;
+	}
+
+	&.is-btn-disabled {
+		color: $steel;
+		border-color: $steel;
+
+		&:hover {
+			background: inherit;
+		}
+	}
+}
+
+.btn-on-dark.btn-primary.btn-disabled {
+	background: rgba($steel, 0.5);
+	border-color: $steel;
+}
+
+// ====================
+// Button Utilities
+// ====================
+
+.btn-d-block {
+	display: block;
+}
+
+// ====================
+// Button Groups
+// ====================
+
+.btn-group {
+	display: inline-block;
+
+	> .btn {
+		float: left;
+		padding-right: 18px;
+		padding-left: 18px;
+		margin: 0;
+		color: $sg-blue;
+		background: $white;
+		border-color: rgba($sg-blue, 0.8);
+
+		&:hover {
+			background: rgba($sg-blue, 0.1);
+		}
+
+		&:active {
+			@include btn-shadow;
+		}
+
+		&:first-child {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+
+		&:last-child {
+			margin-left: -1px;
+			border-bottom-right-radius: 0;
+			border-top-left-radius: 0;
+		}
+
+		&:not(:first-child):not(:last-child) {
+			margin-left: -1px;
+			border-radius: 0;
+		}
+
+		&.is-active {
+			color: $white;
+			background: rgba($sg-blue, 0.8);
+			border-color: $sg-blue;
+		}
+	}
+}
+
+// Temporary Button Overrides
+body.blog .widget_search .btn.btn-primary,
+body.single .widget_search .btn.btn-primary {
+	padding: 0 15px;
+	line-height: 28px;
+}
+
+// ====================
+// Carets
+// ====================
+
+.caret {
+	position: relative;
+	cursor: pointer;
+
+	&::before {
+		position: absolute;
+		top: 25%;
+		left: 12px;
+		border-top: 12px solid transparent;
+		border-bottom: 12px solid transparent;
+		border-left: 12px solid rgba($slate, 0.4);
+		content: "";
+	}
+
+	&::after {
+		position: absolute;
+		top: 30%;
+		left: 10px;
+		border-top: 10px solid transparent;
+		border-bottom: 10px solid transparent;
+		border-left: 10px solid $white;
+		content: "";
+	}
+
+	&:hover::before {
+		border-left-color: $sg-blue;
+	}
+}
+
+.btn,
+.btn.trump-class:not(.trump),
+.btn.trump-id:not(#trump) {
+	@extend .btn;
+}
+
+.btn-primary,
+.btn-primary.trump-class:not(.trump),
+.btn-primary.trump-id:not(#trump) {
+	@extend .btn-primary;
+}
+
+.btn-secondary,
+.btn-secondary.trump-class:not(.trump),
+.btn-secondary-trump-id:not(#trump) {
+	@extend .btn-secondary;
+}
+
+button {
+	cursor: pointer;
+	cursor: hand;
+}

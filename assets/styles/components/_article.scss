@@ -1,0 +1,39 @@
+// TODO: Try to clean up CSS so we don't need to disable these linting rules
+// scss-lint:disable QualifyingElement
+
+article {
+	blockquote {
+		margin: $scaleup-5 0;
+	}
+
+	blockquote,
+	blockquote p {
+		font-size: $scaleup-5;
+		line-height: $scaleup-6;
+	}
+
+	blockquote.medium,
+	blockquote.medium p {
+		font-size: $scaleup-4;
+		line-height: $scaleup-6;
+	}
+
+	blockquote.small,
+	blockquote.small p {
+		font-size: $scaleup-2;
+		line-height: $scaleup-4;
+	}
+
+	blockquote cite {
+		font-size: 0.85em;
+		white-space: nowrap;
+	}
+
+	blockquote cite::before {
+		content: " ~ ";
+	}
+
+	&.sticky {
+		position: static;
+	}
+}

@@ -1,0 +1,163 @@
+// TODO: Try to clean up CSS so we don't need to disable these linting rules
+// scss-lint:disable SelectorFormat, PlaceholderInExtend
+
+.page-header {
+  padding-top: $mobile-padding;
+  padding-bottom: $mobile-padding;
+  text-align: center;
+
+  .template-leads & {
+    padding: 2rem 0;
+
+    .header-sub {
+      margin-top: .3125rem;
+
+    }
+
+  }
+
+  @include breakpoint(medium) {
+    padding-top: $base-space-medium;
+    padding-bottom: $base-space-medium;
+  }
+}
+
+.single-post .page-header {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.page-header h1,
+.page-header__title {
+  margin-bottom: 0;
+}
+
+.page-header sup,
+.page-header__pretitle {
+  @extend h5;
+  top: 0;
+  display: inline-block;
+  margin-bottom: $scaledown-1;
+
+  a {
+    @extend h5;
+    color: $sg-blue-80;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $sg-blue;
+    }
+  }
+}
+
+.page-header sup.color-underline--style,
+.page-header__pretitle.color-underline--style {
+  display: inline-block;
+}
+
+.page-header__divider {
+  width: 30px;
+  height: 3px;
+  background: $sg-blue-40;
+  margin: $scaleup-4 auto;
+}
+
+.page-header sub,
+.page-header__subtitle {
+  @extend p;
+  display: block;
+  margin-top: $scaleup-1;
+  margin-bottom: 0;
+}
+
+.page-header--image {
+  @extend .p-top-bottom-tall;
+  background-position: 80% center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  h1,
+  sup,
+  sub,
+  h5 {
+    @extend .img-bg;
+  }
+
+  sup a,
+  h5 a {
+    @extend h5.dark-bg;
+  }
+
+  .btn-secondary {
+    @extend .btn-on-dark;
+  }
+}
+
+.page-header--left {
+  text-align: left;
+
+  @include breakpoint(medium down) {
+    .row {
+      justify-content: center;
+    }
+  }
+}
+
+.page-header--no-mobile-image {
+  @include breakpoint(small down) {
+
+    .page-header__pretitle {
+      color: $h5-color;
+      text-shadow: none;
+    }
+
+    .page-header__title {
+      color: $h1-color;
+      text-shadow: none;
+    }
+
+    .page-header__subtitle {
+      color: $p-color;
+      text-shadow: none;
+    }
+
+    .page-header__lorez_bg,
+    img {
+      display: none;
+    }
+  }
+}
+
+.page-header--solutions img {
+  min-width: 1600px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+}
+
+.page-header__lorez_bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  filter: blur(40px)
+}
+.page-header--p-short {
+  padding-top: $base-space-small;
+  padding-bottom: $base-space-small;
+}
+
+.page-header--p-top-short {
+  padding-top: $base-space-small;
+}
+
+.page-header--p-bottom-short {
+  padding-bottom: $base-space-small;
+}
+
+.page-header--p-none {
+  padding-top: 0;
+  padding-bottom: 0;
+}

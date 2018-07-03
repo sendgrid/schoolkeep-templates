@@ -1,0 +1,64 @@
+.quote-bubble {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	padding: $scaleup-2;
+	background-color: $white;
+	border: 1px solid $border-color-gray;
+	border-radius: $border-radius;
+
+	p {
+		margin-bottom: 0;
+	}
+
+	.author {
+		margin-top: $scaledown-3;
+		color: $slate-60;
+	}
+
+	&::before {
+		position: absolute;
+		top: 29px;
+		display: inline-block;
+		border: 10px solid transparent;
+		content: "";
+	}
+
+	&::after {
+		position: absolute;
+		top: 30px;
+		display: inline-block;
+		border: 9px solid transparent;
+		content: "";
+	}
+
+	&.right {
+		&::before {
+			right: -10px;
+			left: auto;
+			border-right: 0;
+			border-left-color: $border-color-gray;
+		}
+
+		&::after {
+			right: -9px;
+			border-right: 0;
+			border-left-color: $white;
+		}
+	}
+
+	&.left {
+		&::before {
+			right: auto;
+			left: -10px;
+			border-left: 0;
+			border-right-color: $border-color-gray;
+		}
+
+		&::after {
+			left: -9px;
+			border-left: 0;
+			border-right-color: $white;
+		}
+	}
+}

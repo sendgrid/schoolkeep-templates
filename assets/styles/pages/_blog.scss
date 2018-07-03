@@ -1,0 +1,854 @@
+// Typography
+.blog .site-content {
+	h1,
+	h2,
+	h3,
+	h4,
+	h6 {
+		color: $darkest-slate;
+	}
+
+	p,
+	ul,
+	ol {
+		@include bookmania-regular;
+		color: $dark-slate;
+
+		em {
+			@include bookmania-regular-italic;
+		}
+
+		strong,
+		b {
+			@include bookmania-semibold;
+		}
+
+		em strong,
+		em b,
+		strong em,
+		b em {
+			@include bookmania-semibold-italic;
+		}
+	}
+
+	.page-header__title {
+		font-family: $colfax-medium-italic;
+	}
+}
+
+.post-content .post {
+
+	h1 {
+		@extend h2;
+	}
+
+	h2,
+	h3 {
+		margin-top: $scaleup-2;
+	}
+
+	h4,
+	h5 {
+		margin-top: $scaleup-1;
+	}
+
+	h6 {
+		margin-top: $scale-0;
+	}
+
+	p {
+		margin-top: $scale-0;
+	}
+
+	a,
+	a u {
+		@include bookmania-regular;
+		color: $dark-slate;
+		text-decoration: none;
+		text-shadow: 1px 1px 0 $white, -1px 1px 0 $white, 2px 0 0 $white, -2px 0 0 $white;
+		background-image: linear-gradient(to bottom, $sg-blue-40 50%, $white 50%);
+		background-position: 0 1.1em;
+		background-repeat: repeat-x;
+		background-size: 2px 0.2em;
+		transition: color 0.3s;
+
+		&:hover {
+			color: $sg-blue;
+		}
+	}
+
+	blockquote {
+		@include breakpoint(large up) {
+			float: left;
+			width: 80%;
+			padding-right: $scaleup-3;
+			margin-left: -13.2%;
+		}
+	}
+
+	blockquote,
+	blockquote > * {
+		@include bookmania-light-italic;
+		display: inline;
+		color: $darkest-slate;
+	}
+}
+
+.blog main,
+.single-post main {
+	@include bookmania-regular;
+	font-size: $scaleup-1;
+}
+
+.blog h2 a,
+.single-post h2 a {
+	color: $darkest-slate;
+}
+
+// Posts
+.blog .section-title {
+	font-family: $colfax-medium-italic;
+}
+
+.blog .article-title a {
+	font-family: $colfax-medium;
+	transition: box-shadow 0.3s;
+
+	&:hover {
+		color: $darkest-slate;
+	}
+}
+
+.blog .article-title:hover {
+	a {
+		box-shadow: inset 0 -0.5em 0 $sg-blue-10;
+	}
+}
+
+.blog {
+	.blog-logo {
+		display: block;
+		max-height: 15rem;
+		margin: 2.62rem auto;
+	}
+}
+
+.no-banner {
+	padding-top: 36.9%;
+	background-color: $sg-blue-5;
+	background-image: url("assets/images/patterns/no-feat-img.png");
+	background-size: 150px;
+}
+
+@include breakpoint(small down) {
+	.blog main {
+		margin-top: 0;
+	}
+}
+
+.blog .main-index-paged {
+	padding-top: $base-padding;
+}
+
+.article-thumb-featured {
+	display: block;
+	transition: opacity 0.3s;
+
+	@include breakpoint(medium up) {
+		padding-left: $scaleup-7;
+	}
+
+	&:hover {
+		opacity: 0.8;
+	}
+}
+
+@include breakpoint(small down) {
+	.feat-col {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+.article-header-featured {
+	position: relative;
+	z-index: 1;
+	padding: $scaleup-1;
+	margin-top: -10%;
+	background: $white;
+
+	@include breakpoint(medium up) {
+		width: 70%;
+		padding: $scaleup-4 $scaleup-4 0 0;
+	}
+
+	@include breakpoint(medium down) {
+		padding-bottom: 0;
+		margin-right: 10px;
+		margin-left: 10px;
+
+		.article-title {
+			margin-bottom: $scale-0;
+			font-size: $scaleup-2;
+			line-height: $scaleup-4;
+		}
+	}
+
+	.article-title {
+		margin-bottom: $scaledown-2;
+	}
+
+	cite {
+		line-height: $scaledown-4;
+	}
+}
+
+.article-header,
+.article-header-featured,
+.post-content {
+
+	.page-header__pretitle a {
+		color: $slate-40;
+
+		&:hover {
+			color: $sg-blue;
+		}
+	}
+}
+
+.post-tile {
+	margin-bottom: $scaleup-4;
+
+	// tiles by default are medium-4
+	@extend .medium-4;
+
+	@include breakpoint(medium down) {
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+
+	@include breakpoint(small down) {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+
+	@include breakpoint(medium up) {
+		margin-bottom: $scaleup-8;
+	}
+}
+
+.blog:not(.paged) main .post-tile {
+	// first two are medium-6 as long as we are not paged
+	&:nth-child(1),
+	&:nth-child(2) {
+		@extend .medium-6;
+
+		@include breakpoint(large up) {
+			h2 a {
+				font-size: $scaleup-3;
+			}
+
+			figcaption {
+				display: block;
+				padding: $scaleup-5;
+				font-size: $scaleup-3;
+				line-height: $scaleup-4;
+			}
+		}
+
+	}
+}
+
+.main-index-1st .post-tile {
+	// For the blog, child selector is a different index
+	&:nth-child(3),
+	&:nth-child(4) {
+		@extend .medium-6;
+
+		@include breakpoint(large up) {
+			h2 a {
+				font-size: $scaleup-3;
+			}
+
+			figcaption {
+				display: block;
+				padding: $scaleup-5;
+				font-size: $scaleup-3;
+				line-height: $scaleup-4;
+			}
+		}
+
+	}
+}
+
+.post-tile article {
+	padding: 0 $scale-0;
+}
+
+.post-tile .article-title {
+	margin-bottom: 0;
+}
+
+.post-tile figure,
+.post-tile .article-thumbnail {
+	display: block;
+	width: 100%;
+}
+
+.post-tile .article-thumbnail {
+	transition: opacity 0.3s;
+
+	&:hover {
+		opacity: 0.8;
+	}
+}
+
+.post-tile figure a {
+	position: relative;
+	height: 0;
+	display: block;
+	width: 100%;
+	padding-bottom: 67.777%;
+	background-color: $sg-blue-5;
+	background-image: url("assets/images/patterns/no-feat-img.png");
+	background-size: 150px;
+
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+		opacity: 0;
+		transition: all 1200ms;
+	}
+
+	.lazyloaded {
+		transition: all 600ms;
+		opacity: 1;
+	}
+}
+
+.blog-dark {
+	@include bookmania-semibold-italic;
+	background-color: $darkest-slate;
+
+	p {
+		font-size: $scaleup-1;
+	}
+
+	small {
+		font-size: $scaledown-1;
+	}
+
+}
+
+.post-tile__featured-quote,
+.post__featured-quote {
+	position: relative;
+	width: 100%;
+	padding-bottom: 67.777%;
+
+	&.hero-quote {
+		padding-bottom: 37%;
+
+		@include breakpoint(small down) {
+			padding-bottom: 43%;
+		}
+
+		&:hover {
+			background: $darkest-slate;
+		}
+
+		// fix for search icon
+		@media screen and (max-width: 66.44rem)  and (min-width: 62rem) {
+			margin-top: 1.5rem;
+
+		}
+
+		@media screen and (max-width: 32rem) {
+			padding-bottom: 54%;
+
+		}
+
+		@media screen and (max-width: 25.5rem) {
+			padding-bottom: 64%;
+
+		}
+
+		@media screen and (max-width: 22rem) {
+			padding-bottom: 70%;
+
+		}
+
+		figcaption {
+			display: block;
+			font-size: $scaleup-3;
+			line-height: $scaleup-4;
+
+			@include breakpoint(medium down) {
+				font-size: $scaleup-1;
+				line-height: $scaleup-2;
+			}
+
+		}
+
+	}
+
+	figcaption {
+		position: absolute;
+		right: 0;
+		display: block;
+		align-items: center;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+		max-width: 32rem;
+		padding: $scaleup-3;
+		font-size: $scaleup-1;
+		line-height: $scaleup-2;
+		color: $white;
+		text-align: right;
+
+		@include breakpoint(small down) {
+			span {
+				font-size: $scale-0;
+				line-height: $scaleup-1;
+			}
+		}
+
+		span::before {
+			position: relative;
+			left: -0.2rem;
+			content: "“";
+		}
+
+		span::after {
+			position: absolute;
+			margin-left: 0.2rem;
+			content: "”";
+		}
+	}
+
+}
+
+// Add 2 Any
+.a2a_kit.absolute {
+	position: absolute;
+	bottom: 0;
+}
+
+.blog .post .a2a_kit a {
+	background-image: none;
+}
+
+// Single
+.blog {
+
+	cite a {
+		font-style: normal;
+		color: $slate-80;
+
+		&:hover {
+			color: $sg-blue;
+		}
+	}
+
+	cite::before {
+		content: "";
+	}
+
+	time {
+		font-family: $colfax-regular;
+		color: $slate-80;
+	}
+
+	.source {
+		margin-top: $scaledown-3;
+		font-size: $scaledown-1;
+		line-height: $scaleup-1;
+	}
+
+	.a2a_floating_style {
+		z-index: 2;
+		margin-left: 7px;
+	}
+}
+
+@include breakpoint(small down) {
+	.single-post  .page-header__title {
+		font-size: $scaleup-2;
+		line-height: $scaleup-4;
+	}
+}
+
+.post-content {
+	position: relative;
+	z-index: 10;
+	padding: $scaleup-3 $scaleup-2;
+	background: $white;
+
+	@include breakpoint(large up) {
+		padding: $scaleup-5 $scaleup-9 $scaleup-3;
+	}
+
+	@include breakpoint(small down) {
+		padding: 10px 0;
+		margin: 0;
+
+		.page-header {
+			padding: 0 $scaleup-1;
+		}
+	}
+}
+
+.single-hero {
+	position: relative;
+	z-index: 3;
+	margin-bottom: -15%;
+	overflow: hidden;
+	background-color: #fff;
+
+	@include breakpoint(small down) {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}
+
+.lo-rez {
+	padding-bottom: 37%;
+}
+
+.single-hero__lo-rez {
+	width: 100%;
+	padding-bottom: 37%;
+	background-size: cover;
+	filter:blur(25px);
+}
+
+.article-thumb-featured__lo-rez {
+	width: 100%;
+	padding-bottom: 37%;
+	background-size: cover;
+	filter:blur(25px);
+}
+
+// lazy loading
+.lazy-parent > img,
+.single-hero  img {
+	position: absolute;
+	top: 0;
+}
+
+.lazy-parent {
+	position: relative;
+	display: block;
+}
+
+.lazy-parent img,
+.single-hero img {
+	opacity: 0;
+	transition: opacity 400ms;
+}
+.lazy-parent img.lazyloaded,
+.single-hero img.lazyloaded {
+	opacity: 1;
+	transition: opacity 400ms;
+}
+
+@include breakpoint(small down) {
+	.author-signature__avatar {
+		margin-bottom: $scaleup-1;
+	}
+
+	.author-signature > div {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+.show-more-pop-posts {
+	margin-top: -10px;
+}
+
+.show-more-pop-posts .sg-caret {
+	position: relative;
+	width: 8px;
+	margin-top: -1px;
+	margin-left: $scaledown-6;
+	vertical-align: middle;
+}
+
+// Signature
+@include breakpoint(medium up) {
+	.author-signature__avatar img {
+		width: 78px;
+		height: 78px;
+	}
+}
+
+.author .author-signature__avatar {
+	margin: 0 auto $scaleup-5;
+}
+
+.author .author-signature__avatar img {
+	width: 178px;
+	height: 178px;
+}
+
+.author-signature__bio {
+	line-height: $scaleup-1;
+}
+
+.author-signature__avatar img {
+	border-radius: 100%;
+}
+
+.author-signature__meta {
+	line-height: $scale-0;
+}
+
+.author-signature .author-signature__channel-twitter {
+	color: $sg-blue;
+}
+
+.single .author-signature__channel-twitter {
+	font-size: $scaledown-1;
+}
+
+// Category Navigation
+.categories-top-wrapper {
+	display: none;
+	height: 56px;
+
+	@include breakpoint(large) {
+		display: block;
+	}
+}
+
+.categories-top {
+	font-size: $scaledown-1;
+	text-align: left;
+	background-color: $background-color-gray-light;
+	border-top: 1px $border-color-gray solid;
+	border-bottom: 1px $border-color-gray solid;
+
+	@include breakpoint(large) {
+		position: fixed;
+		right: 0;
+		left: 0;
+		z-index: 100;
+
+		&.blog-home-page {
+			position: relative;
+
+			&.sticky-categories {
+				@include animation("fade-in 0.5s");
+				position: fixed;
+			}
+
+		}
+
+	}
+
+	.search-blog img {
+		width: $scale-0;
+		height: $scale-0;
+		margin-top: -4px;
+	}
+
+	.search-blog img:hover {
+		cursor: pointer;
+	}
+
+	ul {
+		margin: 0 auto;
+	}
+
+	li {
+		flex: 0 1 auto;
+		width: auto;
+		padding: $scaleup-1;
+		line-height: $scale-0;
+		list-style: none;
+	}
+
+	li a {
+		display: block;
+		font-family: $colfax-medium;
+		color: $slate-60;
+	}
+
+	li a:hover {
+		color: $sg-blue;
+		text-decoration: none;
+	}
+
+}
+
+.categories-top .current-cat a {
+	color: $sg-blue;
+}
+
+// Paint Patterns
+.paint-1-back {
+	background-image: url("assets/images/patterns/background-paint.png");
+	background-position: center center;
+	background-size: cover;
+}
+
+.paint-2-back {
+	background-image: url("assets/images/patterns/background-paint-2.png");
+	background-position: center center;
+	background-size: cover;
+}
+
+// iFrames in Posts
+.post-content iframe {
+	margin: $scaleup-5 auto;
+}
+
+// Image Alignment
+.aligncenter,
+.alignnone,
+div.aligncenter,
+div.alignnone,
+a img.aligncenter,
+a img.alignnone {
+	display: block;
+	margin: $scaleup-5 auto;
+}
+
+.alignright,
+a img.alignright {
+	float: right;
+	margin: $scaleup-5 0 $scaleup-5 $scaleup-1;
+}
+
+.alignleft,
+a img.alignleft {
+	float: left;
+	margin: $scaleup-5 $scaleup-1 $scaleup-5 0;
+}
+
+// Subscribe Module
+.subscribe-form-blog {
+	padding: $scaleup-5;
+	margin-bottom: $scaleup-8;
+
+	@include breakpoint(small down) {
+		padding: $scaleup-3;
+	}
+}
+
+// Subscribe Page
+.page-subscribe {
+
+
+	.subscribe-follow {
+		padding: 2rem 0;
+
+		@include breakpoint(600 up) {
+			padding: 2rem 6rem 0;
+		}
+
+		@include breakpoint(950 up) {
+			padding: 2rem 12rem 0;
+		}
+
+	}
+
+	.sg-marketo-form-1030 {
+		.input-group {
+		  max-width: 100%;
+		}
+
+		.input-group-field {
+			margin-right: 1.25rem;
+		}
+
+		.disclaimer-blog-subscribe,
+		.error-message {
+			font-size:  0.833rem;
+			margin-top: 0.6rem;
+			position: absolute;
+		}
+
+	}
+
+	.sg-marketo-form {
+
+		input[type="email"] {
+			box-sizing: border-box;
+			vertical-align: bottom;
+			padding: $scaledown-2 $scale-0 !important;
+			line-height: $scaleup-1;
+			height: 42px !important;
+			border-width: 0;
+			border: 1px rgba(41,71,98,.2) solid;
+			box-shadow: none;
+			width: 100% !important;
+			max-width: 100%;
+			font-size: 16px;
+			color: $slate;
+			border-radius: 2px;
+			font-family: $colfax-regular;
+		}
+
+		input::placeholder {
+			color: $slate-20;
+		}
+
+		.mktoButton {
+			position: relative;
+			display: block;
+			height: 42px;
+			padding: 8px $scaleup-1;
+			font-size: 13px;
+			font-weight: 400;
+			line-height: $scaleup-2;
+			color: $white;
+			text-align: center;
+			text-decoration: none;
+			cursor: pointer;
+			background: $sg-blue-80;
+			border-color: $sg-blue;
+			border-style: solid;
+			border-width: 1px;
+			border-radius: 2px;
+			transition: all 0.3s;
+
+			@include breakpoint(medium) {
+				display: inline-block;
+				width: auto;
+			}
+
+			&:active,
+			&:focus {
+				text-decoration: none;
+				outline: none;
+			}
+
+			&:hover,
+			&:focus,
+			&.is-active {
+				color: $white;
+				background: $sg-blue;
+			}
+		}
+	}
+
+	.rss-subscribe {
+		position: relative;
+		width: $scaleup-2;
+		height: $scaleup-2;
+		margin-top: -2px;
+		margin-right: $scaledown-2;
+		vertical-align: middle;
+	}
+}
+
+.page-thanks .subscribe-posts {
+	margin-top: $scaleup-6;
+}

@@ -1,0 +1,161 @@
+// TODO: Try to clean up CSS so we don't need to disable these linting rules
+// scss-lint:disable NestingDepth
+
+.content-block-section {
+	[class*="image-"] {
+		margin-bottom: $scaleup-5;
+		text-align: center;
+
+		@include breakpoint(large) {
+			margin-bottom: 0;
+		}
+	}
+
+	.copy-left {
+		@include breakpoint(large) {
+			padding-left: 135px;
+		}
+	}
+
+	.copy-right {
+		@include breakpoint(large) {
+			padding-right: 135px;
+		}
+	}
+}
+
+.content-block {
+	padding-top: $mobile-padding;
+	padding-bottom: $mobile-padding;
+
+	@include breakpoint(medium) {
+		padding-top: $base-space-xlarge;
+		padding-bottom: $base-space-xlarge;
+	}
+
+	~ .content-block {
+		padding-top: 0;
+	}
+
+	.content-container {
+		margin-bottom: $scaleup-5;
+
+		@include breakpoint(large) {
+			margin-bottom: 0;
+		}
+
+		p {
+			margin-bottom: 0;
+		}
+
+		.content-wrapper {
+			max-width: none;
+
+			@include breakpoint(large) {
+				max-width: rem-calc(470);
+			}
+		}
+	}
+
+	.image-container {
+
+		@include breakpoint(medium down) {
+			padding-top: 0;
+		}
+
+		&.center-image {
+			width: 100%;
+			height: auto;
+
+			img {
+				width: 100%;
+				height: auto;
+				margin: 0 auto;
+			}
+		}
+
+		.photograph {
+			@include levitate(false);
+			img {
+				display: block;
+				border-radius: $border-radius;
+			}
+		}
+
+		.browser {
+			@include levitate(false);
+			padding-top: $scaleup-2;
+			overflow: hidden;
+			border: 1px solid $border-color-gray;
+			border-radius: $border-radius;
+
+			img {
+				display: block;
+				border-top: 1px solid $border-color-gray;
+			}
+		}
+	}
+}
+
+.content-block-l-r {
+	max-width: 1400px;
+
+	.content-container .content-wrapper {
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.image-container {
+
+		&.center-image {
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		&.full-bleed-image.image-left {
+			padding-left: 0;
+
+			.image-wrapper {
+				margin-left: 0;
+
+				@include breakpoint(large) {
+					margin-left: rem-calc(-100px);
+				}
+			}
+		}
+
+		&.full-bleed-image.image-right {
+			padding-right: 0;
+
+			.image-wrapper {
+				margin-right: 0;
+
+				@include breakpoint(large) {
+					margin-right: rem-calc(-100px);
+				}
+			}
+		}
+	}
+}
+
+.video-block {
+	padding-top: $base-space-medium;
+	padding-bottom: $base-space-medium;
+}
+
+.content-block .video-small,
+.content-block .video-large {
+	display: block;
+	width: 100%;
+	height: auto;
+	border-bottom-right-radius: $border-radius / 2;
+	border-bottom-left-radius: $border-radius / 2;
+
+	&::-webkit-media-controls-panel,
+	&::-webkit-media-controls-start-playback-button,
+	&::-webkit-media-controls,
+	&::-webkit-media-controls-play-button {
+		display: none !important;
+		-webkit-appearance: none;
+	}
+}

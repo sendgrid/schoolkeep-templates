@@ -1,0 +1,274 @@
+// Restricted to nouislider syntax
+// scss-lint:disable SelectorFormat
+// scss-lint:disable SelectorDepth
+
+// Sliders
+
+// Hide things
+.pricing-sliders,
+.pricing-marketo-form,
+.pricing-free-marketing,
+.slider-wrapper--contact {
+	display: none;
+}
+
+// Show things
+.free .pricing-free-marketing,
+.essential .pricing-sliders,
+.pro .pricing-sliders,
+.premier .pricing-marketo-form,
+.marketing .slider-wrapper--contact,
+.both .slider-wrapper--contact {
+	display: block !important;
+}
+
+// Sliders
+.pricing-sliders {
+
+	// noUi-specific styles
+
+	// Hide things
+	.noUi-value-normal,
+	.noUi-value-large,
+	.noUi-marker-normal,
+	.noUi-marker-large,
+	.noUi-handle::before,
+	.noUi-handle::after,
+	.noUi-tooltip {
+		display: none;
+	}
+
+	// Show things
+	.noUi-value-large:nth-child(2),
+	.noUi-value-large:last-child {
+		display: block;
+	}
+
+	// Style things
+	.noUi-pips-horizontal {
+		padding-top: $scaledown-2;
+		padding-bottom: 0;
+	}
+
+	.noUi-horizontal {
+		height: $scaledown-4;
+	}
+
+	.noUi-base {
+		z-index: 2;
+	}
+
+	.noUi-value-large {
+		font-size: $scaledown-1;
+		line-height: $scaleup-1;
+		color: $slate-60;
+	}
+
+	.noUi-value-horizontal {
+		transform: none;
+	}
+
+	.noUi-value-large:last-child {
+		right: 0;
+		left: unset !important;
+	}
+
+	.noUi-connect {
+		background-color: $sg-blue;
+		border: 0;
+		border-bottom-left-radius: 40px;
+		border-top-left-radius: 40px;
+		box-shadow: none;
+	}
+
+	.noUi-target {
+		background-color: $slate-20;
+		border: 0;
+		border-radius: 40px;
+		box-shadow: none;
+	}
+
+	.noUi-handle.noUi-handle-lower {
+		top: -12px;
+		width: $scaleup-3;
+		height: $scaleup-3;
+		cursor: pointer;
+		border: 2px solid $sg-blue;
+		border-radius: 50%;
+		outline: none;
+		box-shadow: $box-shadow;
+
+		@include breakpoint (medium) {
+			top: -6.5px;
+			width: $scaleup-1;
+			height: $scaleup-1;
+		}
+	}
+
+	.slider--value,
+	.slider--value-right {
+		margin-bottom: $scale-0;
+		font-family: $colfax-medium;
+		font-size: $scale-0;
+		color: $sg-blue;
+
+		@include breakpoint(medium) {
+			font-size: $scaleup-1;
+		}
+
+		&::after {
+			font-family: $colfax-regular;
+		}
+	}
+
+	.slider--value-right {
+		&::after {
+			content: "/mo";
+		}
+	}
+
+	.slider-wrapper--email .slider--value {
+		&::after {
+			content: " emails/mo";
+		}
+	}
+
+	.slider-wrapper--contact .slider--value {
+		&::after {
+			content: " contacts";
+		}
+	}
+
+	.slider--estimate-detail {
+		font-size: $scaledown-1;
+		color: $sg-blue;
+	}
+
+	.slider__mobile-tooltip {
+		margin-top: $scaleup-4;
+		font-size: $scaledown-1;
+		line-height: $scaleup-1;
+		text-align: center;
+	}
+}
+
+// Plan tables
+.pricing-plan-table {
+	font-size: $scaledown-1;
+	line-height: $scaleup-1;
+}
+
+.pricing-plan-table--header-row {
+	margin-bottom: $scaledown-2;
+	border-bottom: 1px solid $border-color-gray;
+}
+
+.pricing-plan-table--row {
+	cursor: pointer;
+	background-color: transparent;
+	border-left: 2px solid transparent;
+	border-radius: $border-radius;
+	transition: background-color 0.3s, border-left 0.3s;
+
+	&.active {
+		background-color: $sg-blue-20;
+		border-left: 2px solid $sg-blue;
+	}
+
+	&:hover:not(.active) {
+		background-color: $sg-blue-10;
+	}
+}
+
+.pricing-plan-table--header {
+	font-family: $colfax-medium;
+}
+
+.pricing-plan-table--header,
+.pricing-plan-table--item,
+.pricing-plan-table--symbol {
+	padding-top: $scaledown-4;
+	padding-bottom: $scaledown-4;
+}
+
+.pricing-plan-table--header,
+.pricing-plan-table--item {
+	&:not(:first-child):not(:last-child) {
+		text-align: center;
+	}
+
+	&:last-child {
+		text-align: right;
+	}
+}
+
+.pricing-plan-table--symbol {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+// Marketo form
+.pricing-marketo-form {
+	.marketo-form--container {
+		background: $white;
+	}
+}
+
+// Free marketing
+.pricing-free-marketing {
+	.ei-free,
+	.mc-free,
+	.both-free {
+		display: none;
+	}
+}
+
+.api .pricing-free-marketing .ei-free {
+	display: inline;
+}
+
+.marketing .pricing-free-marketing .mc-free {
+	display: inline;
+}
+
+.both .pricing-free-marketing .both-free {
+	display: inline;
+}
+
+// Upsells
+.upsells--essentials,
+.upsells--pro,
+.upsells--contacts {
+	width: 100%;
+	max-height: 0;
+	overflow: hidden;
+	transition: all 400ms ease;
+}
+
+.upsells--tip {
+	position: relative;
+	border-radius: $border-radius;
+}
+
+.upsells--tip::before {
+	position: absolute;
+	top: -12px;
+	left: 50%;
+	width: 0;
+	height: 0;
+	margin-left: -3px;
+	border-top: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 6px solid $sg-blue;
+	border-left: 6px solid transparent;
+	content: "";
+}
+
+.max-contacts .upsells--contacts {
+	max-height: 300px;
+}
+
+.pro .max .upsells--pro,
+.essential .max .upsells--essentials {
+	max-height: 300px;
+}

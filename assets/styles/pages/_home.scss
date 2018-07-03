@@ -1,0 +1,125 @@
+.home {
+
+	main {
+		padding: 0;
+	}
+
+	// Animated headline
+	.animated-headline {
+
+		@include breakpoint(small down) {
+			font-family: $colfax-medium;
+			font-size: $scaleup-3;
+		}
+
+		span:not(.animated-headline__words-wrapper) {
+			display: inline;
+			padding: 0;
+
+			@include breakpoint(medium) {
+				display: inline-block;
+
+				&:first-child {
+					margin: 0 3px 0 0;
+				}
+			}
+		}
+	}
+
+	.animated-headline__words-wrapper {
+		display: none;
+		overflow: hidden;
+		position: relative;
+		transition: width 0.3s;
+		vertical-align: middle;
+		width: auto;
+		margin: 0;
+
+		@include breakpoint(medium) {
+			display: inline-block;
+		}
+
+		&::after {
+			/* loading bar */
+			@include gradient($sg-blue);
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			height: 3px;
+			width: 0;
+			z-index: 2;
+			transition: width .3s -0.1s;
+		}
+
+		&.is-loading::after {
+			width: 100%;
+			transition: width 3s;
+		}
+
+		b {
+			left: 0;
+			opacity: 0;
+			position: absolute;
+			top: .2em;
+			white-space: nowrap;
+
+			&.is-showing {
+				opacity: 1;
+				position: relative;
+				top: -1px;
+				&:not(.show-on-load) {
+					@include animation('slide-in .6s');
+				}
+			}
+
+			&.is-hiding {
+				&:not(.hide-on-load) {
+					@include animation('slide-out .6s');
+				}
+			}
+		}
+	}
+
+	.home-tile__thumbnail {
+		height: auto;
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		border-bottom: 1px solid $border-color-gray;
+		&:before {
+			content: '';
+			display: block;
+			width: 100%;
+			padding-top: 52.63%;
+		}
+	}
+
+	.home-tile__copy {
+		padding: $scaleup-2;
+		text-align: center;
+		h3 {
+			display: inline-block;
+		}
+		h1,
+		.p {
+			display: block;
+			max-width: 300px;
+			margin-right: auto;
+			margin-bottom: $scaleup-1;
+			margin-left: auto;
+			font-family: $colfax-light;
+			font-size: $scale-0;
+			line-height: $scaleup-3;
+			color: $slate-80;
+		}
+	}
+
+	.seafoam-underline {
+		border-bottom: 2px solid $seafoam;
+	}
+
+	.mantis-underline {
+		border-bottom: 2px solid $mantis;
+	}
+}

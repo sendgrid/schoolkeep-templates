@@ -1,0 +1,20 @@
+.alert {
+	padding: $scaleup-1 0;
+	font-size: $scaledown-1;
+	line-height: $scaleup-1;
+	text-align: center;
+
+	p {
+		margin-bottom: 0;
+	}
+
+	&.alert-success {
+		color: $alert-success-text;
+		background: $alert-success-background;
+
+		a {
+			color: $alert-success-text;
+			text-decoration: underline;
+		}
+	}
+}

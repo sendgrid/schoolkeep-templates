@@ -1,0 +1,86 @@
+// Solution tabs
+.pricing-tab-menu {
+	display: flex;
+	width: 100%;
+	margin: 0;
+	list-style-type: none;
+}
+
+.pricing-tab-item {
+	display: flex;
+	align-items: center;
+	flex: 1;
+	padding-bottom: 0 !important;
+	margin-bottom: 0;
+	margin-left: -1px;
+	font-size: $scaledown-1;
+	background-color: $slate-10;
+	border: 1px solid $slate-20;
+	transition: background-color 0.3s;
+}
+
+.pricing-tab-item:not(.pricing-tab-item__active):hover {
+	background-color: $slate-5;
+}
+
+.pricing-tab-item:first-child {
+	border-top-left-radius: $border-radius;
+}
+
+.pricing-tab-item:last-child {
+	border-top-right-radius: $border-radius;
+}
+
+.pricing-tab-item__active {
+	background: $white;
+	border-bottom: 1px solid $white;
+}
+
+.pricing-tab-item a {
+	display: block;
+	flex-flow: row nowrap;
+	width: 100%;
+	padding: $scaledown-2;
+	line-height: $scaleup-1;
+	color: $slate;
+
+	@include breakpoint(medium) {
+		padding: $scale-0;
+	}
+
+	@include breakpoint(large) {
+		padding: $scaleup-1;
+	}
+}
+
+.pricing-tab-item--color {
+	width: $scale-0;
+	height: $scale-0;
+	margin-right: auto;
+	margin-bottom: $scaledown-3;
+	margin-left: auto;
+}
+
+.pricing-tab-item__api .pricing-tab-item--color {
+	background-image: url("assets/images/pricing/icon-api-circle.svg");
+}
+
+.pricing-tab-item__marketing .pricing-tab-item--color {
+	background-image: url("assets/images/pricing/icon-mc-circle.svg");
+}
+
+.pricing-tab-item__both .pricing-tab-item--color {
+	width: 26px;
+	background-image: url("assets/images/pricing/icon-combo-circle.svg");
+}
+
+.pricing-tab-item--snippet {
+	font-size: $scaledown-1;
+}
+
+.pricing-tab-item--title {
+	display: block;
+	padding-top: 3px;
+	font-family: $colfax-medium;
+	font-size: $scale-0;
+}

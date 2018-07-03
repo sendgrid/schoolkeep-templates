@@ -1,0 +1,257 @@
+// Hacked in style guide stuff so we can show forms
+@import "styleguide-inputs";
+@import "styleguide-textareas";
+@import "styleguide-selects";
+
+.labs-experiments-page {
+	header {
+		padding: $scaleup-9 $scale-0;
+		text-align: center;
+		color: #ffffff;
+
+		h1 { margin: 0; }
+
+		.title {
+			color: #ffffff;
+		}
+
+		.sub-title {
+			padding: 18px 0 30px;
+		}
+	}
+
+	section {
+		ul {
+			margin: 0;
+			list-style-type: none;
+
+			li {
+				font-size: $scaledown-1;
+				padding-left: 28px;
+				background: url("assets/images/labs/check-circle.svg") no-repeat;
+				background-size: 20px;
+				background-position-y: 5px;
+				margin-bottom: 8px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	section.copy-section {
+		.column {
+			padding: $scaleup-8 $scale-0;
+
+			.title, .image {
+				text-align: center;
+			}
+
+			.title {
+				padding-top: 24px;
+			}
+		}
+	}
+
+	section.image-section {
+		background-color: $slate-5;
+
+		&.image-first {
+			@include breakpoint(medium) {
+				.row {
+					flex-direction: row-reverse;
+
+					.text-column {
+						align-items: flex-start;
+
+						.text-column-content {
+							padding-left: $scaleup-4;
+						}
+					}
+
+					.image-column { padding-right: $scaleup-8; }
+				}
+			}
+		}
+
+		&.text-first {
+			@include breakpoint(medium) {
+				.row {
+					.text-column {
+						align-items: flex-end;
+
+						.text-column-content {
+							padding-right: $scaleup-4;
+						}
+					}
+
+					.image-column { padding-left: $scaleup-8; }
+				}
+			}
+		}
+
+		.row {
+			.text-column {
+				padding: $scaleup-8 $scale-0;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+
+				.text-column-content {
+					max-width: 465px;
+				}
+			}
+
+			.image-column {
+				display: flex;
+				align-items: center;
+				padding: 0;
+
+				.img-wrapper {
+					flex: 1 1 auto;
+					img { width: 100%; }
+				}
+			}
+
+			@include breakpoint(medium down) {
+				.text-column {
+					.text-column-content {
+						h2 { text-align: center; }
+						max-width: 100%;
+					}
+				}
+			}
+		}
+	}
+
+	section.form-section {
+		.row .column {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			text-align: center;
+			padding-top: $scaleup-8;
+
+			> h2, .form-copy {
+				flex: 0 0 100%;
+			}
+
+			.signup-logged-in, .signup-logged-out {
+				display: none;
+			}
+
+			.signup-logged-in {
+				margin-top: 24px;
+
+				.btn {
+					margin-top: 12px;
+				}
+			}
+
+			.signup-logged-out {
+				margin-top: 48px;
+			}
+
+			@include breakpoint(medium down) {
+				.signup-logged-in, .signup-logged-out {
+					padding: 24px;
+				}
+			}
+		}
+	}
+}
+
+.labs-card {
+	background: $white;
+	padding: 45px;
+	border: 1px solid $slate-10;
+	border-radius: $border-radius;
+	text-align: center;
+}
+
+.labs-signup-form {
+	flex: 0 1 629px;
+	text-align: left;
+	box-shadow: 0 2px 6px 0 rgba(41,71,98,0.1);
+	border: 1px solid #ECECED;
+	border-radius: $border-radius;
+	padding: 48px;
+
+	textarea {
+		height: 60px;
+		background: $slate-2;
+	}
+
+	.btn-list {
+		margin-top: 44px;
+	}
+
+	.form-error {
+		display: block;
+		margin-top: 12px;
+	}
+}
+
+.labs-experiments-list-wrapper {
+	h5 {
+		text-align: center;
+	}
+
+	.experiments-list {
+		padding-top: 24px;
+		display: flex;
+		flex-wrap: wrap;
+
+		.labs-card {
+			padding: 45px 18px;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
+			align-items: center;
+			flex: 0 0 285px;
+			margin: 12px;
+
+			.experiment-icon {
+				height: 41px;
+				width: 41px;
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+
+				img {
+					width: 100%;
+				}
+			}
+
+			.title {
+				flex: 1 1 92px;
+				display: flex;
+				align-items: center;
+				margin: 0;
+			}
+
+			.body {
+				flex: 1 1 120px;
+				padding: 0 18px;
+			}
+
+			.signed-up {
+				height: 53px;
+				line-height: 53px;
+				font-size: 13px;
+				padding-left: 28px;
+				background: url("assets/images/labs/check-circle-green.svg") no-repeat;
+				background-position-y: 16px;
+				background-size: 20px;
+				color: $mantis;
+			}
+		}
+
+		@include breakpoint(medium down) {
+			.labs-card {
+				flex: 1 1 100%;
+			}
+		}
+	}
+}

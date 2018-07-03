@@ -1,0 +1,36 @@
+.delivery-team__member {
+	margin-bottom: $scaleup-4;
+}
+
+.delivery-team__avatar {
+	margin-bottom: $scaleup-2;
+}
+
+.delivery-team__avatar img {
+	max-width: 140px;
+	border-radius: 50%;
+}
+
+.delivery-team-modal {
+	padding: $scaleup-6;
+	border: 0;
+	border-radius: $border-radius;
+	outline: none;
+
+	.delivery-team__avatar {
+		margin-bottom: $scaleup-4;
+	}
+
+	.delivery-team__avatar img {
+		max-width: 140px;
+		border-radius: 50%;
+		width: 100%;
+	}
+
+	.close-button {
+		position: absolute;
+		top: $scaleup-4;
+		right: $scaleup-4;
+		outline: none;
+	}
+}

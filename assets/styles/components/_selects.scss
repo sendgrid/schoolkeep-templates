@@ -1,0 +1,230 @@
+.input-select-wrap {
+	position: relative;
+	width: 100%;
+
+	.input-select-label {
+		display: block;
+		font-size: $scaledown-2;
+		line-height: $scale-0;
+		cursor: pointer;
+	}
+
+	&.is-required {
+		label::after {
+			position: absolute;
+			top: 4px;
+			width: 4px;
+			height: 4px;
+			margin-left: 5px;
+			background: $ron-burgundy;
+			border-radius: 4px;
+			content: "";
+		}
+	}
+
+	&.is-disabled {
+		.input-select-label {
+			cursor: default;
+		}
+
+		.input-select-label,
+		.input-select::after {
+			color: rgba($steel, 0.4);
+		}
+	}
+
+	&.is-error {
+		.input-select-label {
+			color: $slate-60;
+		}
+
+		.input-select,
+		.select2-container {
+			border-bottom-color: $ron-burgundy;
+			box-shadow: $ron-burgundy 0 1px 0;
+		}
+	}
+}
+
+.input-select {
+		display: block;
+		width: 100%;
+		height: $scaleup-1;
+		padding: 0 0 7px;
+		font-size: $scaledown-1;
+		line-height: $scaleup-1;
+		color: $slate;
+		cursor: pointer;
+		background-color: transparent;
+		background-image: url("assets/images/icons/caret-south-gray.png");
+		background-position: right center;
+		background-repeat: no-repeat;
+		background-size: 8px 4px;
+		border: 0;
+		border-bottom: 1px solid $slate-20;
+		outline: 0;
+		box-shadow: transparent 0 1px 0;
+		box-sizing: content-box;
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-moz-margin-start: -3px;
+
+		&:-moz-focusring {
+			color: transparent;
+			text-shadow: 0 0 0 $slate;
+		}
+
+		&::-ms-expand {
+			display: none;
+		}
+
+		&[disabled] {
+			color: rgba($steel, 0.4);
+			background-color: transparent;
+		}
+
+		&:focus {
+			border: 0;
+			border-bottom: 1px solid $sg-blue;
+			box-shadow: $sg-blue 0 1px 0;
+		}
+
+}
+
+.input-select-outline {
+	padding: $scale-0;
+	border: 1px solid $sg-blue;
+}
+
+// select2
+.select2,
+.select2-container {
+	font-size: 13px;
+
+	.select2-selection--single {
+		border-radius: 3px;
+	}
+
+	.select2-selection {
+		outline: none !important;
+	}
+
+	.select2-results__option {
+		padding: 6px;
+	}
+
+	b {
+		display: none;
+	}
+}
+
+
+// dropdown
+.select2-dropdown.select2--sg-blue {
+	color: $sg-blue;
+	border: 1px solid $sg-blue;
+	border-top: 0;
+
+	.select2-search__field {
+		border: 1px solid $sg-blue;
+	}
+
+}
+
+.select2-results__options {
+	box-shadow: $box-shadow;
+}
+
+
+// slate-20 select2
+.select2 .select2--slate-20 {
+	font-family: $colfax-regular;
+	border: 1px solid $slate-20;
+	border-radius: 2px;
+
+	.select2-selection__rendered {
+		color: $slate;
+	}
+
+	.select2-selection__arrow {
+		background: url("assets/images/icons/caret-south-slate-20.svg") no-repeat 0 50%;
+		background-size: 10px 5px;
+	}
+}
+
+// sg-blue select2
+.select2 .select2--sg-blue {
+	border: 1px solid $sg-blue;
+
+	.select2-selection__rendered {
+		color: $sg-blue;
+	}
+
+	.select2-selection__arrow {
+		background: url("assets/images/icons/caret-south-blue.png") no-repeat 0 50%;
+		background-size: 10px 5px;
+	}
+}
+
+// slate-20 dropdown
+.select2-dropdown.select2--slate-20 {
+	color: $slate;
+	border: 1px solid $slate-20;
+	border-top: 0;
+
+	.select2-search__field {
+		border: 1px solid $slate-20;
+	}
+
+	.select2-results__option[aria-selected=true] {
+		background-color: $slate-20;
+	}
+
+	.select2-results__option--highlighted[aria-selected] {
+		color: $slate;
+		background-color: $slate-20;
+
+		&:hover {
+			background-color: $slate-10;
+		}
+	}
+
+}
+
+// 38 select 2
+.select2 .select2--sg-select-38 {
+	height: 38px;
+
+	.select2-selection__rendered {
+		line-height: 38px;
+	}
+
+	.select2-selection__arrow {
+		height: 38px;
+	}
+}
+
+.select2 .select2--sg-select-20 {
+	height: 20px;
+
+	.select2-selection__rendered {
+		line-height: 20px;
+	}
+
+	.select2-selection__arrow {
+		height: 20px;
+	}
+}
+
+// fatty select 2
+.select2 .select2--sg-select-fat {
+	height: 42px;
+
+	.select2-selection__rendered {
+		line-height: 42px;
+	}
+
+	.select2-selection__arrow {
+		height: 42px;
+	}
+}

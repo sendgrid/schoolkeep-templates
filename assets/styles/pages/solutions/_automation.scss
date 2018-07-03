@@ -1,0 +1,88 @@
+.automation-form {
+  margin: 6.5rem 0 6.5625rem;
+
+  .small-5 {
+    margin-bottom: 1rem;
+  }
+
+  .badge {
+    padding: 0.204rem .4rem;
+    position: relative;
+
+    &:before{
+      content: "";
+      background: url(/wp-content/themes/sgdotcom/assets/images/solutions/paperairplane.png) no-repeat center;
+      background-size: contain;
+      position: absolute;
+      top: -91px;
+      right: -75px;
+      width: 115px;
+      height: 108px;
+      display: block;
+    }
+
+  }
+
+  .success-message {
+    text-align: center;
+  }
+
+
+  h3 {
+    margin-bottom: .9rem;
+  }
+
+  @media screen and (min-width: 68.75em) {
+    .sg-marketo-form .columns {
+      padding-right: .625rem;
+      padding-left: .625rem;
+    }
+
+    .sg-marketo-form .large-3 {
+      max-width: 15.9375rem;
+    }
+
+    .sg-marketo-form .large-5 {
+      max-width: 20.58rem;
+    }
+
+    .sg-marketo-form .large-5 .input-group-button input {
+      font-size: .8125rem;
+      padding: .85rem .728rem;
+    }
+  }
+
+  @media screen and (max-width: 68.75em) {
+
+    .sg-marketo-form .large-3 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+
+    .sg-marketo-form .input-group {
+      display: block;
+      margin: .5rem auto;
+    }
+
+    .sg-marketo-form .input-group-button {
+      margin: 1rem auto;
+    }
+
+    .sg-marketo-form .input-group-button input {
+      display: block;
+      width: 100%;
+      height: 2.38rem;
+      margin: auto;
+      line-height: .5rem;
+    }
+
+    .sg-marketo-form .error-message {
+      left: 0;
+      position: relative;
+      text-align: center;
+      width: 100%;
+    }
+
+  }
+
+}

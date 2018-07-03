@@ -1,0 +1,46 @@
+// TODO: Globalize these table styles
+// TODO: Try to clean up CSS so we don't need to disable these linting rules
+// scss-lint:disable QualifyingElement, PlaceholderInExtend
+
+table.tablepress {
+	@extend .font-smaller;
+	margin-bottom: $scaleup-4;
+	color: $slate-80;
+
+	tbody td,
+	thead th {
+		padding: $scaleup-1;
+		line-height: 1.2;
+		border-color: $slate-10;
+		border-style: solid;
+		border-width: 1px;
+	}
+
+	thead th {
+		letter-spacing: 1px;
+		color: $slate-60;
+		text-transform: uppercase;
+		background-color: transparent;
+		border-top-color: transparent;
+		border-right-color: transparent;
+		border-left-color: transparent;
+	}
+
+	.odd td,
+	.odd th {
+		background-color: transparent;
+	}
+
+	tr td:not(:last-of-type) {
+		border-right-color: transparent;
+	}
+}
+
+.privacy table {
+	word-wrap: break-word;
+	table-layout: fixed;
+}
+
+.privacy table td {
+	vertical-align: top;
+}

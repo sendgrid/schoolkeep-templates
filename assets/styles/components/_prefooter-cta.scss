@@ -1,0 +1,19 @@
+// TODO: Try to clean up CSS so we don't need to disable these linting rules
+// scss-lint:disable PlaceholderInExtend
+
+.blog-posts-box {
+	@extend %border--gray;
+	@extend %box-shadow--gray;
+	@extend .white-back;
+	padding: $scaleup-3;
+	margin-top: $scaleup-3;
+	border-radius: $border-radius;
+
+	@include breakpoint(medium) {
+		margin-top: 0;
+	}
+
+	.cta-link + .cta-link {
+		margin-top: $scaledown-2;
+	}
+}

@@ -1,0 +1,47 @@
+// TODO: Try to clean up CSS so we don't need to disable these linting rules
+// scss-lint:disable SelectorFormat
+
+.list {
+	margin-top: $scaledown-2 * -1;
+	margin-bottom: $scaledown-2 * -1;
+	margin-left: 0;
+	list-style: none;
+}
+
+.list__item {
+	padding-top: $scaledown-2;
+	padding-bottom: $scaledown-2;
+
+	&:not(:last-child) {
+		border-bottom: $border-width solid $border-color-gray;
+	}
+}
+
+.list--small {
+	font-size: $scaledown-1;
+
+	> * {
+		line-height: $scaleup-2;
+	}
+}
+
+.check-list {
+	margin-top: $scaledown-2 * -1;
+	margin-bottom: $scaledown-2 * -1;
+	margin-left: 0;
+	list-style: none;
+}
+
+.check-list__item {
+	padding-top: $scaledown-2;
+	padding-bottom: $scaledown-2;
+	padding-left: $scaleup-1 + $scale-0;
+	background-image: url('data:image/svg+xml;utf8,<svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><title>circle-check</title><path d="M15.348 7.957l-6.522 6.086-2.174-2.173M11 21c5.523 0 10-4.477 10-10S16.523 1 11 1 1 5.477 1 11s4.477 10 10 10z" stroke-width="1.043" stroke="%231A82E2" fill="none" fill-rule="evenodd"/></svg>');
+	background-position: center left;
+	background-repeat: no-repeat;
+	background-size: $scaleup-1;
+
+	&:not(:last-child) {
+		border-bottom: $border-width solid $border-color-gray;
+	}
+}

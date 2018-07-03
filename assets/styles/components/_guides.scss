@@ -1,0 +1,41 @@
+.guides {
+	$padding: $scaleup-3;
+
+	@include breakpoint(medium) {
+		.guide-cta {
+			&:nth-child(2) {
+				margin-right: 0.9375rem;
+				margin-left: 0.9375rem;
+			}
+		}
+	}
+
+	img {
+		height: 208px;
+	}
+
+	.guide-cta {
+		position: relative;
+		padding: $padding;
+		border: 1px solid $border-color-gray;
+
+		@include breakpoint(small down) {
+			width: 100%;
+			margin-bottom: $padding;
+		}
+
+		p:last-of-type {
+			padding-bottom: $padding * 2;
+		}
+
+		.btn-container {
+			@include breakpoint(medium) {
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				margin-bottom: $padding;
+			}
+		}
+	}
+}

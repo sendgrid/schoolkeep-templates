@@ -1,0 +1,19 @@
+.section-resource,
+.sub-section-cases {
+
+	.view-all-link {
+		font-size: $scale-0;
+		margin-left: $scaledown-2;
+	}
+
+	.resource-section:not(.resources-section--featured) .resource-tile-column:not(.resource-tile-column--featured) .resources-guides .resource-tile__thumbnail {
+		height: auto;
+		&:before {
+			content: '';
+			display: block;
+			width: 100%;
+			padding-top: 130%;
+		}
+	}
+
+}
