@@ -1,0 +1,91 @@
+.testimonials-wrapper {
+
+	@include breakpoint(large down) {
+		height: auto !important;
+		padding-bottom: 4.38rem;
+	}
+}
+
+.testimonial-tile {
+	@extend %border--gray;
+	@extend %box-shadow--gray;
+	display: block;
+	padding: $scaleup-3 0 0;
+	margin: auto;
+	background-color: $white;
+	border-radius: $border-radius;
+
+	@include breakpoint(large down) {
+		margin-top: 0 !important;
+	}
+}
+
+.testimonial-tile--profile-img {
+	.testimonial-tile__caption {
+		padding: 2.75rem 0 1.25rem;
+		margin-top: 3.12rem;
+	}
+}
+
+.testimonial-tile__customer-logo {
+	display: inline;
+	max-height: 1.25rem;
+}
+
+.testimonial-tile__quote {
+	display: block;
+	padding: 1.25rem 1.56rem 0;
+	text-align: center;
+
+	p {
+		font-size: $scale-0;
+		line-height: $scaleup-2;
+		color: $slate;
+	}
+}
+
+.testimonial-tile__caption {
+	position: relative;
+	padding: $scaleup-3;
+	margin-top: 3.12rem;
+	text-align: center;
+	background-color: $sg-blue-80;
+	border-bottom-right-radius: $border-radius / 2;
+	border-bottom-left-radius: $border-radius / 2;
+}
+
+.testimonial-tile__cite {
+	font-style: normal;
+	line-height: $scaleup-2;
+	color: $white;
+
+	&::before {
+		content: "";
+	}
+}
+
+.testimonial-tile__cite-img {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	display: block;
+	max-width: 3.75rem;
+	margin: -1.88rem;
+	border-radius: 100%;
+}
+
+.testimonial-tile__cite-name {
+	font-family: $colfax-medium;
+}
+
+.testimonial-tile__cta {
+	display: block;
+	margin: auto;
+	color: $white;
+	text-decoration: underline;
+
+	&:hover {
+		color: $white;
+		text-decoration: underline;
+	}
+}

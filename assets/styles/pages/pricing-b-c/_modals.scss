@@ -1,0 +1,172 @@
+// Pricing itemization
+.pricing-itemization--item {
+	display: flex;
+	font-size: $scaledown-1;
+	line-height: $scaleup-1;
+
+	&:not(:last-child) {
+		margin-bottom: $scaledown-2;
+	}
+}
+
+.pricing-itemization--item-title {
+	flex: 1;
+}
+
+.pricing-itemization--item-value {
+	flex: 1;
+	font-family: $colfax-medium;
+	color: $slate;
+	text-align: right;
+}
+
+.pricing-itemization--hr {
+	margin: $scaledown-2 0;
+}
+
+.pricing-itemization--item__monthly,
+.pricing-itemization--item__prorate {
+	.pricing-itemization--item-value {
+		color: $sg-blue;
+	}
+}
+
+.pricing-itemization--item__monthly {
+	.pricing-itemization--item-label {
+		font-size: $scale-0;
+		line-height: $scaleup-3;
+	}
+
+	.pricing-itemization--item-value {
+		font-size: $scaleup-1;
+		line-height: $scaleup-3;
+	}
+}
+
+
+// Hide things
+.api .pricing-itemization--item__contacts {
+	display: none;
+}
+
+// Full plan comparison
+#js-pricing-modal {
+	width: 100%;
+	max-width: 1170px;
+
+	@include breakpoint(medium) {
+		width: 90%;
+	}
+
+	@include breakpoint(large) {
+		width: 80%;
+	}
+}
+
+.pricing-comparison--table {
+	font-size: $scaledown-1;
+	line-height: $scaleup-2;
+	border-collapse: collapse;
+}
+
+.pricing-comparison--tbody {
+	border: 1px solid $border-color-gray;
+	border-radius: $border-radius;
+
+	td,
+	th {
+		padding: $scaledown-2 $scaleup-1;
+	}
+
+	td {
+		width: 17%;
+		border-right: 1px solid $border-color-gray;
+		border-left: 1px solid $border-color-gray;
+	}
+
+	td:first-of-type {
+		width: 32%;
+	}
+
+	tr:nth-child(odd),
+	tr:nth-child(even) {
+		background-color: $white;
+		border-bottom: 1px solid $border-color-gray;
+	}
+
+	tr:first-child {
+		background-color: $slate-5;
+		border-bottom: 1px solid $border-color-gray;
+	}
+}
+
+.pricing-comparison--item {
+	transition: background-color 0.3s;
+
+	&:hover {
+		cursor: pointer;
+		background-color: $slate-5 !important;
+	}
+}
+
+.pricing-comparison--header {
+	font-family: $colfax-medium;
+}
+
+.pricing-comparison--main-header {
+	th {
+		padding: $scale-0;
+		font-family: $colfax-medium;
+		color: $slate;
+		border-right: 1px solid $border-color-gray;
+		border-left: 1px solid $border-color-gray;
+	}
+}
+
+.pricing-comparison--plan-price {
+	font-family: $colfax-regular;
+	color: $slate-60;
+}
+
+.pricing-comparison--header {
+	text-align: left;
+}
+
+.pricing-comparison--mc-note {
+	font-family: $colfax-regular;
+	color: $slate-80;
+	text-align: right;
+}
+
+.pricing-comparison--yes,
+.pricing-comparison--no {
+	text-align: center;
+}
+
+.pricing-comparison--no {
+	color: $slate-20;
+}
+
+.pricing-comparison--download {
+	margin-top: $scaleup-3;
+	font-size: $scaledown-1;
+	color: $sg-blue;
+	text-align: center;
+	cursor: pointer;
+	opacity: 0.8;
+	transition: opacity 0.3s;
+
+	img {
+		margin-top: -3px;
+		margin-right: $scaledown-6;
+	}
+
+	&:hover {
+		opacity: 1;
+	}
+
+	&:active,
+	&:focus {
+		outline: none;
+	}
+}

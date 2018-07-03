@@ -1,0 +1,460 @@
+.template-guide {
+
+	.has-background-image {
+		background-repeat: repeat-x;
+		background-size: auto 320px;
+		padding-top: $scaleup-8;
+		padding-bottom: 0;
+	}
+
+	.page-header .page-header__title {
+		@include breakpoint(medium) {
+			margin-left: $scaleup-3;
+			margin-right: $scaleup-3;
+		}
+	}
+
+	menu {
+
+		margin: 0 auto;
+		padding: $scaleup-8 0 0;
+		position: relative;
+
+		header {
+			@extend h5;
+			@extend %font-smaller;
+		}
+
+		dl {
+			@extend .flex-row;
+			margin-bottom: 0;
+		}
+
+		dt, dd {
+			@extend .flex-box;
+			flex-grow: 0;
+			flex-shrink: 0;
+		}
+
+		dt {
+			flex: 60px 0 0;
+			max-width: 60px;
+		}
+
+		dd {
+			flex: 1;
+			text-align: left;
+		}
+
+		dt a,
+		dd a {
+			display: block;
+			width: 100%;
+			transition: color 0.3s;
+			&:hover {
+				color: $sg-blue;
+			}
+		}
+
+		dt a { font-family: $colfax-medium; text-align: left; }
+		dd a { color: $slate-60; }
+
+		&::after {
+			content: "";
+			display: block;
+			width: 100px;
+			height: 3px;
+			left: calc(50% - 50px);
+			position: absolute;
+			bottom: 0;
+		}
+
+		.sticker {
+			bottom: -45px;
+			transition: bottom .5s;
+		}
+
+		.sticker.stuck {
+			position: fixed;
+			bottom: -1px;
+			left: 0;
+			right: 0;
+			background: $white;
+			height: 45px;
+			overflow: hidden;
+			border-top: 1px $slate-20 solid;
+			transition: bottom .5s;
+			z-index: 100;
+
+			@include breakpoint(medium) {
+				&.no-next {
+					bottom: -45px;
+					transition: bottom .5s;
+				}
+			}
+
+			header {
+				float: left;
+				display: none;
+			}
+
+			center {
+				width: 640px;
+				margin: 0 auto;
+				position: relative;
+			}
+
+			dl.flex-row {
+				max-width: 100%;
+			}
+
+			dl:not(.next-h2) {
+				display: none;
+			}
+
+			center::before {
+				position: absolute;
+				line-height: 45px;
+				@extend %font-smaller;
+			}
+
+			dt {
+				max-width: 50%;
+				flex: 1;
+				line-height: 45px;
+				@extend %font-smaller;
+			}
+
+			dt a {
+				display: none;
+			}
+
+			dt::after {
+				content: "Back to Table of Contents";
+				text-transform: none;
+				background-repeat: no-repeat;
+				background-position: 10px center;
+				padding-left: 26px;
+				cursor: pointer;
+				transition: color .3s;
+			}
+
+			dt i {
+				position: relative;
+			}
+
+			dt i::before {
+				border: 1px currentColor solid;
+				border-radius: 50%;
+				color: currentColor;
+				content: "";
+				display: inline-block;
+				height: 16px;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 16px;
+			}
+
+			dt i::after {
+				border-color: currentColor;
+				border-style: solid;
+				border-width: 1px 0 0 1px;
+				content: "";
+				height: 6px;
+				left: 5px;
+				position: absolute;
+				top: calc(50% - 2px);
+				transform: translateY(-50%);
+				transform: rotate(45deg);
+				transition: color 1s;
+				width: 6px;
+			}
+
+			dt:hover i::after {
+				color: #546C82;
+				transition: color .5s;
+			}
+
+			dd {
+				font-family: $colfax-light;
+				align-content: center;
+				@include breakpoint(medium down) {
+					display: none;
+				}
+			}
+
+			dd a {
+				line-height: 16px;
+				color: $slate-40;
+				@extend %font-smaller;
+				text-align: right;
+				padding-top: 5px;
+				transition: color 0.3s;
+				&:hover {
+					color: $sg-blue;
+				}
+			}
+
+			dd a::before {
+				content: "Next Section";
+				color: $slate-40;
+				display: block;
+			}
+
+		}
+
+	}
+
+	article {
+
+		background: $white;
+
+		@include breakpoint(medium down) {
+			margin-right: 2rem;
+			margin-left: 2rem;
+		}
+
+		@include breakpoint(medium down) {
+			margin-right: 1rem;
+			margin-left: 1rem;
+		}
+
+		h1.page-header__title {
+			padding-bottom: 0;
+		}
+
+		h2 {
+			line-height: 57px;
+			width: 100%;
+			position: relative;
+			margin-top: $scaleup-8;
+			margin-bottom: $scaleup-5;
+
+			@include breakpoint(medium down) {
+				margin-top: calc(2em + 53px);
+			}
+
+		}
+
+		h2::before {
+
+			height: 53px;
+			width: 53px;
+			font-size: 24px;
+			text-align: center;
+			color: $white;
+			background: currentColor;
+			display: inline-block;
+			background: black;
+			margin-right: 1.7rem;
+			overflow: hidden;
+			vertical-align: middle;
+			font-family: $colfax-medium;
+
+			@include breakpoint(medium down) {
+				position: absolute;
+				top: -53px;
+				z-index: 0;
+			}
+
+			@each $name, $color in $colors {
+				.style-color--#{$name} & {
+					background-color: $color;
+				}
+			}
+
+		}
+
+		h2:nth-of-type(1)::before { content: "01"; }
+		h2:nth-of-type(2)::before { content: "02"; }
+		h2:nth-of-type(3)::before { content: "03"; }
+		h2:nth-of-type(4)::before { content: "04"; }
+		h2:nth-of-type(5)::before { content: "05"; }
+		h2:nth-of-type(6)::before { content: "06"; }
+		h2:nth-of-type(7)::before { content: "07"; }
+		h2:nth-of-type(8)::before { content: "08"; }
+		h2:nth-of-type(9)::before { content: "09"; }
+		h2:nth-of-type(10)::before { content: "10"; }
+		h2:nth-of-type(11)::before { content: "11"; }
+		h2:nth-of-type(12)::before { content: "12"; }
+		h2:nth-of-type(13)::before { content: "13"; }
+		h2:nth-of-type(14)::before { content: "14"; }
+		h2:nth-of-type(15)::before { content: "15"; }
+		h2:nth-of-type(16)::before { content: "16"; }
+		h2:nth-of-type(17)::before { content: "17"; }
+		h2:nth-of-type(18)::before { content: "18"; }
+		h2:nth-of-type(19)::before { content: "19"; }
+		h2:nth-of-type(20)::before { content: "20"; }
+
+		ul + p {
+			margin-top: $scaleup-1;
+		}
+
+		section[class*="-back"] {
+
+			padding: $scaleup-4;
+			margin-top: $scaleup-3;
+
+			header,center,footer,h2,h3,h4 {
+				color: $white;
+			}
+			h2 {
+				margin: 0 0 $scaleup-1;
+			}
+
+			h2::before {
+				content: "";
+				display: none;
+
+			}
+
+			@include breakpoint(medium) {
+				padding: $scaleup-5 $scaleup-8;
+				margin-left: -$scaleup-8;
+				margin-right: -$scaleup-8;
+				margin-top: $scaleup-3;
+			}
+
+		}
+
+		aside {
+
+			position: relative;
+			z-index: $z-index--guide-aside;
+			color: $white;
+			color: white;
+			height: auto;
+			float: right;
+			width: 290px;
+			margin: $scaleup-4 130px $scaleup-4 -174px;
+			padding: $scaleup-1;
+			transform: translateX(210px);
+
+			&.position-center {
+				float: none;
+				width: 100%;
+			}
+
+			&.position-left {
+				float: right;
+				margin: $scaleup-4 130px $scaleup-4 -174px;
+				transform: translateX(210px);
+			}
+
+			header {
+				font-family: $colfax-medium;
+				font-size: 1rem;
+				line-height: 1.2;
+			}
+
+			center {
+				@extend %font-smaller;
+				line-height: 24px;
+			}
+
+			i.icon ~ header {
+				padding-top: 11px;
+			}
+
+			header ~ center {
+				padding-top: 11px;
+			}
+
+			p {
+				font-size: $scaledown-1 !important;
+				line-height: $scaleup-2 !important;
+				margin-top: 0 !important;
+				margin-bottom: 0 !important;
+			}
+
+			a {
+				color: $white;
+				text-decoration: underline;
+			}
+
+			i.icon {
+				max-width: $scaleup-1;
+				margin-bottom: $scaleup-1;
+			}
+
+			@include breakpoint(medium down) {
+				width: 210px;
+				margin: 0 130px $scaleup-4 -174px;
+				transform: translateX(210px);
+				&.position-left {
+					margin: 0 130px $scaleup-4 -174px;
+					transform: translateX(210px);
+				}
+			}
+
+			@include breakpoint(medium down) {
+				width: 100%;
+				float: none;
+				margin-left: 0 !important;
+				margin-right: 0 !important;
+				transform: none !important;
+			}
+
+		}
+
+		blockquote {
+
+			margin: $scaleup-5 0;
+
+		}
+
+		blockquote,
+		blockquote p {
+			font-family: $colfax-light;
+		}
+
+		ul {
+			list-style: none;
+			padding:0;
+			margin:0;
+		}
+
+		li {
+			padding-left: 1.25rem;
+			position: relative;
+		}
+
+		li::before {
+				content: "• ";
+				padding-right: .3rem;
+				float: left;
+				margin-left: -1.25rem;
+		}
+
+	}
+
+	.prefooter-cta {
+		margin-top: $scaleup-8;
+		margin-bottom: -5.063rem;;
+
+		header,
+		center {
+			color: $white;
+		}
+
+		header ~ center {
+			margin-top: $scaleup-1;
+		}
+
+		center ~ footer {
+			margin-top: $scaleup-3;
+		}
+
+	}
+
+	.addtoany_share_save_container {
+		display: none;
+	}
+
+}
+
+//remove icons from aside shortcode
+.no-asside-icons aside .icon {
+	display: none;
+}

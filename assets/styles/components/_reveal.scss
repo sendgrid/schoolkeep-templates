@@ -1,0 +1,99 @@
+// Reveal
+.reveal {
+	padding: $scaleup-3;
+	overflow-y: visible;
+	border: 0;
+	border-radius: $border-radius;
+	outline: none;
+
+	@include breakpoint(medium) {
+		padding: $scaleup-4;
+	}
+
+	@include breakpoint(large) {
+		padding: $scaleup-6;
+	}
+}
+
+.reveal__close {
+	position: absolute;
+	top: $scaledown-1;
+	right: $scaledown-1;
+	width: $scale-0;
+	height: $scale-0;
+	cursor: pointer;
+	background-image: url("assets/images/icons/icon-modal-close.svg");
+	content: "";
+}
+
+[data-open] {
+	cursor: pointer;
+	outline: none;
+}
+
+// Search Overlay
+.search-overlay {
+	overflow: hidden;
+	background: fade-out($slate, 0.1);
+
+	.reveal {
+		padding-top: 10% !important;
+		overflow: visible;
+		background: none;
+		border: 0;
+		outline: 0;
+
+		@include breakpoint(small down) {
+			position: fixed;
+			top: 40% !important;
+		}
+	}
+
+	img {
+		color: $white;
+	}
+
+	.magnify-glass {
+		width: $scaleup-3;
+		height: $scaleup-3;
+
+		g {
+			stroke: $white;
+		}
+	}
+
+	.input-s {
+		width: 100%;
+		padding-right: 40px;
+		margin-right: -35px;
+		font-family: $colfax-medium;
+		font-size: $scaleup-6;
+		font-style: italic;
+		color: fade-out($white, 0.2);
+		background: none;
+		border: 0;
+		border-bottom: 2px solid $white;
+
+		@include breakpoint(small down) {
+			font-size: $scaleup-2;
+		}
+
+		&::placeholder {
+			font-style: italic;
+			color: fade-out($white, 0.6);
+		}
+	}
+}
+
+.close-search {
+	position: fixed;
+	top: 25px;
+	right: 25px;
+	font-size: $scaleup-6;
+	color: fade-out($white, 0.2);
+	opacity: 0.8;
+
+	&:hover {
+		cursor: pointer;
+	}
+}

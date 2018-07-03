@@ -1,0 +1,20 @@
+.deep-dive-header-block {
+  .badge {
+    position: absolute;
+    right: 0;
+    top: -2.8rem;
+
+    @media (max-width: 33rem) {
+      right: 50%;
+      top: -1.25rem;
+      transform: translate(50%);
+    }
+
+  }
+
+  .dark-bg.headline {
+    display: inline-block;
+    position: relative;
+  }
+
+}

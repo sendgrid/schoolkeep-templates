@@ -1,0 +1,13 @@
+.case-study {
+	background-color: $sg-blue;
+	background-image: url("assets/images/patterns/pixel-pattern-bottom-left-dark.svg");
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	img {
+		max-height: 30px;
+		width: auto;
+	}
+	blockquote p {
+			color: $white;
+	}
+}

@@ -1,0 +1,101 @@
+.pricing-footer {
+	z-index: $z-index--pricing-footer;
+	width: 100%;
+	height: 96px;
+	max-width: $container-max-width;
+	background: $sg-blue-5;
+	box-shadow: 0 -3px 6px 0 rgba($slate, 0.1);
+
+	@include breakpoint(medium) {
+		height: 116px;
+	}
+
+	> .row {
+		height: 100%;
+	}
+}
+
+.pricing-footer--summary {
+	margin-bottom: 0;
+	font-size: $scaledown-1;
+}
+
+.pricing-footer--item {
+	display: block;
+	line-height: $scaleup-1;
+	color: $slate;
+
+	&:not(:last-child) {
+		padding-bottom: $scaledown-7 !important;
+	}
+}
+
+.pricing-footer--item-title {
+	display: inline-block;
+	min-width: $scaleup-8;
+	color: $slate-80;
+
+	&:focus {
+		color: $slate-80;
+	}
+}
+
+.pricing-footer--estimate {
+	font-size: $scale-0;
+
+	@include breakpoint(medium) {
+		text-align: right;
+	}
+}
+
+.pricing-footer--estimate-title {
+	margin-right: $scaledown-7;
+}
+
+.pricing-footer--estimate-amount {
+	font-size: $scaleup-1;
+	color: $slate;
+}
+
+.pricing-footer--breakdown-link {
+	font-size: $scaledown-1;
+	line-height: $scaleup-1;
+	color: $sg-blue-80;
+	cursor: pointer;
+	transition: color 0.3s;
+
+	&:hover,
+	&:focus {
+		color: $sg-blue;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.fixed-to-bottom .pricing-footer {
+	position: fixed;
+	bottom: 0;
+	transition: all 400ms ease;
+}
+
+.premier .pricing-footer,
+.pricing-footer.out {
+	bottom: -200px;
+	transition: all 400ms ease;
+}
+
+.premier .pricing-footer {
+	bottom: -200px;
+	position: fixed;
+}
+
+// Hide things
+.free .pricing-footer--contacts,
+.free .pricing-footer--add-ons,
+.premier .pricing-footer--contacts,
+.premier .pricing-footer--add-ons,
+.api .pricing-footer--contacts {
+	display: none;
+}

@@ -1,0 +1,91 @@
+.template-leads {
+
+	 .form-wrapper {
+		 position: relative;
+	 }
+
+		 $form-offset: rem-calc(-88);
+
+		 .header-block {
+				min-height: 0;
+				max-height: none;
+				justify-content: center;
+				align-items: center;
+
+				.headline-block {
+						z-index: 1;
+						position: relative;
+						width: 100%;
+						padding: $scaleup-6 0;
+						top: inherit;
+						left: inherit;
+						transform: none;
+						text-align: center;
+						height: auto;
+						@include breakpoint(medium) {
+							padding: $scaleup-8 0 $scaleup-6;
+						}
+				}
+
+				&.img-bg {
+						.headline-block {
+								@include breakpoint(medium) {
+									padding-top: $scaleup-9;
+								}
+						}
+				}
+		}
+
+		.image-container {
+				position: absolute;
+				height: rem-calc(334);
+				width: 100%;
+				top: 0;
+				left: 0;
+				overflow: hidden;
+				img {
+					position: absolute;
+					top: 0;
+					left: 50%;
+					margin-right: -50%;
+					transform: translate(-50%, 0);
+					min-width: 1410px;
+				}
+		}
+
+		.marketo-form-block {
+				width: 100%;
+
+				.marketo-form--container {
+						background: $white;
+						padding: 0;
+						max-width: rem-calc(630);
+						margin: 0 auto;
+
+						.form-col {
+							padding: $scaleup-4;
+							@include breakpoint(medium) {
+								padding: $scaleup-6;
+							}
+						}
+
+						.description {
+								border-top: 1px solid $border-color-gray;
+								border-left: none;
+								@include breakpoint(medium) {
+									border-left: 1px solid $border-color-gray;
+									border-top: none;
+								}
+						}
+
+						&.description {
+								max-width: rem-calc(960);
+						}
+
+						.mktoField {
+								position: static;
+						}
+				}
+		}
+
+}

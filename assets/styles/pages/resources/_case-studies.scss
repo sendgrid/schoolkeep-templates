@@ -1,0 +1,201 @@
+.single-case {
+
+	@include breakpoint(large up) {
+		.has-banner-img .page-header {
+			max-width: 548px;
+			padding: 0;
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+
+	@include breakpoint(1050px down) {
+		.page-header__title {
+			font-size: $scaleup-3;
+			line-height: $scaleup-4;
+		}
+	}
+
+	// Banner copy should always be white
+	.page-header__title,
+	.page-header__pretitle,
+	.page-header__pretitle a {
+		color: $white;
+
+		&:hover {
+			color: $white;
+		}
+	}
+
+	.side {
+		padding: $scaleup-1;
+		margin-top: 6px;
+		background: $slate-5;
+	}
+
+	.case-logo {
+		display: block;
+		margin-bottom: $scaleup-1;
+
+		img {
+			width: auto;
+			height: auto;
+			max-width: 200px;
+			max-height: 54px;
+		}
+	}
+
+	.case-row {
+		max-width: 1600px;
+
+		.column {
+			padding: 0;
+			@include breakpoint(medium down) {
+				padding: $scale-0;
+			}
+		}
+	}
+
+	.case-title {
+		flex: 11%;
+	}
+
+	.case-stat {
+		max-width: 330px;
+
+		@include breakpoint(small down) {
+			width: 100%;
+			max-width: 100%;
+			min-width: 100%;
+			margin-bottom: $scaleup-6;
+
+			&:last-child {
+				margin-bottom: $scale-0;
+			}
+		}
+
+	}
+
+	.case-stat__tile {
+		display: block;
+		width: 100%;
+		height: 100%;
+		padding: $scaleup-3;
+		margin: 0;
+		line-height: $scaleup-1;
+		box-shadow: 0 1.313rem 2.813rem -1.5rem rgba(41, 70, 97, 0.3);
+	}
+
+	.case-stat__val {
+		font-size: $scaleup-5;
+		line-height: $scaleup-5;
+	}
+
+	.case-stat__name {
+		margin-top: $scaledown-4;
+	}
+
+	.quote-attr > div {
+		display: inline-block;
+	}
+
+	article > p {
+		font-size: $scaleup-1;
+	}
+
+	article .quote {
+		font-size: $scaleup-1;
+		line-height: $scaleup-1;
+	}
+
+	article .case-pull-quote {
+		margin-bottom: 0;
+	}
+
+	article .case-pull-quote__meta {
+	text-align: left;
+	}
+
+	.case-pull-quote {
+		color: $slate-80;
+	}
+
+	.case-pull-quote__headshot {
+		width: 50px;
+		height: auto;
+		margin-right: 10px;
+	}
+
+	.case-pull-quote__meta {
+		vertical-align: middle;
+	}
+
+	.case-story .case-pull-quote {
+		text-align: center;
+	}
+
+	.case-story .column:last-child {
+		margin-bottom: 0;
+
+		// remove the last child margin bottom of any element type
+		> :last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	.full-bleed-image img {
+		width: auto;
+		max-height: 600px;
+	}
+
+	.js-magnific-video {
+		margin-top: -4rem;
+
+		figcaption {
+			position: absolute;
+			width: 100%;
+			margin-top: -50px;
+			font-family: "Colfax-Medium", helvetica, sans-serif;
+			font-size: 0.833rem;
+			font-style: normal;
+			font-weight: normal;
+			line-height: 1.5;
+			letter-spacing: 1px;
+			color: $white;
+			text-rendering: optimizeLegibility;
+			text-transform: uppercase;
+		}
+
+	}
+
+}
+
+// compensate for two .free-form-copy block next to each other
+.free-form-copy + .free-form-copy {
+	margin-top: -2rem;
+}
+
+// all case studies
+.case-solutions {
+	font-size: $scaledown-1;
+}
+
+.case-solutions label {
+	margin-right: 20px;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.case-solutions input {
+	margin-right: 5px;
+	font-size: $scaleup-1;
+}
+
+// hide loader until we filter
+.archive-resource .fragment-loader {
+	display: none;
+	margin-bottom: -13px;
+	opacity: 0;
+}

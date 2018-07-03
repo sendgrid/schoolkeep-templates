@@ -1,0 +1,250 @@
+// TODO: Try to clean up CSS so we don't need to disable these linting rules
+// scss-lint:disable SelectorFormat, NestingDepth
+// Floating Tiles
+.floating-tile {
+	@include levitate(true);
+	background: $white;
+	border: $border-width solid $border-color-gray;
+	border-radius: $border-radius;
+}
+// Resource Tiles
+.resource-tile-row:not(.resource-tile-row--featured) {
+	margin-bottom: $scaleup-3 * -1;
+}
+
+.resource-tile-column {
+	display: flex;
+	padding-bottom: $scaleup-3;
+}
+
+.resource-tile-wrapper {
+	display: flex;
+	width: 100%;
+
+	&.video-case {
+		position: relative;
+
+		&::before {
+			position: absolute;
+			top: -0.875rem;
+			right: -0.875rem;
+			z-index: 100;
+			width: 3.125rem;
+			height: 3.125rem;
+			background: url("assets/images/icons/blue-play-button.svg");
+			background-size: contain;
+			content: "";
+		}
+	}
+}
+
+.resource-tile {
+	width: 100%;
+	margin-bottom: 0;
+}
+
+.resource-tile--featured {
+	display: flex;
+	flex-direction: column;
+
+	@include breakpoint(medium) {
+		display: flex;
+		flex-direction: row;
+	}
+}
+
+.floating-tile--blue-border {
+	border-color: $sg-blue-10;
+}
+
+.resource-tile:not(.resource-tile--featured) {
+	display: flex;
+	flex-direction: column;
+}
+
+.resource-tile__copy {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	height: auto;
+	padding: $scaleup-2;
+}
+
+.resource-tile--featured .resource-tile__copy {
+	@include breakpoint(medium) {
+		flex-basis: 50%;
+		padding: $scaleup-4;
+	}
+}
+
+.resource-tile__cta-link {
+	margin-top: auto;
+}
+
+.resource-tile__thumbnail {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-bottom: 1px solid $border-color-gray;
+}
+
+.resource-tile--featured .resource-tile__thumbnail {
+	height: 240px;
+
+	@include breakpoint(medium) {
+		flex-basis: 50%;
+		height: 330px;
+		border-right: 1px solid $border-color-gray;
+		border-bottom: 0;
+	}
+}
+
+.resource-tile:not(.resource-tile--featured) .resource-tile__thumbnail {
+	height: 150px;
+}
+
+.resource-tile.type-case .resource-tile__thumbnail {
+	display: flex;
+	align-items: center;
+	padding: $scaleup-5;
+	text-align: center;
+
+	img {
+		width: 100%;
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: contain;
+	}
+}
+
+.resource-tile__info {
+	display: flex;
+}
+
+.resource-length {
+	font-size: $scaledown-1;
+	font-style: italic;
+	color: $slate-40;
+}
+// Stat Tiles
+.stat-tile {
+	display: flex;
+	align-items: center;
+	width: 220px;
+	height: 220px;
+	padding: $scaleup-2;
+	margin: 0 auto $scaleup-3;
+	font-family: $colfax-medium;
+	color: $sg-blue;
+	background: $white;
+	border: $border-width solid $border-color-gray;
+	box-shadow: $box-shadow--3d;
+}
+
+.stat-tile__number {
+	font-family: $colfax-medium;
+	font-size: $scaleup-8;
+	line-height: $scaleup-8;
+	color: $sg-blue;
+}
+
+.stat-tile__text {
+	margin-bottom: 0;
+	font-size: $scaledown-1;
+	line-height: $scale-0;
+	text-transform: uppercase;
+
+	&:not(:last-child) {
+		margin-bottom: $scaledown-2;
+	}
+}
+// Bar Graphs
+.stat-tile__bar-graph {
+	display: table;
+	width: 85%;
+	margin: $scaledown-2 auto;
+	table-layout: fixed;
+
+	span {
+		position: relative;
+		display: table-cell;
+		height: 3.62rem;
+		padding-bottom: 0;
+		vertical-align: bottom;
+
+		&::before {
+			display: block;
+			height: 100%;
+			max-height: 0;
+			margin: 0 0.1rem;
+			background: $sg-blue;
+			border-radius: $border-radius;
+			content: "";
+		}
+	}
+}
+
+.stat-tile__draw-bar-graph span {
+	&:nth-child(1)::before {
+		max-height: 70%;
+		background: lighten($sg-blue, 25%);
+		transition-duration: 0.75s;
+	}
+
+	&:nth-child(2)::before {
+		max-height: 80%;
+		background: lighten($sg-blue, 20%);
+		transition-delay: 0.15s;
+		transition-duration: 1s;
+	}
+
+	&:nth-child(3)::before {
+		max-height: 90%;
+		background: lighten($sg-blue, 15%);
+		transition-delay: 0.35s;
+		transition-duration: 1.25s;
+	}
+
+	&:nth-child(4)::before {
+		max-height: 100%;
+		background: lighten($sg-blue, 10%);
+		transition-delay: 0.5s;
+		transition-duration: 1.5s;
+	}
+}
+
+// Stat Tile Colors
+@each $name, $color in $colors {
+	.stat-tile--#{$name} {
+		color: $color;
+
+		.stat-tile__number {
+			color: $color;
+		}
+
+		.stat-tile__bar-graph span::before {
+			background: $color;
+		}
+
+		.stat-tile__draw-bar-graph {
+			span {
+				&:nth-child(1)::before {
+					background: lighten($color, 25%);
+				}
+
+				&:nth-child(2)::before {
+					background: lighten($color, 20%);
+				}
+
+				&:nth-child(3)::before {
+					background: lighten($color, 15%);
+				}
+
+				&:nth-child(4)::before {
+					background: lighten($color, 10%);
+				}
+			}
+		}
+	}
+}
+

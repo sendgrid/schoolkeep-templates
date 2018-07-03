@@ -1,0 +1,71 @@
+// TODO: Try to clean up CSS so we don't need to disable these linting rules
+// scss-lint:disable QualifyingElement, PlaceholderInExtend
+
+/* Pagination */
+nav.pagination {
+	display: block;
+	float: none;
+	font-size: 0.8125rem;
+	line-height: 1;
+	text-align: center;
+
+	.screen-reader-text {
+		display: none;
+	}
+
+	.page-numbers {
+		@extend .colfax;
+	}
+
+	.page-numbers.current {
+		@extend .colfax-medium;
+	}
+
+	a,
+	span.current,
+	span.dots {
+		position: relative;
+		display: inline-block;
+		padding: 10px;
+		line-height: 1.5;
+		color: #294661;
+	}
+
+	a:hover {
+		color: #1a82e2;
+		background: transparent;
+	}
+
+	a.next,
+	a.prev {
+		@extend .btn;
+		@extend .btn-secondary;
+		@extend .btn-small;
+		font-family: $colfax-regular;
+	}
+
+	a.next {
+		float: right;
+	}
+
+	a.prev {
+		float: left;
+	}
+
+	span.current {
+		font-weight: 700;
+		color: $sg-blue;
+		background: transparent;
+	}
+
+	a.next:hover,
+	a.prev:hover {
+		color: #1a82e2;
+		background: rgba(26, 130, 226, 0.1);
+		border-color: $sg-blue;
+	}
+
+	.meta-nav {
+		display: none;
+	}
+}

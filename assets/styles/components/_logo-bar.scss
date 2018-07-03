@@ -1,0 +1,23 @@
+.logo-bar {
+	.logos-wrapper {
+		margin-bottom: $scaleup-3 * -1;
+	}
+
+	a {
+		color: $slate-80;
+
+		strong {
+			text-decoration: underline;
+		}
+
+	}
+
+	.logo-wrapper {
+		margin-bottom: $scaleup-3;
+	}
+
+	img {
+		max-width: 150px;
+		max-height: 50px;
+	}
+}

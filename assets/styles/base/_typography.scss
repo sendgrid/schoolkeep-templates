@@ -1,0 +1,469 @@
+// TODO: Try to clean up CSS so we don't need to disable these linting rules
+// scss-lint:disable PlaceholderInExtend
+
+// ====================
+// Fonts
+// ====================
+
+// Colfax
+// (c) 2013 Process Type Foundry
+// http://processtypefoundry.com
+// info@processtype.com
+
+$fonts-path: "assets/fonts" !default;
+
+// Colfax
+
+@font-face {
+	font-family: "Colfax-Light";
+	src: url("#{$fonts-path}/colfax/ColfaxWebLight.eot");
+	src: url("#{$fonts-path}/colfax/ColfaxWebLight.eot?#iefix") format("embedded-opentype"),
+			 url("#{$fonts-path}/colfax/ColfaxWebLight.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Colfax-Regular";
+	src: url("#{$fonts-path}/colfax/ColfaxRegular.eot");
+	src: url("#{$fonts-path}/colfax/ColfaxRegular.eot?#iefix") format("embedded-opentype"),
+			 url("#{$fonts-path}/colfax/ColfaxRegular.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Colfax-Regular-Italic";
+	src: url("#{$fonts-path}/colfax/ColfaxRegularItalic.eot");
+	src: url("#{$fonts-path}/colfax/ColfaxRegularItalic.eot?#iefix") format("embedded-opentype"),
+			 url("#{$fonts-path}/colfax/ColfaxRegularItalic.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Colfax-Medium";
+	src: url("#{$fonts-path}/colfax/ColfaxWebMedium.eot");
+	src: url("#{$fonts-path}/colfax/ColfaxWebMedium.eot?#iefix") format("embedded-opentype"),
+			 url("#{$fonts-path}/colfax/ColfaxWebMedium.woff") format("woff");
+}
+
+@font-face {
+	font-family: "Colfax-Medium-Italic";
+	src: url("#{$fonts-path}/colfax/ColfaxWebMediumItalic.eot");
+	src: url("#{$fonts-path}/colfax/ColfaxWebMediumItalic.eot?#iefix") format("embedded-opentype"),
+			 url("#{$fonts-path}/colfax/ColfaxWebMediumItalic.woff") format("woff"),
+			 url("#{$fonts-path}/colfax/ColfaxWebMediumItalic.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Colfax-Bold";
+	src: url("#{$fonts-path}/colfax/ColfaxBold.eot");
+	src: url("#{$fonts-path}/colfax/ColfaxBold.eot?#iefix") format("embedded-opentype"),
+			 url("#{$fonts-path}/colfax/ColfaxBold.woff") format("woff");
+}
+
+@font-face {
+	font-family: "icomoon";
+	src: url("#{$fonts-path}/icomoon/icomoon.eot?xaiekp");
+	src: url("#{$fonts-path}/icomoon/icomoon.eot?xaiekp#iefix") format("embedded-opentype"),
+			 url("#{$fonts-path}/icomoon/icomoon.ttf?xaiekp") format("truetype"),
+			 url("#{$fonts-path}/icomoon/icomoon.woff?xaiekp") format("woff"),
+			 url("#{$fonts-path}/icomoon/icomoon.svg?xaiekp#icomoon") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: "icomoon" !important;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	text-transform: none;
+	speak: none;
+	font-variant: normal;
+}
+
+// Font Rendering
+@mixin font-sharpening() {
+	-webkit-font-smoothing: none;
+	-moz-osx-font-smoothing: none;
+}
+
+@mixin font-smoothing() {
+	-webkit-font-smoothing: auto;
+	-moz-osx-font-smoothing: auto;
+}
+
+.sharp-text {
+	@include font-sharpening;
+}
+
+.smooth-text {
+	@include font-smoothing;
+}
+
+// ====================
+// Typography Styles
+// ====================
+
+// Main Typography
+h1,
+h2,
+h3,
+h4,
+h6 {
+	color: $slate;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $colfax-medium;
+}
+
+h1 {
+	margin-bottom: $scaleup-3;
+
+	&.dark-bg {
+		color: $white;
+	}
+
+	&.img-bg {
+		color: $white;
+		text-shadow: 0 2px 3px rgba($slate, 0.15);
+	}
+
+	&.small {
+		font-size: $scaleup-4;
+		line-height: $scaleup-5;
+	}
+}
+
+h2 {
+	margin-bottom: $scaleup-2;
+
+	&.dark-bg {
+		color: $white;
+	}
+
+	&.img-bg {
+		color: $white;
+		text-shadow: 0 2px 3px rgba($slate, 0.15);
+	}
+}
+
+h3 {
+	margin-bottom: $scaleup-2;
+
+	&.dark-bg {
+		color: $white;
+	}
+
+	&.img-bg {
+		color: $white;
+		text-shadow: 0 2px 3px rgba($slate, 0.15);
+	}
+}
+
+h4 {
+	margin-bottom: $scaleup-1;
+
+	&.dark-bg {
+		color: $white;
+	}
+
+	&.img-bg {
+		color: $white;
+		text-shadow: 0 2px 3px rgba($slate, 0.15);
+	}
+}
+
+h5 {
+	margin-bottom: $scaleup-1;
+	letter-spacing: 1px;
+	color: $slate-60;
+	text-transform: uppercase;
+
+	&.dark-bg {
+		color: rgba($white, 0.9);
+
+		a:hover {
+			color: $white;
+		}
+	}
+
+	&.img-bg {
+		color: rgba($white, 0.9);
+		text-shadow: 0 2px 3px rgba($slate, 0.1);
+
+		a:hover {
+			color: $white;
+		}
+	}
+}
+
+h6 {
+	margin-bottom: $scale-0;
+
+	&.dark-bg {
+		color: rgba($white, 0.9);
+	}
+}
+
+p,
+article {
+	margin-top: 0;
+	margin-bottom: $scale-0;
+
+	&.small {
+		font-size: $scaledown-1;
+		line-height: $scaleup-1;
+		color: $slate-80;
+	}
+
+	&.headline {
+		font-family: $colfax-light;
+		font-size: $scaleup-1;
+		line-height: $scaleup-3;
+	}
+
+	&.strong {
+		font-weight: 600;
+	}
+
+	&.italic {
+		font-style: italic;
+	}
+
+	&.dark-bg {
+		color: $white;
+	}
+
+	&.img-bg {
+		color: $white;
+	}
+}
+
+strong,
+b {
+	font-family: $colfax-medium;
+}
+
+// Links
+a {
+	font-family: $colfax-regular;
+	font-weight: 500;
+	color: $sg-blue-80;
+	transition: color 0.3s;
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $sg-blue;
+		text-decoration: none;
+	}
+
+	&.dark-bg {
+		color: $white-transparent-80;
+
+		&:hover,
+		&:focus,
+		&:active {
+			color: $white;
+		}
+	}
+}
+
+.view-all,
+.cta-link {
+	display: block;
+	font-family: $colfax-regular;
+
+	&.small {
+		font-size: $scaledown-1;
+		line-height: $scaleup-1;
+	}
+
+	&.small {
+		font-size: $scaledown-1;
+		line-height: $scaleup-2;
+	}
+}
+
+.small {
+	font-size: $scaledown-1;
+	line-height: $scaleup-1;
+}
+
+.article-more {
+	font-size: $scaledown-1;
+}
+
+// Dark Background
+.dark-bg {
+	color: $white;
+
+	h1,
+	h2,
+	h3,
+	h4 {
+		color: $white;
+	}
+
+	h5,
+	h6,
+	p {
+		color: rgba($white, 0.9);
+	}
+}
+
+// Gradient Text
+.gradient-text {
+	&.blue {
+		@include gradient-text($sg-blue);
+		color: $sg-blue;
+	}
+}
+
+// Heading classes to inherit styles if different markup is required
+.h1 {
+	@extend h1;
+}
+
+.h2 {
+	@extend h2;
+}
+
+.h3 {
+	@extend h3;
+}
+
+.h4 {
+	@extend h4;
+}
+
+.h5 {
+	@extend h5;
+}
+
+.h6 {
+	@extend h6;
+}
+
+.p {
+	@extend p;
+}
+
+// Fonts by Class
+.colfax,
+.colfax-light {
+	font-family: $colfax-light;
+}
+
+.colfax-regular {
+	font-family: $colfax-regular;
+}
+
+.colfax-medium {
+	font-family: $colfax-medium;
+}
+
+.colfax-medium-italic {
+	font-family: $colfax-medium-italic;
+}
+
+.colfax-bold {
+	font-family: $colfax-bold;
+}
+
+.bookmania-light {
+	@include bookmania-light;
+}
+
+.bookmania-light-italic {
+	@include bookmania-light-italic;
+}
+
+.bookmania-regular {
+	@include bookmania-regular;
+}
+
+.bookmania-regular-italic {
+	@include bookmania-regular-italic;
+}
+
+.bookmania-semibold {
+	@include bookmania-semibold;
+}
+
+.bookmania-semibold-italic {
+	@include bookmania-semibold-italic;
+}
+
+.bookmania-bold {
+	@include bookmania-bold;
+}
+
+.bookmania-bold-italic {
+	@include bookmania-bold-italic;
+}
+
+// Scale Size
+.font-smaller {
+	font-size: 0.8125em; // 13px of 16px default
+	line-height: 1.85; // 24px relative to 13px
+}
+
+.font-smallest {
+	font-size: 60%;
+	font-weight: 400;
+}
+
+// Blockquotes
+blockquote,
+blockquote p {
+	padding: 0;
+	margin: 0;
+	font-family: $colfax-light;
+	font-size: $scaleup-1;
+	font-weight: 100;
+	line-height: $scaleup-3;
+	color: $sg-blue;
+	border-left: 0;
+}
+
+.quote {
+	font-family: $colfax-light;
+	font-size: $scaleup-1;
+	font-style: italic;
+	line-height: $scaleup-2;
+	color: $slate;
+
+	@include breakpoint(medium) {
+		font-size: $scaleup-4;
+		line-height: $scaleup-5;
+	}
+}
+
+// Lists
+
+ul,
+ol {
+	margin-bottom: $scale-0;
+}
+
+li {
+	font-weight: 300;
+	line-height: $scaleup-3;
+
+	&:not(:last-child) {
+		padding-bottom: $scaledown-2;
+	}
+
+}

@@ -1,0 +1,46 @@
+// TODO: Try to clean up CSS so we don't need to disable these linting rules
+// scss-lint:disable QualifyingElement
+
+.snippet-email-cases {
+	// reduce size for mobile
+	@include breakpoint(small down) {
+		.icon-email-case {
+			width: 80px;
+			height: 80px;
+		}
+
+		.icon-email-case svg {
+			width: 30px;
+		}
+	}
+
+	.icon-email-case {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 120px;
+		height: 120px;
+		margin: 0 auto 36px;
+	}
+
+	.orbit {
+		width: 100%;
+	}
+
+	.orbit-container {
+		outline: none;
+	}
+
+	.orbit-bullets button {
+		width: 15px;
+		height: 15px;
+		margin: 0 4.5px;
+		background-color: $slate-10;
+		border-radius: 50%;
+		outline: none;
+	}
+
+	.orbit-bullets button.is-active {
+		background-color: $slate;
+	}
+}

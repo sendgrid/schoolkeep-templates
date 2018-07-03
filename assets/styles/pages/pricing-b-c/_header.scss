@@ -1,0 +1,15 @@
+// Colored headers
+.pricing-table--badge,
+.page-header--wrapper__pricing {
+	@include gradient-two-color($mantis, $seafoam);
+}
+
+.api .pricing-table--badge,
+.api .page-header--wrapper__pricing {
+	@include gradient($mantis);
+}
+
+.marketing .pricing-table--badge,
+.marketing .page-header--wrapper__pricing {
+	@include gradient($seafoam);
+}

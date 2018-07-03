@@ -1,0 +1,100 @@
+.page-pricing {
+
+	.push-notice {
+		display: none;
+	}
+
+	// Pricing page specific overrides
+	.site-header {
+		position: relative;
+	}
+
+	.primary-site-nav__link {
+		position: inherit;
+
+		a {
+			position: relative;
+		}
+	}
+
+	// Sub nav
+	.site-sub-nav {
+
+		@include breakpoint(large) {
+			margin-left: auto;
+			margin-right: auto;
+			position: absolute;
+			width: 100%;
+			left: 0;
+			right: 0;
+
+		}
+	}
+
+	.site-content {
+		padding-top: 0;
+ 	}
+
+	.page-header {
+		padding-top: $scaleup-7;
+		padding-bottom: $scaleup-4;
+	}
+
+	.pricing-tables .page-header {
+		padding-top: $scaledown-1;
+		padding-bottom: $scaleup-1;
+	}
+}
+
+.show-for-both,
+.show-for-marketing,
+.show-for-api,
+.show-for-essentials,
+.free .hide-on-free-premier,
+.premier .hide-on-free-premier {
+	display: none;
+}
+
+.api .hide-for-api {
+	display: none;
+}
+
+.upsells--essentials,
+.upsells--pro,
+.upsells--contacts {
+	width: 100%;
+	max-height: 0;
+	overflow: hidden;
+	transition: all 400ms ease;
+}
+
+.upsells--tip {
+	position: relative;
+}
+
+.upsells--tip:before {
+	content: ' ';
+	height: 0;
+	width: 0;
+	position: absolute;
+	top: -12px;
+	left: 50%;
+	margin-left: -3px;
+	border-top: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-left: 6px solid transparent;
+	border-bottom:6px solid $sg-blue;
+}
+
+.max-contacts .upsells--contacts {
+	max-height: 300px;
+}
+
+.pro .max .upsells--pro,
+.essential .max .upsells--essentials {
+	max-height: 300px;
+}
+
+.try-free-notification {
+	border: 1px solid $sg-blue-20;
+}

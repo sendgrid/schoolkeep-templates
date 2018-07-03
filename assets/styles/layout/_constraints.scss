@@ -1,0 +1,27 @@
+// ====================
+// Grid Constraints
+// ====================
+
+.constrain,
+.row.expanded.constrain,
+[class*="constrain-"] {
+	margin-right: auto;
+	margin-left: auto;
+	max-width: $width-medium;
+	box-sizing: border-box;
+}
+
+.constrain-small,
+.row.expanded.constrain-small {
+	max-width: $width-small;
+}
+
+.constrain-medium,
+.row.expanded.constrain-medium {
+	max-width: $width-medium;
+}
+
+.constrain-large,
+.row.expanded.constrain-large {
+	max-width: $width-large;
+}

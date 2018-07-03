@@ -1,0 +1,201 @@
+// TODO: Try to clean up CSS so we don't need to disable these linting rules
+// scss-lint:disable VendorPrefix, ColorKeyword
+
+// ====================
+// Animations
+// ====================
+
+@mixin animation($animate...) {
+	$max: length($animate);
+	$animations: "";
+
+	@for $i from 1 through $max {
+		$animations: #{$animations + nth($animate, $i)};
+		@if $i < $max {
+			$animations: #{$animations + ", "};
+		}
+	}
+
+	-webkit-animation: $animations;
+	-moz-animation: $animations;
+	-o-animation: $animations;
+	animation: $animations;
+}
+
+// ====================
+// Keyframes
+// ====================
+
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes #{$animation-name} {
+		@content;
+	}
+	@-moz-keyframes #{$animation-name} {
+		@content;
+	}
+	@-o-keyframes #{$animation-name} {
+		@content;
+	}
+	@keyframes #{$animation-name} {
+		@content;
+	}
+}
+
+// ====================
+// Gradients
+// ====================
+
+@mixin gradient($color) {
+	$adjusted-color: lighten($color, 25%);
+	$adjusted-color: saturate($adjusted-color, 25%);
+
+	background: $color;
+	background: linear-gradient(to bottom right, $adjusted-color, $color);
+}
+
+@mixin gradient-two-color($color-1, $color-2) {
+	$adjusted-color-1: lighten($color-1, 25%);
+	$adjusted-color-1: saturate($adjusted-color-1, 25%);
+
+	background: $color-1;
+	background: linear-gradient(to bottom right, $adjusted-color-1, $color-2);
+}
+
+@mixin gradient-img($color, $img-url) {
+	$adjusted-color: lighten($color, 15%);
+	$adjusted-color: desaturate($adjusted-color, 15%);
+
+	background: $color;
+	background-image: url($img-url);
+	background-image: url($img-url), linear-gradient(to bottom right, $adjusted-color, $color);
+	background-repeat: repeat-x;
+	background-position: center left;
+}
+
+@mixin gradient-text($color) {
+	$adjusted-color: lighten($color, 15%);
+	$adjusted-color: desaturate($adjusted-color, 15%);
+
+	color: mix($color, $adjusted-color);
+	background: linear-gradient(to bottom right, $adjusted-color, $color);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+// ====================
+// Colors
+// ====================
+
+@each $name, $color in $colors {
+	.#{$name}-back,
+	.style-color--#{$name} .color-back--style,
+	.color-back--#{$name} {
+		background-color: $color;
+	}
+
+	.#{$name}, // Deprecate this?
+	.style-color--#{$name} .color-text--style, // when style color assigned, make .color-text--style inherit assigned color scheme
+	.color-text--#{$name} { // assign text color per element
+		color: $color;
+	}
+
+	.style-color--#{$name} .color-underline--style,
+	.color-underline--#{$name} {
+		border-bottom: 3px solid $color;
+	}
+}
+
+[class*=".style-color"] .color-text--style {
+	color: $white;
+}
+
+@mixin color-theme($name, $color) {
+
+	.sg-opt-background--#{$name}-theme {
+		background-color: $color;
+	}
+
+	.sg-opt-color--#{$name}-theme{
+		color: $color;
+	}
+
+	.style-color--#{$name} {
+		.feature-cta .cta {
+			border-top: 3px solid $color;
+		}
+
+		.case-study {
+			background-color: $color;
+			background-image: url("assets/images/patterns/pixel-pattern-bottom-left-dark.svg");
+		}
+
+		&.page-template-solutions {
+			.header-block .breadcrumb {
+				border-bottom: 3px solid $color;
+			}
+		}
+
+		&.page-template-solutions-deep-dive {
+			.deep-dive-header-block {
+				@include gradient($color);
+			}
+		}
+	}
+}
+
+// Page Color Schemes
+@include color-theme(sg-blue, $sg-blue);
+@include color-theme(sg-blue-5, $sg-blue-5);
+@include color-theme(slate, $slate);
+@include color-theme(slate-80, $slate-80);
+@include color-theme(mantis, $mantis);
+@include color-theme(ron-burgundy, $ron-burgundy);
+@include color-theme(burnt-orange, $burnt-orange);
+@include color-theme(carrot, $carrot);
+@include color-theme(mango, $mango);
+@include color-theme(spruce, $spruce);
+@include color-theme(grass-stain, $grass-stain);
+@include color-theme(lime, $lime);
+@include color-theme(cobalt, $cobalt);
+@include color-theme(bluebird, $bluebird);
+@include color-theme(seafoam, $seafoam);
+@include color-theme(caribbean, $caribbean);
+@include color-theme(crown, $crown);
+@include color-theme(screample, $screample);
+@include color-theme(sangria, $sangria);
+@include color-theme(lavender, $lavender);
+@include color-theme(wild-strawberry, $wild-strawberry);
+@include color-theme(steel, $steel);
+@include color-theme(white, $white);
+@include color-theme(black, $black);
+@include color-theme(java, $java);
+
+// ====================
+// Levitate
+// ====================
+
+@mixin levitate($hover) {
+
+	$shadow-color: rgba($slate, 0.1);
+	$levitate-shadow: 0 0 2px $shadow-color, 0 2px 3px $shadow-color, 0 7px 9px $shadow-color;
+
+	@if $hover {
+		@include breakpoint(medium) {
+			cursor: pointer;
+
+			&:hover,
+			&:active {
+				transform: translateY(-1px);
+				box-shadow: $levitate-shadow;
+			}
+
+			&:disabled {
+				transform: translateY(1px);
+				box-shadow: 0 2px 3px 0 $shadow-color;
+			}
+		}
+	}
+
+	box-shadow: 0 2px 3px 0 $shadow-color;
+	transition: all 0.3s;
+}

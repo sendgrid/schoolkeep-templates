@@ -1,0 +1,73 @@
+// Pixel Pattern Variations
+
+.pixel-bg-t-r-w {
+	background-image: url("assets/images/patterns/pixel-pattern-top-right-white.svg");
+	background-position: top right;
+	background-repeat: no-repeat;
+}
+
+.pixel-bg-t-l-w {
+	background-image: url("assets/images/patterns/pixel-pattern-top-left-white.svg");
+	background-position: top left;
+	background-repeat: no-repeat;
+}
+
+.pixel-bg-t-w {
+	background-image: url("assets/images/patterns/pixel-pattern-top-right-white.svg");
+	background-position: top right;
+	background-repeat: no-repeat;
+
+	@include breakpoint(medium) {
+		background-image: url("assets/images/patterns/pixel-pattern-top-left-white.svg"), url("assets/images/patterns/pixel-pattern-top-right-white.svg");
+		background-position: calc(50% - 575px) 0, calc(50% + 575px) 0;
+		background-repeat: no-repeat, no-repeat;
+	}
+}
+
+.pixel-bg-t-r-d {
+	background-image: url("assets/images/patterns/pixel-pattern-top-right-dark.svg");
+	background-position: top right;
+	background-repeat: no-repeat;
+}
+
+.pixel-bg-t-l-d {
+	background-image: url("assets/images/patterns/pixel-pattern-top-left-dark.svg");
+	background-position: top left;
+	background-repeat: no-repeat;
+}
+
+.pixel-bg-b-l-d {
+	background-image: url("assets/images/patterns/pixel-pattern-bottom-left-dark.svg");
+	background-position: bottom left;
+	background-repeat: no-repeat;
+}
+
+.pixel-bg-b-r-d {
+	background-image: url("assets/images/patterns/pixel-pattern-bottom-right-dark.svg");
+	background-position: bottom right;
+	background-repeat: no-repeat;
+}
+
+.pixel-bg-t-d {
+	background-image: url("assets/images/patterns/pixel-pattern-top-right-dark.svg");
+	background-position: top right;
+	background-repeat: no-repeat;
+
+	@include breakpoint(medium) {
+		background-image: url("assets/images/patterns/pixel-pattern-top-left-dark.svg"), url("assets/images/patterns/pixel-pattern-top-right-dark.svg");
+		background-position: calc(50% - 575px) 0, calc(50% + 575px) 0;
+		background-repeat: no-repeat, no-repeat;
+	}
+}
+
+.pixel-bg-b-d {
+	background-image: url("assets/images/patterns/pixel-pattern-bottom-left-dark.svg");
+	background-position: top right;
+	background-repeat: no-repeat;
+
+	@include breakpoint(medium) {
+		background-image: url("assets/images/patterns/pixel-pattern-bottom-left-dark.svg"), url("assets/images/patterns/pixel-pattern-bottom-right-dark.svg");
+		background-position: calc(50% - 575px) 0, calc(50% + 575px) 0;
+		background-repeat: no-repeat, no-repeat;
+	}
+}

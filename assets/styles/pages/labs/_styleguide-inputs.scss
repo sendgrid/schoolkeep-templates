@@ -1,0 +1,139 @@
+@import "../../base/variables";
+
+.sg-input-info,
+.sg-input-text-info {
+	display: inline-block;
+	padding-top: 6px;
+	font-size: 12px;
+	line-height: 15px;
+
+	&.danger {
+		color: $ron-burgundy;
+	}
+}
+
+.sg-input-text-wrap {
+	position: relative;
+	padding-top: 15px;
+	margin-bottom: 20px;
+
+	&.is-required {
+		label::after {
+			position: absolute;
+			top: 6px;
+			right: -9px;
+			width: 4px;
+			height: 4px;
+			background: $ron-burgundy;
+			border-radius: 4px;
+			content: "";
+		}
+	}
+
+	&.is-focused,
+	&.has-value {
+		.sg-input-text-label {
+			top: 0;
+			font-size: 12px;
+			line-height: 15px;
+		}
+
+		label::after {
+			top: 4px;
+		}
+	}
+
+	&.is-disabled {
+		.sg-input-text-label {
+			color: rgba($steel, 0.4);
+		}
+
+		[type="text"],
+		[type="password"],
+		[type="number"],
+		[type="email"],
+		[type="tel"] {
+			pointer-events: none;
+			border-bottom-color: rgba($steel, 0.4);
+		}
+	}
+
+	&.is-error,
+	&.is-error.is-focused,
+	&.is-error.has-value {
+		[type="text"],
+		[type="password"],
+		[type="number"],
+		[type="email"],
+		[type="tel"] {
+			border-bottom-color: $ron-burgundy;
+			box-shadow: $ron-burgundy 0 1px 0;
+		}
+	}
+
+
+	&.is-large {
+		.sg-input-text-label {
+			top: 15px;
+			font-size: 18px;
+			line-height: 27px;
+		}
+
+		[type="text"],
+		[type="password"],
+		[type="number"],
+		[type="email"],
+		[type="tel"] {
+			font-size: 18px;
+			line-height: 27px;
+		}
+	}
+
+	&.is-large.is-focused,
+	&.is-large.has-value {
+		.sg-input-text-label {
+			top: 0;
+			font-size: 12px;
+			line-height: 15px;
+		}
+	}
+
+	[type="text"],
+	[type="password"],
+	[type="number"],
+	[type="email"],
+	[type="tel"] {
+		height: auto;
+		display: block;
+		width: 100%;
+		padding: 0;
+		font-size: 13px;
+		line-height: 24px;
+		color: $slate;
+		background-color: transparent;
+		border: 0;
+		border-bottom: 1px solid $slate-20;
+		box-shadow: transparent 0 1px 0;
+		transition: 0.3s border-color, 0.3s box-shadow;
+
+		&:focus {
+			border-color: $sg-blue;
+			box-shadow: $sg-blue 0 1px 0;
+		}
+
+		&:disabled {
+			background: transparent;
+		}
+	}
+}
+
+.sg-input-text-label {
+	position: absolute;
+	top: 18px;
+	display: inline-block;
+	font-size: 13px;
+	line-height: 18px;
+	pointer-events: none;
+	transition: 0.3s top, 0.3s font-size;
+	transition-timing-function: cubic-bezier(0.02, 0.01, 0.47, 1);
+}

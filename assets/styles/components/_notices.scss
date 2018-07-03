@@ -1,0 +1,177 @@
+// public notice wrapper
+.public-notice {
+	position: relative;
+	display: none;
+	max-height: 400px;
+	padding: 0 50px;
+	overflow: hidden;
+	font-size: 13px;
+	line-height: 20px;
+	text-align: center;
+	transition: max-height 400ms;
+
+	&.show-public-notice {
+		display: block;
+
+		&.slide-in {
+			@include animation("slide-in 1s");
+		}
+
+		&.fade-in {
+			@include animation("fade-in 2s");
+		}
+
+	}
+
+	div {
+		position: relative;
+		z-index: 2;
+	}
+
+	&::before {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+		content: " ";
+	}
+
+	&.public-notice--gradient {
+		background: linear-gradient(135deg, #1fbdd5 0%, #2b96f1 48.12%, #745afa 95.11%, #745afa 95.11%, #7857fb 97.63%, #7c54fb 100%);
+	}
+
+	i {
+		display: inline-block;
+		margin-right: 15px;
+		line-height: 1.5;
+		vertical-align: middle;
+	}
+
+	.btn {
+		margin-left: 10px;
+		font-size: 0.81rem;
+		text-decoration: none;
+		background: #fff;
+		border: 0;
+
+		@include breakpoint(small down) {
+			margin-left: 0;
+		}
+
+	}
+
+	a {
+		color: #fff;
+		text-decoration: underline;
+	}
+}
+
+.public-notice--info {
+	color: #fff;
+	background: $sg-blue;
+
+	.public-notice__dismiss path {
+		fill: #fff;
+	}
+
+	.public-notice__alert-icon .outline {
+		display: none;
+	}
+
+	.public-notice__alert-icon {
+		display: none;
+	}
+
+	.btn {
+
+		@include breakpoint(small down) {
+			margin-top: 10px;
+		}
+
+		color: $sg-blue;
+		text-decoration: none;
+	}
+}
+
+.public-notice--warning {
+	color: #8c6c15;
+	background-color: #fefae6;
+
+	.public-notice__dismiss path {
+		fill: #8c6c15;
+	}
+
+	.public-notice__alert-icon .outline {
+		stroke: #8c6c15;
+	}
+
+	a,
+	.btn {
+		color: #8c6c15;
+	}
+}
+
+.public-notice--alert {
+	color: #b71c1c;
+	background-color: #f4dddd;
+
+	.public-notice__dismiss path {
+		fill: #b71c1c;
+	}
+
+	.public-notice__alert-icon .outline {
+		stroke: #b71c1c;
+	}
+
+	a,
+	.btn {
+		color: #b71c1c;
+	}
+}
+
+// Dismiss icon
+.notice-cookies__dismiss,
+.public-notice__dismiss {
+	position: absolute;
+	top: 20px;
+	right: 10px;
+	display: inline-block;
+	overflow: hidden;
+	display: inline-block;
+	margin-right: 15px;
+	line-height: 1.5;
+	vertical-align: middle;
+
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+.notice-cookies__dismiss {
+	color: $slate-10;
+}
+
+// Cookies are yummy
+.notice-cookies {
+	max-height: 0;
+	overflow: hidden;
+	text-align: center;
+	font-size: $scaledown-1;
+	background: $slate-2;
+	position: relative;
+	color: $slate;
+
+	.notice-cookies__copy {
+		padding: $scale-0 $scaleup-6;
+	}
+
+	path {
+		fill: $slate-60;
+	}
+
+}
+
+.notice-cookies.in {
+	max-height: 300px;
+}

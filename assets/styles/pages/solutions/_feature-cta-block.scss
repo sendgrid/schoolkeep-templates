@@ -1,0 +1,49 @@
+.feature-cta {
+	$ctaWidth: rem-calc(296px);
+	$ctaMargin: $scaleup-2 / 2;
+	$maxCTARow: 3;
+	text-align: center;
+	width: 100%;
+
+	.cta-container {
+		display: flex;
+		margin: 0 auto;
+		flex-wrap: wrap;
+		justify-content: center;
+
+		@include breakpoint(medium down) {
+			padding: 0;
+		}
+	}
+
+	.cta {
+		@include levitate(true);
+		position: relative;
+		text-align: left;
+		background: $white;
+		width: $ctaWidth;
+		height: 160px;
+		margin: $ctaMargin;
+		padding: $scaleup-2;
+		border-top: 3px solid $sg-blue;
+		border-radius: 2px;
+		box-shadow: 0px 2px 3px 0px rgba($slate, 0.10);
+		@include breakpoint(small down) {
+			width: 100%;
+			max-width: none;
+		}
+	}
+
+	.cta-link {
+		bottom: $scaleup-2;
+		left: $scaleup-2;
+		position: absolute;
+		width: calc(100% - 3rem);
+
+		span{
+			float: right;
+			margin-top: 0.3rem;
+		}
+	}
+
+}

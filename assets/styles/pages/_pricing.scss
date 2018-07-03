@@ -1,0 +1,964 @@
+.page-pricing,
+.page-template-sem,
+[class*="page-sendgrid-services"] {
+	.cta-link {
+		display: inline-block;
+	}
+	.blue-back.sem-copy-bar a {
+		color:white;
+		text-decoration:underline;
+	}
+}
+
+.pricing-module {
+	.add-on {
+		padding: 1rem;
+		border: 0.07rem $border-color-gray solid;
+		border-collapse: collapse;
+		border-radius: 2px;
+
+		[type='checkbox'] + label {
+			display: inline-block;
+			margin-right: 1rem;
+			margin-bottom: 0;
+			margin-left: 0.5rem;
+			vertical-align: baseline;
+			cursor: pointer;
+		}
+
+		label {
+			display: block;
+			margin: 0;
+			font-weight: bold;
+			color: $slate;
+		}
+
+		[type='checkbox'] {
+			font-size: 100%;
+			line-height: 1.15;
+		}
+
+		[type="checkbox"] {
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+	}
+
+	.choose-add-ons {
+
+		@include breakpoint(medium down) {
+			margin-bottom: $scaleup-3;
+		}
+
+		.select2-container {
+			z-index: $z-index-1;
+			width: auto !important;
+		}
+
+		.select2-selection__rendered {
+			padding: 0 1.6rem 0 0;
+			font-family: $colfax-medium;
+		}
+
+		.select2-selection--single {
+			border: 0;
+		}
+
+		.select2--add-on {
+			min-width: 230px;
+			font-family: $colfax-regular;
+			border: 1px solid $border-color-gray;
+			border-radius: $border-radius;
+		}
+
+		.select2-selection__rendered {
+			color: $slate;
+		}
+
+		.select2-selection__arrow {
+			background: url("assets/images/icons/caret-south-slate-80.svg") no-repeat 0 50%;
+			background-size: 10px 5px;
+		}
+
+
+		.select2-dropdown {
+			color: $slate;
+			border: 1px solid $border-color-gray;
+			border-top: 1px solid $border-color-gray;
+			border-radius: $border-radius;
+		}
+
+		.select2-results__option[aria-selected=true] {
+			background-color: $background-color-gray-light;
+		}
+
+		.select2-results__option--highlighted[aria-selected] {
+			color: $slate;
+			background-color: $slate-20;
+		}
+
+	}
+
+	hr {
+		margin: 0;
+	}
+
+	.dollar-before::before {
+		content: "$";
+	}
+
+	.toggler.toggled-off:not(.toggled-on) {
+		display: none;
+	}
+
+	table {
+		tbody tr:nth-child(even) {
+			background-color: transparent;
+		}
+
+		thead,
+		tbody,
+		tfoot {
+			border: 0px solid transparent;
+			background-color: transparent;
+		}
+	}
+
+	// Plans
+	table.plans {
+		font-size: $scaledown-1;
+		border-collapse: collapse;
+		margin-bottom: 0;
+
+		td,
+		th {
+			input[type=radio] {
+				display: block;
+				margin: 0 auto;
+				@include breakpoint(medium) {
+					display: inline-block;
+					margin-right: $scaledown-6;
+				}
+			}
+			&:not(.selected) {
+				cursor: hand;
+				cursor: pointer;
+			}
+		}
+		.ip th {
+			font-family: $colfax-medium;
+			color: white;
+			text-transform: uppercase;
+			letter-spacing: .5px;
+			font-size: .625rem;
+			cursor: default;
+			&.shared {
+				background: $sg-blue;
+				border: 1px solid $sg-blue;
+			}
+			&.dedicated {
+				background: $mantis;
+				border: 1px solid $mantis;
+			}
+			&.csm {
+				background: $seafoam;
+				border: 1px solid $seafoam;
+			}
+		}
+		.titles th {
+			color: $slate-80;
+			line-height: $scaleup-3;
+			padding-top: $scaleup-1;
+			&.essentials,
+			&.pro,
+			&.premier {
+				font-family: $colfax-medium;
+			}
+		}
+	}
+
+	input.disabled { pointer-events: none; }
+
+	table.plans:not(.mobile-plans) {
+		display: none;
+		@include breakpoint(medium) {
+			display: table;
+		}
+		tr {
+			&:last-of-type {
+				td {
+					&.essentials {
+						border-radius: 0px 0px 0px $border-radius;
+					}
+					&.premier {
+						border-radius: 0px 0px $border-radius 0px;
+					}
+					&~ td {
+						border-bottom: 1px solid $border-color-gray;
+					}
+					&.selected {
+						border-bottom: 1px solid $sg-blue-40;
+					}
+				}
+			}
+			&:not(.ip) {
+				td, th {
+					width: 22%;
+					padding: $scaledown-3 0;
+					border-left: 1px solid $border-color-gray;
+					&:first-of-type {
+						padding-left: 0;
+						width: 34%;
+						border: none;
+					}
+					&:last-of-type {
+						border-right: 1px solid $border-color-gray;
+					}
+					&.selected {
+						background-color: $sg-blue-5;
+						border-right: 1px solid $sg-blue-40;
+						border-left: 1px solid $sg-blue-40;
+						&+ th,
+						&+ td {
+							border-left: 1px solid transparent;
+						}
+					}
+				}
+			}
+		}
+		td {
+			&.compare-no {
+				color: $slate-20;
+			}
+		}
+		.ip th {
+			padding: $scaledown-4;
+			line-height: $scaleup-1;
+			&.shared {
+				border-radius: $border-radius 0px 0px 0px;
+			}
+			&.dedicated {
+				border-radius: 0px $border-radius 0px 0px;
+			}
+		}
+		td ~ td,
+		th ~ th {
+			text-align: center;
+		}
+		.monthly-plan-price {
+			td:not(:first-child) {
+				font-family: $colfax-medium;
+			}
+		}
+		.monthly-plan-volume,
+		.monthly-plan-overage-price {
+			td:not(:first-of-type) {
+				font-family: $colfax-light;
+			}
+		}
+	}
+
+	// Mobile plans
+	table.mobile-plans {
+		width: 100%;
+		text-align: center;
+		display: block;
+		@include breakpoint(medium) {
+			display: none;
+		}
+		thead,
+		tbody,
+		tr,
+		th,
+		td {
+			display: block;
+			width: 100%;
+		}
+		tbody {
+			padding-bottom: $scaleup-1;
+			tr {
+				&:last-of-type td {
+					border-radius: 0px 0px $border-radius $border-radius;
+					border-bottom: 1px solid $border-color-gray;
+					padding-bottom: $scaleup-1;
+					&.selected {
+						border-bottom: 1px solid $sg-blue;
+					}
+				}
+			}
+		}
+		tr {
+			&.monthly-plan-price,
+			&.monthly-plan-volume {
+				font-size: $scale-0;
+				font-family: $colfax-light;
+			}
+			&.monthly-plan-price {
+				td {
+					padding-bottom: $scaleup-1;
+				}
+			}
+			&.monthly-plan-overage-price {
+				font-style: italic;
+				color: $slate-60;
+				td {
+					padding-top: 0;
+					padding-bottom: $scaleup-1;
+				}
+			}
+		}
+		th,
+		td {
+			padding: $scaledown-4 $scaleup-1;
+			border-right: 1px solid $border-color-gray;
+			border-left: 1px solid $border-color-gray;
+			&.selected {
+				border-right: 1px solid $sg-blue;
+				border-left: 1px solid $sg-blue;
+				background-color: $sg-blue-5;
+			}
+		}
+		td {
+			&[class*="price"] {
+				&:not(.disabled)::after {
+					content: '/mo';
+				}
+			}
+			&[class*="emails-included"] {
+				&:not(.disabled)::after {
+					content: ' emails included in plan';
+				}
+			}
+			&[class*="overage-rate"] {
+				&:not(.disabled)::after {
+					content: '/extra email sent';
+				}
+			}
+			&.compare-no {
+				color: $slate-40;
+				text-decoration: line-through;
+			}
+		}
+		.ip th {
+			border-radius: $border-radius $border-radius 0px 0px;
+		}
+		.titles th {
+			text-align: center;
+		}
+	}
+
+	td.disabled,
+	th.disabled {
+		opacity: .6;
+	}
+
+	td.disabled:hover,
+	th.disabled:hover {
+		cursor: initial !important;
+	}
+
+	// Visibility states for step 1
+	&.step-1 {
+		.edit-estimate {
+			display: none;
+		}
+		.edit-plan {
+			display: none;
+		}
+		.choose-plan {
+			display: none;
+		}
+		.choose-add-ons {
+			display: none;
+		}
+		.readout-2 {
+			display: none;
+		}
+		.readout-3 {
+			display: none;
+		}
+		.readout-custom {
+			display: none;
+		}
+		.breakdown {
+			display: none
+		}
+	}
+
+	// Visibility states for step 2
+	&.step-2 {
+		.edit-estimate {
+			display: block;
+		}
+		.edit-plan {
+			display: none;
+		}
+		.choose-add-ons {
+			display: none;
+		}
+		.readout-1 {
+			display: none;
+		}
+		.readout-2 {
+			display: block;
+		}
+		.readout-3 {
+			display: none;
+		}
+	}
+
+	&.step-3.radio-selected-premier,
+	&.step-3.radio-selected-essentials,
+	&.step-2.radio-selected-essentials {
+		.edit-estimate {
+			display: block;
+		}
+		.choose-add-ons {
+			display: none;
+		}
+		.readout-1 {
+			display: none;
+		}
+		.readout-2 {
+			display: none;
+		}
+		.readout-3 {
+			display: block;
+		}
+	}
+
+	&.step-3.radio-selected-premier,
+	&.step-2.radio-selected-essentials {
+		.edit-plan {
+			display: none;
+		}
+	}
+
+	// Visibility states for step 3
+	&.step-3 {
+		.edit-estimate {
+			display: block;
+		}
+		.edit-plan {
+			display: block;
+		}
+		.choose-plan {
+			display: none;
+		}
+		.choose-add-ons {
+			display: block;
+		}
+		.readout-1 {
+			display: none;
+		}
+		.readout-2 {
+			display: none;
+		}
+		.readout-3 {
+			display: block;
+		}
+	}
+
+	// Visibility states for edit estimate
+	&.editing-estimate#pricing-module {
+		.edit-estimate {
+			display: none;
+		}
+	}
+
+	// Visibility states for edit estimate
+	&.editing-plan-table {
+		.edit-plan {
+			display: none;
+		}
+	}
+
+	// Visibility states for readouts
+	&:not(.selected-premier) {
+		.readout-custom {
+			display: none;
+		}
+		.readout-essentials-pro {
+			display: block;
+		}
+	}
+
+	&.selected-premier {
+		&:not(.step-1) .readout-essentials-pro {
+			display: none;
+		}
+		&.step-2 .readout-custom {
+			display: block;
+		}
+	}
+
+	// Animation for estimate needs section
+	.estimate-volume {
+		opacity: 1;
+		transition: opacity 0.5s;
+		&.fade-out {
+			opacity: 0;
+		}
+	}
+
+	// Animations for transitioning between steps
+	.fade-slide-in {
+		@include mui-animation(fade($from: 0, $to: 1), slide($state: in, $direction: up));
+		animation-duration: 0.3s;
+	}
+
+	.fade-it-out {
+		@include mui-animation(fade($from: 1, $to: 0));
+		animation-duration: 0.3s;
+	}
+
+
+	.fade-it-in {
+		@include mui-animation(fade($from: 0, $to: 1));
+		animation-duration: 0.3s;
+	}
+
+	// Estimate Volume
+	.slider {
+		background: none;
+		margin-bottom: $scaleup-2;
+	}
+
+	.noUi-base {
+		max-width: 100%;
+		background: $slate-20;
+		height: $scaledown-4;
+		border-radius: 100px;
+	}
+
+	.noUi-target {
+		border: none;
+		box-shadow: none;
+	}
+
+	.noUi-connect {
+		background: $sg-blue;
+		border-radius: 100px;
+		box-shadow: none;
+	}
+
+	.noUi-handle {
+		border-radius: 50%;
+		border: $slate-20 1px solid;
+		width: $scaleup-1;
+		height: $scaleup-1;
+		margin-left: $scaleup-1 / 2;
+		background: $white;
+		box-shadow: none;
+		cursor: pointer;
+		transition: all 0.3s;
+		&:before,
+		&:after {
+			display: none;
+		}
+		&.noUi-active,
+		&:hover {
+			background: $sg-blue-5;
+			border-color: $sg-blue;
+		}
+		&:active,
+		&:focus {
+			outline: none;
+		}
+	}
+
+	.slider-copy,
+	.slider-value {
+		margin-bottom: $scaledown-1;
+		font-size: $scaledown-1;
+		line-height: $scaleup-1;
+		color: $slate-80;
+	}
+
+	.slider-copy {
+
+		.volume {
+			width: $scaleup-8;
+			font-size: $scale-0;
+			color: $sg-blue;
+			text-align: center;
+		}
+	}
+
+	.slider-value {
+		text-align: left;
+
+		@include breakpoint(medium) {
+			margin-top: 0;
+			text-align: right;
+		}
+
+		.email-price,
+		.contact-price {
+			font-size: $scale-0;
+		}
+
+	}
+
+	.slider-wrap.maxed .volume::after {
+		content: "+";
+	}
+
+	.slider-wrap.maxed .not-maxed-only,
+	.slider-wrap:not(.maxed) .maxed-only {
+		display: none;
+	}
+
+	.pad-tight {
+		padding: $scale-0;
+	}
+
+	.readout {
+
+		header {
+			background: $slate-5;
+		}
+
+		h6 {
+			margin: 0;
+			font-size: $scaledown-1;
+			line-height: $scaleup-1;
+			color: $slate-80;
+			text-transform: uppercase;
+		}
+
+	}
+
+	.outlined {
+		border: 1px $border-color-gray solid;
+		border-collapse: collapse;
+	}
+
+	.volume-datapoint,
+	.edit-plan {
+		font-size: $scale-0;
+
+		@include breakpoint(medium) {
+			font-size: $scaleup-1;
+		}
+
+		.change-plan {
+			font-family: $colfax-regular;
+			margin-top: $scaledown-3;
+			font-size: $scaledown-1;
+			color: $sg-blue-80;
+			transition: color 0.3s;
+
+			@include breakpoint(medium) {
+				float: right;
+			}
+
+			&:hover {
+				color: $sg-blue;
+			}
+		}
+	}
+
+	// Full Plan Comparison
+	.comparison-toggle,
+	.download-comparison {
+		font-family: $colfax-regular;
+		position: relative;
+		font-size: $scaledown-1;
+		padding: $scaledown-2;
+		color: $sg-blue-80;
+		transition: color 0.3s;
+		cursor: pointer;
+		&:hover {
+			color: $sg-blue;
+		}
+		&:active, &:focus {
+			outline: none;
+		}
+	}
+
+	.comparison-toggle {
+		float: left;
+	}
+
+	.download-comparison {
+		float: none;
+		.download-icon {
+			height: $scale-0;
+			width: $scaleup-1;
+			margin-bottom: -3px;
+			margin-right: 2px
+		}
+		.download-icon path {
+			stroke: $sg-blue-80;
+		}
+		@include breakpoint(medium) {
+			float: right;
+		}
+	}
+
+	.table-comparison {
+		border: 1px solid $border-color-gray;
+		border-radius: $border-radius;
+		border-collapse: collapse;
+		text-align: center;
+		display: none;
+
+		@include breakpoint(medium) {
+			display: block;
+		}
+	 .full-comparison {
+			table-layout: fixed;
+			border-collapse: collapse;
+			border-top: 1px solid $border-color-gray;
+			margin-bottom: 0;
+			tbody {
+				 font-size: $scaledown-1;
+				 border-collapse: collapse;
+				 tr {
+					 &:hover {
+						 background: $background-color-gray;
+					 }
+					 &.compare-heading:hover {
+						 background: $white;
+					 }
+				 }
+				 td, th {
+					 width: 22.222%;
+					 padding: $scaledown-3 $scaleup-1;
+					 border-left: 1px solid $border-color-gray;
+					 line-height: 1.5;
+					 &:first-of-type {
+						 width: 33.333%;
+						 border: none;
+					 }
+				 }
+				 td:first-of-type,
+				 th:first-of-type {
+					 text-align: left;
+				 }
+				 td {
+					 width: 22.222%;
+					 padding: $scaledown-1 $scaledown-1;
+					 &.compare-no {
+						 color: $slate-20;
+					 }
+				 }
+				 th {
+					 &.essentials,
+					 &.pro,
+					 &.premier {
+						 font-family: $colfax-medium;
+						 font-weight: 500;
+					 }
+					 &.compare-section {
+						 font-family: $colfax-medium;
+						 border-top: 1px solid $border-color-gray;
+						 border-bottom: 1px solid $border-color-gray;
+						 font-weight: 500;
+						 padding: $scaledown-2;
+					 }
+				 }
+			}
+		}
+	}
+
+	// Other Plans
+	.other-plans {
+		background: $slate-5;
+
+		.plan-box {
+			position: relative;
+			background: $white;
+			border: 1px solid $border-color-gray;
+			border-radius: $border-radius;
+			padding: $scaleup-3;
+			height: 100%;
+		}
+
+		.column {
+			&:first-of-type {
+				margin-bottom: $scaleup-3;
+
+				@include breakpoint(medium) {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+
+	// Readout
+	.readout {
+		font-size: $scaledown-1;
+		line-height: $scaleup-1;
+		border-radius: $border-radius;
+		width: 100%;
+		.readout-button {
+			display: block;
+			width: 100%;
+		}
+		.readout-free-cta {
+			margin-top: $scaledown-4;
+		}
+		.plan-datapoint:first-letter {
+			text-transform: capitalize;
+		}
+		.sign-up-estimate,
+		.total-estimate {
+			font-size: $scale-0;
+			line-height: $scaleup-2;
+		}
+		.total-estimate {
+			margin-top: $scaledown-4;
+		}
+		dl,
+		dt,
+		dd {
+			margin-bottom: 0;
+		}
+		dl {
+			line-height: $scaleup-2;
+			&.flex-row {
+				&:not(:first-of-type):not(.p-top-none) {
+					padding-top: $scaledown-2;
+				}
+				dd {
+					text-align: right;
+				}
+			}
+		}
+		dt {
+			font-family: $colfax-light;
+		}
+
+		small {
+			font-family: $colfax-light;
+			display: block;
+			min-width: 100%;
+			font-style: italic;
+		}
+		// Remove this when we auto-expand the breakdown
+		.breakdown button {
+			font-family: $colfax-regular;
+			display: block;
+			position: relative;
+			padding: $scaledown-2 $scaleup-2;
+			width: 100%;
+			text-align: left;
+			color: $sg-blue-80;
+			transition: color 0.3s;
+			&:after {
+				position: absolute;
+				right: $scale-0;
+			}
+			&:hover {
+				color: $sg-blue;
+			}
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+
+}
+
+.add-on-modals {
+	display: none;
+}
+
+.add-on-modal {
+	position: relative;
+	width: 37.5rem;
+	max-width: 100%;
+	padding: 3.75rem;
+	margin: 1.25rem auto;
+	background: $white;
+
+	.mfp-close {
+		top: $scaleup-3;
+		right: $scaleup-3;
+		width: 2rem;
+		height: 2rem;
+		font-family: $colfax-regular;
+		line-height: 2rem;
+	}
+
+	h3 {
+		display: inline;
+		font-size: $scaleup-1;
+		color: $slate;
+	}
+
+	.pro-badge {
+		position: relative;
+		top: -0.25rem;
+	}
+
+	header p {
+		margin: 0.8rem auto 0.8rem;
+	}
+
+	.modal-note {
+		font-size: $scaledown-1;
+		font-style: italic;
+		color: rgba($slate-80, 0.5);
+	}
+
+	.circle-check {
+
+		li {
+			font-size: $scaledown-1;
+			line-height: $scaleup-1;
+			color: $slate-80;
+			background-image: url('data:image/svg+xml;utf8,<svg width="22" height="22" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg"><title>circle-check</title><path d="M15.348 7.957l-6.522 6.086-2.174-2.173M11 21c5.523 0 10-4.477 10-10S16.523 1 11 1 1 5.477 1 11s4.477 10 10 10z" stroke-width="1.043" stroke="%2318c96e" fill="none" fill-rule="evenodd"/></svg>');
+			background-position-y: 1px;
+		}
+	}
+
+}
+
+.page-pricing {
+
+	.pro-badge {
+		font-family: $colfax-medium;
+		font-size: 11px;
+		letter-spacing: 0.5px;
+		color: white;
+		text-transform: uppercase;
+		padding: 1px 3px;
+		background-color: $mantis;
+		border-radius: 2px;
+	}
+}
+
+.prorated-tooltip {
+	font-size: 12px;
+	line-height: 18px;
+
+	.text-left {
+		display: inline-block;
+		width: 68%;
+
+	}
+
+	.text-right {
+		display: inline-block;
+		width: 32%;
+	}
+}
+
+
+#main.pricing-ver-slider {
+
+	.other-plans {
+		background: #fff;
+	}
+
+	.plan-box {
+		border: 1px solid $sg-blue-40;
+		box-shadow: 11px 11px 0 0 $sg-blue-5;
+	}
+
+}

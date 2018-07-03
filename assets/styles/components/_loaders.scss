@@ -1,0 +1,37 @@
+.fragment-loader {
+
+	background-color: #a9b5c0;
+	display: block;
+	left: -13px;
+	margin: 0 auto;
+	opacity: 0;
+	position: relative !important;
+	width: 13px;
+	height: 13px;
+	animation: fragment_loader 1.6s infinite;
+	animation-delay: 0s;
+
+	&::before,
+	&::after {
+		background-color: #a9b5c0;
+		content: "";
+		height: 13px;
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		width: 13px;
+	}
+
+	&::before {
+		left: 13px;
+		animation: fragment_loader 1.6s infinite;
+		animation-delay: .2s;
+	}
+  
+	&::after {
+		left: 26px;
+		animation: fragment_loader 1.6s infinite;
+		animation-delay: .4s;
+	}
+
+}

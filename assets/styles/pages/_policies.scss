@@ -1,0 +1,16 @@
+.page-template-policies,
+.page-template-privacy {
+
+	ol ol {
+		list-style-type: none;
+	}
+
+	ol ol li:before {
+		margin-left: -23px;
+		content: "(" counter(section, lower-alpha) ") ";
+	}
+
+	ol ol li {
+		counter-increment: section;
+	}
+}

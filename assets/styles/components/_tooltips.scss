@@ -1,0 +1,14 @@
+.has-tip {
+	display: inline;
+	border-bottom: dashed 1px $sg-blue-40;
+}
+
+.has-tip--important {
+	font-family: $colfax-regular;
+	color: $sg-blue-80;
+}
+
+.tooltip {
+	min-width: 240px !important;
+	line-height: $scaleup-1;
+}

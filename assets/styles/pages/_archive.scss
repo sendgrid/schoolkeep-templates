@@ -1,0 +1,9 @@
+// Archive Main
+
+.multiple main article:not(.has-post-thumbnail) [class*="column"] {
+	flex-grow: 1;
+}
+
+a.article-more {
+	white-space: nowrap; 
+}
