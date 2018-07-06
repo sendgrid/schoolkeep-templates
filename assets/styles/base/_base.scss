@@ -38,12 +38,6 @@ body {
 
 .site-content {
 	padding-top: 75px;
-
-	@include breakpoint(large) {
-		&:not(.site-content--short-header) {
-			padding-top: 105px;
-		}
-	}
 }
 
 a,

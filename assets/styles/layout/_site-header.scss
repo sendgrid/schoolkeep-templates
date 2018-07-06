@@ -19,6 +19,11 @@
 	@include breakpoint(large) {
 		position: fixed;
 	}
+
+	.menu.align-right {
+	  padding-top: 0.2rem;
+	}
+
 }
 
 // Secondary (Small) Site Nav
@@ -95,10 +100,10 @@
 	}
 }
 
-.primary-site-nav__link  {
+.primary-site-nav__link {
 	position: relative;
 	cursor: pointer;
-	padding-bottom: $scaleup-1;
+	padding-bottom: 0!important;
 	&:hover > a {
 		color: $sg-blue;
 	}
@@ -132,13 +137,13 @@
 	}
 
 	a {
-		background-image: url("../../../brand/sg-logo-300.png");
+		background-image: url("{{current_school.logo_url}}");
 		background-position: left center;
 		background-repeat: no-repeat;
-		background-size: 150px auto;
+		background-size: 274px auto;
 		display: block;
-		height: 27px;
-		width: 150px;
+		height: 35px;
+		width: 274px;
  }
 }
 
@@ -177,12 +182,20 @@
 		}
 	}
 }
+.primary-site-nav__profilelink {
 
-.primary-site-nav__link:hover .site-sub-nav {
-	@include breakpoint(large) {
-		max-height: 320px;
-		z-index: $z-index--site-header;
-		box-shadow: $box-shadow--site-header;
+	&:hover .site-sub-nav {
+		@include breakpoint(large) {
+			max-height: 320px;
+			z-index: $z-index--site-header;
+			box-shadow: $box-shadow--site-header;
+			padding-top: 0.625rem;
+		}
+	}
+
+	svg {
+		margin-left: 0.4rem;
+		margin-top: 0.35rem;
 	}
 }
 
