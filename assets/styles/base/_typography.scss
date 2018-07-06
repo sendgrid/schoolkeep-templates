@@ -16,58 +16,58 @@ $fonts-path: "assets/fonts" !default;
 
 @font-face {
 	font-family: "Colfax-Light";
-	src: url("#{$fonts-path}/colfax/ColfaxWebLight.eot");
-	src: url("#{$fonts-path}/colfax/ColfaxWebLight.eot?#iefix") format("embedded-opentype"),
-			 url("#{$fonts-path}/colfax/ColfaxWebLight.woff") format("woff");
+	src: url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/colfax/ColfaxWebLight.eot");
+	src: url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/colfax/ColfaxWebLight.eot?#iefix") format("embedded-opentype"),
+			 url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/colfax/ColfaxWebLight.woff") format("woff");
 }
 
 @font-face {
 	font-family: "Colfax-Regular";
-	src: url("#{$fonts-path}/colfax/ColfaxRegular.eot");
-	src: url("#{$fonts-path}/colfax/ColfaxRegular.eot?#iefix") format("embedded-opentype"),
-			 url("#{$fonts-path}/colfax/ColfaxRegular.woff") format("woff");
+	src: url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/colfax/ColfaxRegular.eot");
+	src: url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/colfax/ColfaxRegular.eot?#iefix") format("embedded-opentype"),
+			 url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/colfax/ColfaxRegular.woff") format("woff");
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Colfax-Regular-Italic";
-	src: url("#{$fonts-path}/colfax/ColfaxRegularItalic.eot");
-	src: url("#{$fonts-path}/colfax/ColfaxRegularItalic.eot?#iefix") format("embedded-opentype"),
-			 url("#{$fonts-path}/colfax/ColfaxRegularItalic.woff") format("woff");
+	src: url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/colfax/ColfaxRegularItalic.eot");
+	src: url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/colfax/ColfaxRegularItalic.eot?#iefix") format("embedded-opentype"),
+			 url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/colfax/ColfaxRegularItalic.woff") format("woff");
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Colfax-Medium";
-	src: url("#{$fonts-path}/colfax/ColfaxWebMedium.eot");
-	src: url("#{$fonts-path}/colfax/ColfaxWebMedium.eot?#iefix") format("embedded-opentype"),
-			 url("#{$fonts-path}/colfax/ColfaxWebMedium.woff") format("woff");
+	src: url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/colfax/ColfaxWebMedium.eot");
+	src: url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/colfax/ColfaxWebMedium.eot?#iefix") format("embedded-opentype"),
+			 url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/colfax/ColfaxWebMedium.woff") format("woff");
 }
 
 @font-face {
 	font-family: "Colfax-Medium-Italic";
-	src: url("#{$fonts-path}/colfax/ColfaxWebMediumItalic.eot");
-	src: url("#{$fonts-path}/colfax/ColfaxWebMediumItalic.eot?#iefix") format("embedded-opentype"),
-			 url("#{$fonts-path}/colfax/ColfaxWebMediumItalic.woff") format("woff"),
-			 url("#{$fonts-path}/colfax/ColfaxWebMediumItalic.woff2") format("woff2");
+	src: url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/colfax/ColfaxWebMediumItalic.eot");
+	src: url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/colfax/ColfaxWebMediumItalic.eot?#iefix") format("embedded-opentype"),
+			 url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/colfax/ColfaxWebMediumItalic.woff") format("woff"),
+			 url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/colfax/ColfaxWebMediumItalic.woff2") format("woff2");
 }
 
 @font-face {
 	font-family: "Colfax-Bold";
-	src: url("#{$fonts-path}/colfax/ColfaxBold.eot");
-	src: url("#{$fonts-path}/colfax/ColfaxBold.eot?#iefix") format("embedded-opentype"),
-			 url("#{$fonts-path}/colfax/ColfaxBold.woff") format("woff");
+	src: url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/colfax/ColfaxBold.eot");
+	src: url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/colfax/ColfaxBold.eot?#iefix") format("embedded-opentype"),
+			 url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/colfax/ColfaxBold.woff") format("woff");
 }
 
 @font-face {
 	font-family: "icomoon";
-	src: url("#{$fonts-path}/icomoon/icomoon.eot?xaiekp");
-	src: url("#{$fonts-path}/icomoon/icomoon.eot?xaiekp#iefix") format("embedded-opentype"),
-			 url("#{$fonts-path}/icomoon/icomoon.ttf?xaiekp") format("truetype"),
-			 url("#{$fonts-path}/icomoon/icomoon.woff?xaiekp") format("woff"),
-			 url("#{$fonts-path}/icomoon/icomoon.svg?xaiekp#icomoon") format("svg");
+	src: url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/icomoon/icomoon.eot?xaiekp");
+	src: url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/icomoon/icomoon.eot?xaiekp#iefix") format("embedded-opentype"),
+			 url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/icomoon/icomoon.ttf?xaiekp") format("truetype"),
+			 url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/icomoon/icomoon.woff?xaiekp") format("woff"),
+			 url("https://sendgrid.com/wp-content/themes/sgdotcom/assets/fonts/icomoon/icomoon.svg?xaiekp#icomoon") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }

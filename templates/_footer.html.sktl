@@ -1,45 +1,95 @@
-<footer class="uk-padding-large-vertical uk-border-top">
-  <div class="uk-container uk-container-center">
-    <div class="uk-grid uk-padding-large-left uk-padding-large-right">
-      <div class="uk-width-small-1-1 uk-width-medium-7-10 uk-margin-bottom">
-        {{ if website_footer.show_navigation_links? }}
-          <nav>
-            <ul class="uk-margin-bottom-remove uk-text-center-small">
-              {{ footer_navigations.each 'website_navigation' }}
-                <li>
-                  <a href="{{ website_navigation.path }}" {{if website_navigation.external?}} target="_blank" {{end}}>
-                    {{website_navigation.name}}
-                  </a>
-                </li>
-              {{ end }}
-            </ul>
-          </nav>
-        {{ end }}
-        {{ if website_footer.show_customer_service_email? & website_footer.school_customer_service_email & (current_school.public | current_person) }}
-          <p class="uk-text-center-small">
-            {{ t('.need_help') }}
-            {{ t('.email') }}
-            <a href="mailto:{{ website_footer.school_customer_service_email }}">
-              {{ website_footer.school_customer_service_email }}
-            </a>
-          </p>
-        {{ end }}
+<!--     {{ website_footer.school_customer_service_email }}
+ -->
+
+      <div class="row p-small">
+        <div class="column medium-2">
+          <a href="https://sendgrid.com/">sendgrid.com</a>
+        </div>
+        <div class="column medium-5">
+          We respect your privacy. Learn more <a href="https://sendgrid.com/policies/privacy/">here</a>.
+        </div>
+        <div class="column medium-5">
+          Need Help? Email us at
+          <a href="mailto:{{ website_footer.school_customer_service_email }}">
+            {{ website_footer.school_customer_service_email }}
+          </a>
+        </div>
+
       </div>
-      <div class="{{ if website_footer.show_customer_service_email? | website_footer.show_navigation_links? }}uk-width-medium-3-10{{ else }}uk-width-medium-1-1{{ end }}">
-        {{ if website_footer.show_social_media_links? & (current_school.public | current_person) }}
-          <nav class="social-links">
-            <ul class="uk-margin-bottom-remove {{ if website_footer.show_customer_service_email? | website_footer.show_navigation_links? }}uk-text-right {{ else }}uk-text-center {{ end }} uk-text-center-small">
-              {{ website_footer.social_media_links.each 'social_media_link' }}
-                <li>
-                  <a href="{{ social_media_link.link }}" class="{{ social_media_link.name }}" target="_blank" title="{{ social_media_link.name }}">
-                    <i class="uk-icon-{{ social_media_link.name }}"></i>
-                  </a>
-                </li>
-              {{ end }}
-            </ul>
-          </nav>
-        {{ end }}
+      <footer class="site-footer js-site-footer">
+
+      <nav class="row expanded constrain-large">
+      <dl class="site-footer__section solutions column small-12 medium-6 large-expand">
+      <dt class="site-footer__title">Solutions</dt>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--email-api-and-smtp"><a href="https://sendgrid.com/solutions/email-api/" class="site-footer__link site-footer__link--email-api-and-smtp" data-gtm-outbound="footer_link">Email API and SMTP</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--email-marketing-campaigns"><a href="https://sendgrid.com/solutions/email-marketing/" class="site-footer__link site-footer__link--email-marketing-campaigns" data-gtm-outbound="footer_link">Email Marketing Campaigns</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--email-delivery"><a href="https://sendgrid.com/email-delivery/" class="site-footer__link site-footer__link--email-delivery" data-gtm-outbound="footer_link">Email Delivery</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--expert-services"><a href="https://sendgrid.com/solutions/expert-services/" class="site-footer__link site-footer__link--expert-services" data-gtm-outbound="footer_link">Expert Services</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--separator"><a href="#" class="site-footer__link site-footer__link--separator" data-gtm-outbound="footer_link">Separator</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--pricing"><a href="https://sendgrid.com/pricing/" class="site-footer__link site-footer__link--pricing" data-gtm-outbound="footer_link">Pricing</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--try-for-free"><a href="https://app.sendgrid.com/signup?id=71713987-9f01-4dea-b3d4-8d0bcd9d53ed" class="site-footer__link site-footer__link--try-for-free" data-gtm-cta-type="free" data-gtm-outbound="footer_link">Try for Free!</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--contact-sales"><a href="https://sendgrid.com/contact/" rel="nofollow" class="site-footer__link site-footer__link--contact-sales" data-gtm-outbound="footer_link">Contact Sales</a></dd>
+    </dl>
+    <dl class="site-footer__section sendgrid-is-for column small-12 medium-6 large-expand">
+      <dt class="site-footer__title">SendGrid is For</dt>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--startups"><a href="https://sendgrid.com/accelerate/" class="site-footer__link site-footer__link--startups" data-gtm-outbound="footer_link">Startups</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--enterprises"><a href="https://sendgrid.com/solutions/enterprise/" class="site-footer__link site-footer__link--enterprises" data-gtm-outbound="footer_link">Enterprises</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--agencies"><a href="https://sendgrid.com/partners/agencies/" class="site-footer__link site-footer__link--agencies" data-gtm-outbound="footer_link">Agencies</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--ecommerce"><a href="https://sendgrid.com/solutions/ecommerce/" class="site-footer__link site-footer__link--ecommerce" data-gtm-outbound="footer_link">Ecommerce</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--separator"><a href="#" class="site-footer__link site-footer__link--separator" data-gtm-outbound="footer_link">Separator</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--our-customers"><a href="https://sendgrid.com/customers/" class="site-footer__link site-footer__link--our-customers" data-gtm-outbound="footer_link">Our Customers</a></dd>
+    </dl>
+    <dl class="site-footer__section support column small-12 medium-6 large-expand">
+      <dt class="site-footer__title">Support</dt>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--contact-support"><a href="https://support.sendgrid.com/" rel="nofollow" class="site-footer__link site-footer__link--contact-support" data-gtm-outbound="footer_link">Contact Support</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--documentation"><a href="https://sendgrid.com/docs" class="site-footer__link site-footer__link--documentation" data-gtm-outbound="footer_link">Documentation</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--report-spam"><a href="https://sendgrid.com/report-spam/" class="site-footer__link site-footer__link--report-spam" data-gtm-outbound="footer_link">Report Spam</a></dd>
+    </dl>
+    <dl class="site-footer__section community column small-12 medium-6 large-expand">
+      <dt class="site-footer__title">Community</dt>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--partners"><a href="https://sendgrid.com/partners/" rel="nofollow" class="site-footer__link site-footer__link--partners" data-gtm-outbound="footer_link">Partners</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--blog"><a href="https://sendgrid.com/blog/" class="site-footer__link site-footer__link--blog" data-gtm-outbound="footer_link">Blog</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--events"><a href="https://sendgrid.com/events/" class="site-footer__link site-footer__link--events" data-gtm-outbound="footer_link">Events</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--github"><a href="http://github.com/sendgrid" rel="nofollow" class="site-footer__link site-footer__link--github" data-gtm-outbound="footer_link">Github</a></dd>
+    </dl>
+    <dl class="site-footer__section company column small-12 medium-6 large-expand">
+      <dt class="site-footer__title">Company</dt>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--about"><a href="https://sendgrid.com/about/" class="site-footer__link site-footer__link--about" data-gtm-outbound="footer_link">About</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--our-team"><a href="https://sendgrid.com/team/" class="site-footer__link site-footer__link--our-team" data-gtm-outbound="footer_link">Our Team</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--careers"><a href="https://sendgrid.com/careers/" class="site-footer__link site-footer__link--careers" data-gtm-outbound="footer_link">Careers</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--newsroom"><a href="https://sendgrid.com/news/" class="site-footer__link site-footer__link--newsroom" data-gtm-outbound="footer_link">Newsroom</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--investors"><a href="https://investors.sendgrid.com" class="site-footer__link site-footer__link--investors" data-gtm-outbound="footer_link">Investors</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--labs"><a href="https://sendgrid.com/labs/" class="site-footer__link site-footer__link--labs" data-gtm-outbound="footer_link">Labs</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--contact-us"><a href="https://sendgrid.com/contact/" class="site-footer__link site-footer__link--contact-us" data-gtm-outbound="footer_link">Contact Us</a></dd>
+    </dl>
+      </nav>
+
+      <div class="site-footer__bottom">
+        <div class="row expanded constrain-large align-middle">
+
+
+          <ul class="site-footer__social column small-12 large-6">
+              <li><a href="https://twitter.com/sendgrid" target="_blank"><img src="https://sendgrid.com/wp-content/themes/sgdotcom/assets/images/footer/icon-twitter-circle.svg"><span class="show-for-sr">Twitter</span></a></li>
+              <li><a href="https://www.linkedin.com/company/sendgrid" target="_blank"><img src="https://sendgrid.com/wp-content/themes/sgdotcom/assets/images/footer/icon-linkedin-circle.svg"><span class="show-for-sr">LinkedIn</span></a></li>
+              <li><a href="https://www.facebook.com/SendGrid" target="_blank"><img src="https://sendgrid.com/wp-content/themes/sgdotcom/assets/images/footer/icon-facebook-circle.svg"><span class="show-for-sr">Facebook</span></a></li>
+              <li><a href="https://plus.google.com/+Sendgrid1" target="_blank"><img src="https://sendgrid.com/wp-content/themes/sgdotcom/assets/images/footer/icon-google-circle.svg"><span class="show-for-sr">Google Plus</span></a></li>
+              <li><a href="https://github.com/sendgrid" target="_blank"><img src="https://sendgrid.com/wp-content/themes/sgdotcom/assets/images/footer/icon-github-circle.svg"><span class="show-for-sr">GitHub</span></a></li>
+              <li><a href="https://sendgrid.com/blog/feed/" target="_blank"><img src="https://sendgrid.com/wp-content/themes/sgdotcom/assets/images/footer/icon-rss-circle.svg"><span class="show-for-sr">RSS Feed</span></a></li>
+                  </ul>
+
+          <dl class="site-footer__legal column small-12 large-6">
+            <dd>
+              <span><a href="/policies" id="footer-tos">Legal and Security</a></span>
+              <span class="site-footer__copyright">©2018 SendGrid</span>
+            </dd>
+          </dl>
+
+        </div>
       </div>
-    </div>
-  </div>
-</footer>
+
+    </footer>
+
+
+
+  </div> <!-- site-content -->
+</div> <!-- site-wrapper -->

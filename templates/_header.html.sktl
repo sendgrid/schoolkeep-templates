@@ -1,85 +1,113 @@
-<header class="school-website-header uk-z-4">
-  <div class="uk-padding-horizontal uk-container uk-container-center">
-    <nav class="uk-navbar" data-behavior="dropdown">
-      <a href="{{current_school.logo_navigation_url}}" class="uk-brand">
-        {{ if current_school.logo_url }}
-          <img src="{{current_school.logo_url}}" alt="{{current_school.name}}">
-        {{ else }}
-          <span class="uk-text-large uk-text-bold">{{ current_school.name }}</span>
-        {{ end }}
-      </a>
-      <div class="uk-navbar-flip">
-        <ul class="uk-navbar-nav uk-hidden-small">
+<div class="site-wrapper">
+  <header class="site-header js-fixed-header">
+
+    <nav class="primary-site-nav is-closed has-sub-open">
+
+      <div class="row expanded constrain-large align-middle">
+
+        <button class="site-header__toggle js-site-header-toggle">
+          <span class="site-header__menu"></span>
+        </button>
+
+        <div class="primary-site-nav__logo column small-12 large-2 m-right-5-large">
+          <a href="{{current_school.logo_navigation_url}}"></a>
+        </div>
+
+        <ul class="primary-site-nav__links column expand flex-container flex-dir-column large-flex-dir-row">
+
+         <!--
+
+          Search
+
+         {{ if display_search_form }}
+            <li class="uk-padding-top">
+              {{ partial 'search_form' }}
+            </li>
+          {{ end }}
+
+          -->
+
+        </ul>
+
+        <ul class="column small-12 large-5 t-a-right-large m-left-5-large show-for-large menu align-right">
+
           {{ header_navigations.each 'website_navigation' }}
-            <li>
+            <li class="primary-site-nav__link">
               <a href="{{ website_navigation.path }}" {{if website_navigation.external?}} target="_blank" {{end}}>
                 {{ website_navigation.name }}
               </a>
             </li>
           {{ end }}
 
-          {{ if display_search_form }}
-            <li class="uk-padding-top">
-              {{ partial 'search_form' }}
-            </li>
-          {{ end }}
-
           {{ if current_person }}
-            <li class="uk-parent" data-uk-dropdown="{mode:'click'}">
-              <a href="#" class="learner-name">{{current_person.name}}</a>
-              <div class="uk-dropdown uk-dropdown-flip uk-dropdown-navbar">
-                <ul class="uk-nav uk-nav-navbar">
-                  <li><a href="{{ routes.my_content_path }}">{{ current_school.my_content_label }}</a></li>
-                  {{ unless current_school.sso_enabled? }}
-                    <li><a href="{{ routes.my_profile_path }}">{{ t('.my_profile') }}</a></li>
-                  {{ end }}
-                  <li class="uk-nav-divider"></li>
-                  <li><a href="{{ routes.log_out_path }}" data-method="delete" rel="nofollow">{{ t('.log_out') }}</a></li>
-                </ul>
-              </div>
+
+            <li class="primary-site-nav__profilelink">
+              <a href="#" class="">
+                {{current_person.name}}
+                <svg width="10px" height="5px" viewBox="0 0 10 5" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="All-Courses" transform="translate(-1294.000000, -35.000000)" fill="#489BE8"> <g id="Navigation"> <g id="Header"> <g id="Group-5" transform="translate(480.000000, 24.000000)"> <path d="M823.850765,11.3478421 L823.538353,11.1143295 C823.341373,10.9618902 823.020405,10.9618902 822.823424,11.1143295 L819.015248,14.2603211 L815.111705,11.1143295 C814.912725,10.9618902 814.591757,10.9618902 814.394777,11.1143295 L814.147735,11.326065 C813.950755,11.4776978 813.950755,11.7245044 814.147735,11.8777503 L818.655284,15.3862753 C818.854265,15.5379081 819.175232,15.5379081 819.372213,15.3862753 L823.850765,11.8995274 C824.049745,11.747088 824.049745,11.4994749 823.850765,11.3478421 Z" id="Caret"></path> </g> </g> </g> </g> </g> </svg>
+              </a>
+              <ul class="site-sub-nav">
+                <div class="site-sub-nav__wrapper">
+                  <div class="site-sub-nav__row row small-up-1 large-up-6 align-center">
+                    <div class="column">
+                      <li class="site-sub-nav-link">
+                        <a href="{{ routes.my_content_path }}">
+                          <span class="site-sub-nav-link__title">
+                            {{ if current_school.my_content_label }}
+                            {{ current_school.my_content_label }}
+                            {{ else }}
+                            My Courses
+                            {{ end }}
+                          </span>
+                        </a>
+                      </li>
+                    </div>
+                    {{ unless current_school.sso_enabled? }}
+                    <div class="column">
+                      <li class="site-sub-nav-link">
+                        <a href="{{ routes.my_profile_path }}">
+                          <div class="site-sub-nav-link__title">{{ t('.my_profile') }}</div>
+                        </a>
+                      </li>
+                    </div>
+                    {{ end }}
+                    <div class="column">
+                      <li class="site-sub-nav-link">
+                        <a href="{{ routes.log_out_path }}">
+                          <div class="site-sub-nav-link__title">{{ t('.log_out') }}</div>
+                        </a>
+                      </li>
+                    </div>
+
+
+                  </div>
+                </div>
+              </ul>
             </li>
+
           {{ else }}
-            <li><a href="{{ routes.log_in_path }}">{{ t('.log_in') }}</a></li>
+
+            <li class="">
+              <a href="{{ routes.log_in_path }}" class="btn btn-secondary" >{{ t('.log_in') }}</a>
+            </li>
+
           {{ end }}
         </ul>
-        <div class="uk-visible-small">
-         {{ if display_search_form }}
-           <button class="uk-button uk-button-link uk-navbar-toggle mobile-search-toggle mobile-navbar-toggle" data-uk-toggle="{target:'#mobile-search'}">
-           </button>
-         {{ end }}
-          <a href="#mobile-nav" class="mobile-navbar-toggle uk-navbar-toggle" data-uk-offcanvas></a>
-        </div>
+
       </div>
     </nav>
-  </div>
-</header>
 
-<div id="mobile-search" class="school-website-header uk-visible-small uk-position-top uk-padding uk-block-default uk-flex uk-border-bottom {{ if hide_search_box }}uk-hidden {{end}}">
-  {{ if display_search_form }}
-    {{ partial 'search_form' }}
-  {{ end }}
-  <a class="uk-button uk-button-link" href="{{ routes.my_content_path }}">{{ t('.cancel') }}</a>
-</div>
+  </header>
 
-<div id="mobile-nav" class="uk-offcanvas">
-  <div class="uk-offcanvas-bar uk-offcanvas-bar-flip">
-    <ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
-      {{ header_navigations.each 'website_navigation' }}
-        <li>
-          <a href="{{ website_navigation.path }}" {{if website_navigation.external?}} target="_blank" {{end}}>
-            {{website_navigation.name}}
-          </a>
-        </li>
-      {{ end }}
+  <div class="site-content">
 
-      {{ if current_person }}
-        <li><a href="{{ routes.my_content_path }}">{{ current_school.my_content_label }}</a></li>
-        <li><a href="{{ routes.my_profile_path }}">{{ t('.my_profile') }}</a></li>
-        <li class="uk-nav-divider"></li>
-        <li><a href="{{ routes.log_out_path }}" data-method="delete" rel="nofollow">{{t('.log_out')}}</a></li>
-      {{ else }}
-        <li><a href="{{ routes.log_in_path }}">{{t('.log_in')}}</a></li>
-      {{ end }}
-    </ul>
-  </div>
-</div>
+
+
+
+  <!-- <div id="mobile-search" class="school-website-header uk-visible-small uk-position-top uk-padding uk-block-default uk-flex uk-border-bottom {{ if hide_search_box }}uk-hidden {{end}}">
+    {{ if display_search_form }}
+      {{ partial 'search_form' }}
+    {{ end }}
+    <a class="uk-button uk-button-link" href="{{ routes.my_content_path }}">{{ t('.cancel') }}</a>
+  </div> -->
+

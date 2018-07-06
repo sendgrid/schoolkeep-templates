@@ -1,39 +1,194 @@
-<div class="school-website-hero hero-tall uk-overlay uk-cover-background" style="background-image: url('{{ homepage.artwork_url }}');">
-  <div class="uk-overlay-panel uk-overlay-background uk-flex uk-flex-center uk-flex-middle uk-text-center">
-    <hgroup class="uk-container uk-container-center uk-padding-large-horizontal">
-      {{ if homepage.headline }}
-        <h1 class="uk-text-center uk-heading-large uk-container-center">{{ homepage.headline }}</h1>
-      {{ end }}
-      {{ if homepage.subheadline }}
-        <h2 class="uk-text-center uk-margin-large-bottom">{{ homepage.subheadline }}</h2>
-      {{ end }}
-      <a href="/courses" class="uk-button uk-button-primary uk-button-large uk-margin-large-top">{{ t('.discover_catalog') }}</a>
-    </hgroup>
-  </div>
-</div>
+  <header class="p-relative">
 
-<div class="uk-container uk-container-center uk-padding-large-top uk-padding-large-bottom">
-  <hgroup class="banner uk-text-center uk-padding-large-top uk-padding-large-horizontal">
-    {{ if homepage.published_featured_courses }}
-      {{ if homepage.featured_courses_headline | homepage.featured_courses_subheadline }}
-        {{ if homepage.featured_courses_headline }}
-          <h2>{{ homepage.featured_courses_headline }}</h2>
+    <img src="{{ homepage.artwork_url }}">
+
+    <div style="top: 0; width: 100%;" class="center-cols expanded p-absolute row text-center m-top-2">
+      <div class="small-12 medium-6 large-5 column p-relative m-top-5">
+        {{ if homepage.headline }}
+          <h1 class="page-header__title">{{ homepage.headline }}</h1>
+        {{ end }}
+        {{ if homepage.subheadline }}
+          <sub class="page-header__subtitle">{{ homepage.subheadline }}</sub>
         {{ end }}
 
-        {{ if homepage.featured_courses_subheadline }}
-          <h3 class="uk-margin-remove uk-text-muted">{{ homepage.featured_courses_subheadline }}</h3>
-        {{ end }}
-      {{ end }}
-    {{ end }}
-  </hgroup>
+        {{ if current_person }}
 
-  {{ if homepage.published_featured_courses }}
-    <div class="uk-width-small-1-1 uk-width-1-1 uk-padding-large-horizontal uk-container-center uk-padding-large-top uk-padding-large-bottom uk-margin-large-bottom">
-      <ul class="uk-grid school-website-course-list" data-behavior="listResize">
-        {{ homepage.published_featured_courses.each 'course' }}
-          {{ partial 'course' }}
-        {{ end }}
-      </ul>
+          <a href="/courses" class="btn btn-primary m-top-4">
+            {{ t('.discover_catalog') }}
+          </a>
+
+
+        {{else}}
+
+          <a href="{{ routes.log_in_path }}" class="btn btn-primary m-top-4">
+            Get Started
+          </a>
+          <a href="{{ routes.log_in_path }}" class="login-link m-top-2">
+            Or <span>login</span> to continue learning.
+          </a>
+
+        {{end}}
+
+
+      </div>
     </div>
-  {{ end }}
-</div>
+  </header>
+
+  <section class="section-1 blue-5-back">
+    <div class="row expanded align-middle p-top-5 p-bottom-5">
+      <div class="column medium-7">
+          <div class="book-shelf p-relative">
+            <svg width="635px" height="528px" viewBox="0 0 635 528" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <defs> <linearGradient x1="136.703297%" y1="3.30288124%" x2="70.3296703%" y2="77.3717498%" id="linearGradient-1"> <stop stop-color="#489BE9" offset="0%"></stop> <stop stop-color="#489BE9" stop-opacity="0" offset="100%"></stop> </linearGradient> <linearGradient x1="0%" y1="49.979716%" x2="100%" y2="49.979716%" id="linearGradient-2"> <stop stop-color="#70AFED" offset="0%"></stop> <stop stop-color="#65AAEC" offset="36%"></stop> <stop stop-color="#499BE9" offset="98%"></stop> <stop stop-color="#489BE9" offset="100%"></stop> </linearGradient> <linearGradient x1="169.086909%" y1="5.55780933%" x2="66.9966997%" y2="71.2778905%" id="linearGradient-3"> <stop stop-color="#489BE9" offset="0%"></stop> <stop stop-color="#489BE9" stop-opacity="0" offset="100%"></stop> </linearGradient> </defs> <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Home-Desktop-HD" transform="translate(0.000000, -1281.000000)"> <g id="Section-1" transform="translate(0.000000, 1044.000000)"> <g id="Illustration" transform="translate(0.000000, 237.000000)"> <rect id="Bkgd" fill="#D1E6F9" x="0" y="119" width="635" height="409" rx="2"></rect> <rect id="Rectangle-path" fill="#FFFFFF" fill-rule="nonzero" x="102" y="0" width="21" height="119"></rect> <rect id="Rectangle-path" fill="#D1E6F9" fill-rule="nonzero" x="140" y="50" width="32" height="70"></rect> <rect id="Rectangle-path" fill="#1A82E2" fill-rule="nonzero" x="36" y="0" width="33" height="119"></rect> <circle id="Oval" fill="#97CBF7" fill-rule="nonzero" cx="53.5" cy="37.5" r="11.5"></circle> <rect id="Rectangle-path" fill="#A3CDF2" fill-rule="nonzero" x="172" y="18" width="33" height="101"></rect> <circle id="Oval" fill="#FBFDFF" fill-rule="nonzero" cx="188" cy="39" r="7"></circle> <rect id="Rectangle-path" fill="#FBFDFF" fill-rule="nonzero" x="177" y="56" width="24" height="57"></rect> <rect id="Rectangle-path" fill="#97CBF7" fill-rule="nonzero" x="123" y="18" width="17" height="101"></rect> <circle id="Oval" fill="#76B4EF" fill-rule="nonzero" cx="132" cy="42" r="5"></circle> <rect id="Rectangle-path" fill="#76B4EF" fill-rule="nonzero" x="140" y="70" width="32" height="7"></rect> <rect id="Rectangle-path" fill="#97CBF7" fill-rule="nonzero" x="140" y="77" width="32" height="20"></rect> <polygon id="Shape" fill="url(#linearGradient-1)" fill-rule="nonzero" style="mix-blend-mode: multiply;" points="140 120 172 70 172 120"></polygon> <rect id="Rectangle-path" fill="url(#linearGradient-2)" fill-rule="nonzero" x="69" y="31" width="33" height="88"></rect> <rect id="Rectangle-path" fill="#97CBF7" fill-rule="nonzero" x="69" y="52" width="33" height="17"></rect> <polygon id="Shape" fill="url(#linearGradient-3)" fill-rule="nonzero" style="mix-blend-mode: multiply;" points="70 118 102 30 102 118"></polygon> </g> </g> </g> </g> </svg>
+            <div class="row p-absolute">
+              <div class="column small-12">
+                <article class="floating-tile floating-tile--blue-border">
+
+                  <div class="resource-tile__copy">
+                    <svg width="45px" height="40px" viewBox="0 0 45 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"> <g id="Home-Desktop-HD" transform="translate(-274.000000, -1093.000000)" stroke="#FF9900" stroke-width="1.9047619"> <g id="Section-1" transform="translate(9.000000, 1063.000000)"> <g id="Get-it-right-from-the-start" transform="translate(235.000000, 0.000000)"> <g id="Icon" transform="translate(30.000000, 30.000000)"> <polygon id="Stroke-4957" points="0.9375 36.1914286 12.1875 39.0485714 22.5 36.1914286 32.8125 39.0485714 44.0625 36.1914286 42.1875 0.953333333 31.875 3.81047619 22.5 0.953333333 13.125 3.81047619 2.8125 0.953333333"></polygon> <path d="M31.875,10.4771429 L35.625,14.2866667" id="Stroke-4958"></path> <path d="M31.875,14.2866667 L35.625,10.4771429" id="Stroke-4959"></path> <path d="M8.4375,27.62 L9.375,26.667619" id="Stroke-4960"></path> <path d="M14.0625,21.9057143 L15,20.9533333" id="Stroke-4961"></path> <path d="M34.6875,17.1438095 L34.6875,19.0485714" id="Stroke-4962"></path> <path d="M26.25,21.9057143 L27.1875,22.8580952" id="Stroke-4963"></path> <path d="M20.625,18.0961905 L22.5,18.0961905" id="Stroke-4964"></path> <path d="M32.8125,24.7628571 L33.75,23.8104762" id="Stroke-4965"></path> </g> </g> </g> </g> </g> </svg>
+                    <h3>
+                      Get it right from the start
+                    </h3>
+                    <p>
+                      Starting something new can be a challenge. Don't rely on trial and error to get it right. SendGrid Academy gives you a solid foundation from day one.
+                    </p>
+                  </div>
+
+                </article>
+              </div>
+              <div class="column small-12">
+                <article class="floating-tile floating-tile--blue-border">
+
+                  <div class="resource-tile__copy">
+                    <svg width="41px" height="40px" viewBox="0 0 41 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"> <g id="Home-Desktop-HD" transform="translate(-274.000000, -1381.000000)" stroke="#18C96E" stroke-width="1.73913043"> <g id="Section-1" transform="translate(9.000000, 1063.000000)"> <g id="Get-the-depth-of-expertise" transform="translate(235.000000, 289.000000)"> <g id="Icon" transform="translate(30.000000, 30.000000)"> <path d="M14.7826087,28.5652174 C14.7826087,30.9669565 12.8365217,32.9130435 10.4347826,32.9130435 C8.03304348,32.9130435 6.08695652,30.9669565 6.08695652,28.5652174 C6.08695652,26.1652174 8.03304348,24.2173913 10.4347826,24.2173913 C12.8365217,24.2173913 14.7826087,26.1652174 14.7826087,28.5652174 L14.7826087,28.5652174 Z" id="Stroke-212"></path> <path d="M37.3913043,13.7826087 L40,11.173913 L35.6521739,6.82608696 L38.2608696,4.2173913 C39.2226087,3.25913043 39.2226087,1.70086957 38.2608696,0.739130435 C37.2991304,-0.219130435 35.7443478,-0.219130435 34.7826087,0.739130435 L15.226087,20.2956522 C13.8156522,19.4765217 12.1826087,19 10.4347826,19 C5.15304348,19 0.869565217,23.2834783 0.869565217,28.5652174 C0.869565217,33.8486957 5.15304348,38.1304348 10.4347826,38.1304348 C15.7165217,38.1304348 20,33.8486957 20,28.5652174 C20,26.8173913 19.5234783,25.1843478 18.7043478,23.773913 L27.826087,14.653913 L31.3043478,18.1304348 L33.9130435,15.5217391 L30.4347826,12.0434783 L33.0434783,9.43478261 L37.3913043,13.7826087 L37.3913043,13.7826087 Z" id="Stroke-213"></path> </g> </g> </g> </g> </g> </svg>
+                    <h3>
+                      The depth of expertise you need
+                    </h3>
+                    <p>
+                      No matter what you’re sending, we’ve curated expert email advice and<br> strategies that take the guesswork out of optimizing your program.
+                    </p>
+                  </div>
+
+                </article>
+              </div>
+              <div class="column small-12">
+                <article class="floating-tile floating-tile--blue-border">
+
+                  <div class="resource-tile__copy">
+                    <svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"> <g id="Home-Desktop-HD" transform="translate(-274.000000, -1704.000000)" stroke="#7C4DFF" stroke-width="1.66666667"> <g id="Section-1" transform="translate(9.000000, 1063.000000)"> <g id="Results-you-want" transform="translate(235.000000, 611.000000)"> <g id="Icon" transform="translate(30.000000, 30.000000)"> <polyline id="Stroke-4666" points="39.1666667 39.1666667 0.833333333 39.1666667 0.833333333 0.833333333"></polyline> <path d="M15,27.5 C15,28.8816667 13.8816667,30 12.5,30 C11.12,30 10,28.8816667 10,27.5 C10,26.12 11.12,25 12.5,25 C13.8816667,25 15,26.12 15,27.5 L15,27.5 Z" id="Stroke-4667"></path> <path d="M28.1933333,13.8575 L34.9866667,5.18083333" id="Stroke-4668"></path> <path d="M16.5543333,12.4365 L24.251,15.1831667" id="Stroke-4669"></path> <path d="M0.833333333,19.6353333 L12.0316667,12.9603333" id="Stroke-4670"></path> <path d="M27.1646667,26.2533333 L34.5063333,22.0933333" id="Stroke-4671"></path> <path d="M15,27.5 L22.5,27.5" id="Stroke-4672"></path> <path d="M0.833333333,35 L10.3533333,28.7766667" id="Stroke-4673"></path> <path d="M16.6666667,11.6666667 C16.6666667,13.0483333 15.5466667,14.1666667 14.1666667,14.1666667 C12.7866667,14.1666667 11.6666667,13.0483333 11.6666667,11.6666667 C11.6666667,10.285 12.7866667,9.16666667 14.1666667,9.16666667 C15.5466667,9.16666667 16.6666667,10.285 16.6666667,11.6666667 L16.6666667,11.6666667 Z" id="Stroke-4674"></path> <path d="M29.1666667,15.8333333 C29.1666667,17.215 28.0466667,18.3333333 26.6666667,18.3333333 C25.2866667,18.3333333 24.1666667,17.215 24.1666667,15.8333333 C24.1666667,14.4516667 25.2866667,13.3333333 26.6666667,13.3333333 C28.0466667,13.3333333 29.1666667,14.4516667 29.1666667,15.8333333 L29.1666667,15.8333333 Z" id="Stroke-4675"></path> <path d="M39.1666667,3.33333333 C39.1666667,4.715 38.0466667,5.83333333 36.6666667,5.83333333 C35.2866667,5.83333333 34.1666667,4.715 34.1666667,3.33333333 C34.1666667,1.95166667 35.2866667,0.833333333 36.6666667,0.833333333 C38.0466667,0.833333333 39.1666667,1.95166667 39.1666667,3.33333333 L39.1666667,3.33333333 Z" id="Stroke-4676"></path> <path d="M39.1666667,20.8333333 C39.1666667,22.215 38.0466667,23.3333333 36.6666667,23.3333333 C35.2866667,23.3333333 34.1666667,22.215 34.1666667,20.8333333 C34.1666667,19.4516667 35.2866667,18.3333333 36.6666667,18.3333333 C38.0466667,18.3333333 39.1666667,19.4516667 39.1666667,20.8333333 L39.1666667,20.8333333 Z" id="Stroke-4677"></path> <path d="M27.5,27.5 C27.5,28.8816667 26.38,30 25,30 C23.62,30 22.5,28.8816667 22.5,27.5 C22.5,26.1183333 23.62,25 25,25 C26.38,25 27.5,26.1183333 27.5,27.5 L27.5,27.5 Z" id="Stroke-4678"></path> </g> </g> </g> </g> </g> </svg>
+
+                    <h3>
+                      Results you want
+                    </h3>
+                    <p>
+                      Email drives results. Learn how to take actionable steps to meet the goals that matter most to you and your business.
+                    </p>
+                  </div>
+
+                </article>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="column medium-4">
+          <h2>
+            Gain Confidence in Your Sending Skills
+          </h2>
+          <p>
+            SendGrid Academy helps you take learning into your own hands. Whether you’re a seasoned email expert or preparing to send your first campaign, choose your own path through streamlined guided courses– each designed to help you send with confidence.
+          </p>
+          <p>
+            <a href="/courses" class="btn btn-primary m-top-4">
+            {{ t('.discover_catalog') }}
+          </a>
+          </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-2 p-top-5 p-bottom-5 p-relative">
+    <div class="row p-bottom-2 p-top-8">
+      <header class="column t-a-center small-12">
+        <h2>
+          Ready to step up your sending skills?
+        </h2>
+        <p>
+          Our bite-size courses take as little as 10 minutes to complete and can be accessed on your mobile device too!
+        </p>
+      </header>
+    </div>
+    <div class="row expanded">
+      <div class="column small-6">
+        <div class="row">
+          <div class="column small-12">
+            <div class="floating-tile floating-tile--blue-border seafoam-dot">
+              <div class="resource-tile__copy">
+                <p>Find what’s right for you.</p>
+                <p>
+                  Depending on your expertise level, find and pick what’s right for you. For more guidance, you can follow learning paths in order to master a topic from A to Z.
+                </p>
+              </div>
+            </div>
+          </div>
+           <div class="column small-12">
+            <div class="floating-tile floating-tile--blue-border orange-dot">
+              <div class="resource-tile__copy">
+                <p>A little can go a long way.</p>
+                <p>
+                  We know you have a lot to do. We’ve designed courses to make it easy to learn a little or lot — you get to choose.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="column small-12">
+            <div class="floating-tile floating-tile--blue-border screample-dot">
+              <div class="resource-tile__copy">
+                <p>Learn by doing.</p>
+                <p>
+                  We’ve created practical scenarios and examples so you can learn by doing and get feedback on what works and what doesn’t.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <svg class="svg-hand p-absolute" width="1440px" height="1198px" viewBox="0 0 1440 1198" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <defs> <linearGradient x1="81.8191244%" y1="3.65259938%" x2="15.3511901%" y2="97.4634304%" id="linearGradient-1"> <stop stop-color="#E5F0FA" offset="0%"></stop> <stop stop-color="#DAEAFA" offset="100%"></stop> </linearGradient> <linearGradient x1="50%" y1="2.74340679%" x2="50%" y2="100%" id="linearGradient-2"> <stop stop-color="#D1E6F9" offset="0%"></stop> <stop stop-color="#FBFBFB" offset="100%"></stop> </linearGradient> <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-3"> <stop stop-color="#EEF5FA" offset="0%"></stop> <stop stop-color="#FFFFFF" offset="100%"></stop> </linearGradient> </defs> <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Home-Desktop-HD" transform="translate(0.000000, -1900.000000)"> <g id="Hand-Illustration" transform="translate(-18.000000, 1809.000000)"> <path d="M995.715148,589.58162 C957.715148,573.58162 938.715148,568.914953 938.715148,575.58162 C931.381815,595.267894 955.048481,615.934561 1009.71515,637.58162 L995.715148,589.58162 Z" id="Finger-4" fill="#76B4EE" transform="translate(973.564610, 605.111031) rotate(-40.000000) translate(-973.564610, -605.111031) "></path> <path d="M997.715148,649.58162 C959.715148,633.58162 940.715148,628.914953 940.715148,635.58162 C933.381815,655.267894 957.048481,675.934561 1011.71515,697.58162 L997.715148,649.58162 Z" id="Finger-3" fill="#76B4EE" transform="translate(975.564610, 665.111031) rotate(-40.000000) translate(-975.564610, -665.111031) "></path> <path d="M1002.61525,699.39096 C968.681143,685.102913 951.714087,680.935566 951.714087,686.888919 C945.165398,704.46882 966.299801,722.924214 1015.1173,742.255101 L1002.61525,699.39096 Z" id="Finger-2" fill="#76B4EE" transform="translate(982.834759, 713.258770) rotate(-40.000000) translate(-982.834759, -713.258770) "></path> <path d="M977.695607,760.82879 C956.901858,752.073528 946.504983,749.519909 946.504983,753.167935 C942.492154,763.940342 955.442647,775.249224 985.356462,787.094579 L977.695607,760.82879 Z" id="Finger-1" fill="#76B4EE" transform="translate(965.574746, 769.326546) rotate(-40.000000) translate(-965.574746, -769.326546) "></path> <g id="Phone" transform="translate(954.000000, 358.000000)"> <g id="Device"> <rect id="Body" stroke="url(#linearGradient-1)" stroke-width="2.1" fill="#FFFFFF" x="1.23181818" y="1.05" width="243.351336" height="514.478817" rx="56"></rect> <rect id="Top-Grill" fill="#D1E6F9" x="102.121231" y="30.994729" width="41.3524466" height="3.9736832" rx="1.9868416"></rect> <ellipse id="Home-Button" stroke="url(#linearGradient-3)" stroke-width="2.1" fill="url(#linearGradient-2)" cx="123.197443" cy="481.22333" rx="18.6894316" ry="18.6843776"></ellipse> </g> <rect id="Placeholder" fill="#7C4DFF" x="16" y="69" width="214" height="380"></rect> <g id="Slider-Dots" transform="translate(111.242586, 440.397430)" fill="#FFFFFF"> <g id="Small-Camera-Icon" transform="translate(18.141445, 0.000000)" opacity="0.5"> <path d="M5.03724494,1.14294229 L5.85246347,1.14294229 C6.22093513,1.14294229 6.51958175,1.46300296 6.51958175,1.85789539 L6.50719449,4.39789486 C6.50719449,4.79278729 6.20854787,5.11284797 5.84007621,5.11284797 L0.961217869,5.11284797 C0.592746206,5.11284797 0.294099591,4.79278729 0.294099591,4.39789486 L0.283460076,1.85789539 C0.283460076,1.46300296 0.582106692,1.14294229 0.950578354,1.14294229 L1.76579689,1.14294229 C1.8489643,1.14294229 1.92657239,1.09837688 1.97260356,1.02426008 L2.37502918,0.402729324 C2.42106034,0.328612519 2.49866843,0.284047109 2.58183584,0.284047109 L4.30389049,0.284047109 C4.3870579,0.284047109 4.46466599,0.328612519 4.51069716,0.402729324 L4.83043827,1.02426008 C4.87646943,1.09837688 4.95407752,1.14294229 5.03724494,1.14294229 Z M3.41219986,3.99426066 C4.03840257,3.99426066 4.54604016,3.48557177 4.54604016,2.85807222 C4.54604016,2.23057267 4.03840257,1.72188378 3.41219986,1.72188378 C2.78599715,1.72188378 2.27835955,2.23057267 2.27835955,2.85807222 C2.27835955,3.48557177 2.78599715,3.99426066 3.41219986,3.99426066 Z M0.850380228,0.568094218 L1.70076046,0.568094218 L1.70076046,0.852141328 L0.850380228,0.852141328 L0.850380228,0.568094218 Z" id="Camera"></path> </g> <path d="M11.338403,5.11284797 C12.5908085,5.11284797 13.6060837,4.09547019 13.6060837,2.84047109 C13.6060837,1.585472 12.5908085,0.568094218 11.338403,0.568094218 C10.0859976,0.568094218 9.07072243,1.585472 9.07072243,2.84047109 C9.07072243,4.09547019 10.0859976,5.11284797 11.338403,5.11284797 Z" id="Oval"></path> <path d="M2.26768061,5.11284797 C3.52008603,5.11284797 4.53536122,4.09547019 4.53536122,2.84047109 C4.53536122,1.585472 3.52008603,0.568094218 2.26768061,0.568094218 C1.01527519,0.568094218 0,1.585472 0,2.84047109 C0,4.09547019 1.01527519,5.11284797 2.26768061,5.11284797 Z" id="Oval" fill-opacity="0.5"></path> </g> <g id="Status-Bar/White/Locked" transform="translate(16.000000, 70.000000)"> <rect id="Background" fill-opacity="0" fill="#000000" x="0" y="0" width="212.595057" height="11.3618844"></rect> <g id="Charge" transform="translate(162.800000, 0.099786)" fill="#FFFFFF"> <g id="Battery-Icon" transform="translate(25.900000, 2.100000)"> <path d="M1.26206501,0.405263158 L1.26206501,0.405263158 C0.795659111,0.405263158 0.42,0.76656651 0.42,1.21583894 L0.42,6.48416106 C0.42,6.9314577 0.797213513,7.29473684 1.26206501,7.29473684 L17.637935,7.29473684 C18.1043409,7.29473684 18.48,6.93343349 18.48,6.48416106 L18.48,1.21583894 C18.48,0.768542303 18.1027865,0.405263158 17.637935,0.405263158 L1.26206501,0.405263158 Z M1.26206501,0 L1.26206501,0 L17.637935,0 C18.3343605,0 18.9,0.544349637 18.9,1.21583894 L18.9,6.48416106 C18.9,7.15855095 18.3349542,7.7 17.637935,7.7 L1.26206501,7.7 C0.565639459,7.7 0,7.15565036 0,6.48416106 L0,1.21583894 C0,0.541449048 0.565045753,0 1.26206501,0 L1.26206501,0 Z" id="Shape" fill-rule="nonzero"></path> <path d="M1.12432555,0.811300011 C0.936368937,0.811300011 0.784,0.961710398 0.784,1.1558766 L0.784,6.5514735 C0.784,6.7417779 0.931374588,6.89605009 1.12432555,6.89605009 L7.84,6.89605009 L7.84,0.811300011 L1.12432555,0.811300011 Z" id="Charge"></path> <path d="M20.3,3.85 C20.3,4.56251044 19.8436509,5.15196198 19.25,5.25 L19.25,2.45 C19.8436509,2.54803802 20.3,3.13748956 20.3,3.85 Z" id="Shape"></path> </g> <text id="58-%" font-family=".SFNSText, .SF NS Text" font-size="9.8" font-weight="normal"> <tspan x="0" y="9">58 %</tspan> </text> </g> <path d="M156.099435,9.02325179 L156.099435,6.53250179 L157.297835,7.83761429 L156.099435,9.02325179 L156.099435,9.02325179 L156.099435,9.02325179 L156.099435,9.02325179 Z M157.352847,4.10756429 L156.099435,5.36846429 L156.099435,2.97963929 L157.352847,4.10756429 L157.352847,4.10756429 L157.352847,4.10756429 L157.352847,4.10756429 Z M156.400518,5.97258929 L158.260376,4.10756429 L155.485412,1.41498929 L155.419859,1.41498929 L155.419859,5.15988929 L153.536282,3.18517679 L153,3.74542679 L155.266353,5.97258929 L153,8.19941429 L153.536282,8.75966429 L155.419859,6.78495179 L155.419859,10.5295143 L155.539765,10.5295143 L158.287388,7.83018929 L156.400518,5.97258929 L156.400518,5.97258929 Z" id="Bluetooth-Icon" fill="#FFFFFF" opacity="0.45"></path> <g id="Lock-Icon" transform="translate(104.347909, 2.180942)" fill="#FFFFFF"> <rect id="Rectangle-958" x="0" y="2.8" width="5.6" height="4.2" rx="0.7"></rect> <path d="M4.2,4.2 L4.2,2.09103651 C4.2,1.32058839 3.57319865,0.7 2.8,0.7 C2.02141075,0.7 1.4,1.32278826 1.4,2.09103651 L1.4,4.2 L0.7,4.2 L0.7,2.1 C0.7,0.940202025 1.63211613,0 2.8,0 C3.95979797,0 4.9,0.932116127 4.9,2.1 L4.9,4.2 L4.2,4.2 Z" id="Combined-Shape"></path> </g> <path d="M56.3462826,3.41618381 C58.0435837,3.41618381 59.5904411,4.02754272 60.7764963,5.03001943 L61.6,4.14103861 C60.1952768,2.94869888 58.3606523,2.11498929 56.3462826,2.11498929 C54.3349744,2.11498929 52.5029739,2.94616738 51.1,4.13470984 L51.9217543,5.02495642 C53.1069349,4.02543313 54.6511683,3.41618381 56.3462826,3.41618381 L56.3462826,3.41618381 Z M56.3462826,5.98228792 C57.3635262,5.98228792 58.2928652,6.34344957 59.0096589,6.93835368 L59.8808322,5.99747696 C58.9326877,5.20173998 57.6994002,4.68193724 56.3462826,4.68193724 C54.9957891,4.68193724 53.7633762,5.20047422 52.8161065,5.9936797 L53.6859678,6.93582217 C54.4023241,6.34218381 55.3303511,5.98228792 56.3462826,5.98228792 L56.3462826,5.98228792 Z M58.1380482,7.87923039 C57.6530426,7.48558107 57.0285268,7.21302217 56.3458453,7.21302217 C55.6644758,7.21302217 55.0408347,7.48515916 54.5558291,7.8771208 L56.3458453,9.81498929 L58.1380482,7.87923039 L58.1380482,7.87923039 Z" id="Wifi" fill="#FFFFFF"></path> <text id="KL" font-family=".SFNSText, .SF NS Text" font-size="9.8" font-weight="normal" letter-spacing="-0.280000004" fill="#FFFFFF"> <tspan x="35.7" y="9.09978587">KL</tspan> </text> <g id="Signal" transform="translate(4.900000, 2.880942)" fill="#FFFFFF"> <path d="M26.6,4.80454545 L26.6,4.80454545 C27.70708,4.80454545 28.6045455,3.90707995 28.6045455,2.8 C28.6045455,1.69292005 27.70708,0.795454545 26.6,0.795454545 C25.49292,0.795454545 24.5954545,1.69292005 24.5954545,2.8 C24.5954545,3.90707995 25.49292,4.80454545 26.6,4.80454545 L26.6,4.80454545 Z M26.6,5.25 L26.6,5.25 C25.2469023,5.25 24.15,4.1530977 24.15,2.8 C24.15,1.4469023 25.2469023,0.35 26.6,0.35 C27.9530977,0.35 29.05,1.4469023 29.05,2.8 C29.05,4.1530977 27.9530977,5.25 26.6,5.25 L26.6,5.25 Z" id="Circle" fill-rule="nonzero"></path> <path d="M20.65,4.80454545 L20.65,4.80454545 C21.75708,4.80454545 22.6545455,3.90707995 22.6545455,2.8 C22.6545455,1.69292005 21.75708,0.795454545 20.65,0.795454545 C19.54292,0.795454545 18.6454545,1.69292005 18.6454545,2.8 C18.6454545,3.90707995 19.54292,4.80454545 20.65,4.80454545 L20.65,4.80454545 Z M20.65,5.25 L20.65,5.25 C19.2969023,5.25 18.2,4.1530977 18.2,2.8 C18.2,1.4469023 19.2969023,0.35 20.65,0.35 C22.0030977,0.35 23.1,1.4469023 23.1,2.8 C23.1,4.1530977 22.0030977,5.25 20.65,5.25 L20.65,5.25 Z" id="Circle" fill-rule="nonzero"></path> <circle id="Oval" cx="14.7" cy="2.8" r="2.45"></circle> <circle id="Oval" cx="8.75" cy="2.8" r="2.45"></circle> <path d="M2.8,5.25 C4.15309764,5.25 5.25,4.15309764 5.25,2.8 C5.25,1.44690236 4.15309764,0.35 2.8,0.35 C1.44690236,0.35 0.35,1.44690236 0.35,2.8 C0.35,4.15309764 1.44690236,5.25 2.8,5.25 Z" id="Oval-"></path> </g> </g> </g> <g id="Fore-hand" transform="translate(1095.000000, 558.000000)"> <path d="M42.0952381,83 C26.4444444,105.040161 33.4873016,132.590361 63.2238095,165.650602 C92.9603175,198.710843 112.52381,236.493976 121.914286,279 L136,165.650602 L42.0952381,83 Z" id="Path-13" fill="#A3CDF3" style="mix-blend-mode: multiply;"></path> <path d="M12,39.9915517 C71.4616042,70.58635 104.128271,85.2558328 110,84 C118.807594,82.1162508 120.512328,47.686669 115.524124,39.9915517 C107.250774,27.2285616 103.114099,23.564711 103.114099,29 C103.114099,42.0685355 103.114099,0 103.114099,0 C117.533557,1.23489055e-14 136,20 146,29 C156,38 160.22577,73 199.161359,204.494146 C238.096947,335.988293 235,301.897132 310,378 C360,428.735245 389,428.735245 397,378 C403.100234,580.883147 388.100234,665.883147 352,633 C297.849648,583.675279 46.0024285,380.13243 -4.54747351e-13,314.409717 C117.840304,323.474919 103.114099,254.352756 103.114099,204.494146 C103.114099,154.635537 41.350381,123.04119 24,94 C12.4330793,74.6392067 8.43307933,56.6363906 12,39.9915517 Z" id="Path-10" fill="#D1E6F9"></path> <path d="M52.5905895,57.744597 C52.5905895,57.744597 45.1683017,76.7701617 23.7312836,62.4814981 C17.0619891,58.1948991 14.3621028,52.442214 15.6316246,45.2234428 C40.2709346,53.5708789 52.5905895,57.744597 52.5905895,57.744597 Z" id="Path-11" fill="#A3CDF3" transform="translate(33.958847, 56.511828) rotate(8.000000) translate(-33.958847, -56.511828) "></path> <path d="M104,17 C104,17 132,41 136.5,63 C139.5,77.6666667 142.333333,97.3333333 145,122 L104,83 C104,39 104,17 104,17 Z" id="Path-12" fill="#76B4EE"></path> <path d="M0,316.404762 C1.02739216e-12,316.404762 57,379 63,380 C70,370 87,360 124,366 C93.5,331.505952 92.7407407,306.488095 95,285 C80,326 -1.02739216e-12,316.404762 0,316.404762 Z" id="Path-14" fill="#76B4EE"></path> </g> </g> </g> </g> </svg>
+  </section>
+
+  <section>
+    <div class="row p-top-bottom align-middle align-center t-a-center">
+      <div class="column small-12">
+        <h2>
+          {{ homepage.featured_courses_headline }}
+        </h2>
+        {{ if homepage.featured_courses_subheadline }}
+          <p>{{ homepage.featured_courses_subheadline }}</p>
+        {{ end }}
+      </div>
+      {{ if homepage.published_featured_courses }}
+        <div>
+          {{ homepage.published_featured_courses.each 'course' }}
+            {{ partial 'course' }}
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="signup-banner">
+    <div class="row p-top-bottom align-middle align-center t-a-center">
+      <div class="column small-12">
+        <h2>
+          Ready to step up your sending skills?
+        </h2>
+      </div>
+      <div class="column small-12">
+        <a href="#" class="btn btn-on-dark btn-secondary">
+            Sign Up
+          </a>
+      </div>
+    </div>
+  </section>
+
+
