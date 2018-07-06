@@ -166,13 +166,13 @@
           <p>{{ homepage.featured_courses_subheadline }}</p>
         {{ end }}
       </div>
-      {{ if homepage.published_featured_courses }}
+<!--       {{ if homepage.published_featured_courses }}
         <div>
           {{ homepage.published_featured_courses.each 'course' }}
             {{ partial 'course' }}
           {{ end }}
         </div>
-      {{ end }}
+      {{ end }} -->
     </div>
   </section>
 
