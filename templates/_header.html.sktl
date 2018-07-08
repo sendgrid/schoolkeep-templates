@@ -73,7 +73,7 @@
                     {{ end }}
                     <div class="column">
                       <li class="site-sub-nav-link">
-                        <a href="{{ routes.log_out_path }}">
+                        <a href="{{ routes.log_out_path }}" data-method="delete" rel="nofollow">
                           <div class="site-sub-nav-link__title">{{ t('.log_out') }}</div>
                         </a>
                       </li>
