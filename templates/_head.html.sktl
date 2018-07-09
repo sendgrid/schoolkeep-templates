@@ -17,6 +17,12 @@
 footer ul li:before {
   display:none;
 }
+
+footer .site-footer__section .site-footer__link {
+  color: hsla(0,0%,100%,.8);
+  text-decoration: none;
+}
+
 /*need to move this into scss assets/styles/pages/_home.scss*/
 .homepage-featured .small-6.column:nth-child(odd) {
   margin-bottom: 1rem;

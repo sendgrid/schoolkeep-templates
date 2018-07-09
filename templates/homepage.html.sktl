@@ -170,7 +170,56 @@
     {{ if homepage.published_featured_courses }}
       <div class="row collapse">
         {{ homepage.published_featured_courses.each 'course' }}
-          {{ partial 'course' }}
+          <div class="small-6 column">
+          {{ if current_person.enrolled_in_course?(course) }}
+            <a href="{{ course.cover_path }}" class="main-link">
+              <img src="{{ course.list_image_url }}" class="uk-responsive-width uk-width-1-1">
+            </a>
+          {{ else }}
+            <a href="{{ course.details_path }}" class="main-link">
+              <img src="{{ course.list_image_url }}" class="uk-responsive-width uk-width-1-1">
+            </a>
+          {{ end }}
+          </div>
+
+          <div class="small-6 column">
+
+            <h3>
+              {{ course.name }}
+            </h3>
+
+            <p class="">
+              By: {{ course.instructor_names }}
+            </p>
+
+          {{ if current_school.filtering_enabled? }}
+            <p>
+              {{ course.course_category_names }}
+            </p>
+          {{ end }}
+
+
+          {{ if course.ribbon }}
+            <div class="badge">
+              {{ course.ribbon }}
+            </div>
+          {{ end }}
+
+
+          {{ if current_person.enrolled_in_course?(course) }}
+            <p class="">{{ course.progress_text(current_person) }}</p>
+            <a href="{{ course.cover_path }}">{{ course.go_to_label }}</a>
+          {{ else }}
+            <a href="{{ course.details_path }}">
+              {{ if app('commerce').active? }}
+                {{ course.formatted_price }}
+              {{ else }}
+                {{ course.view_label }}
+              {{ end }}
+            </a>
+          {{ end }}
+
+          </div>
         {{ end }}
       </div>
     {{ end }}
