@@ -77,7 +77,7 @@ gulp.task('sass', function () {
   				sourcemaps.write()
 				)
   )
-  .pipe( concat( 'styles.css.sktl' ) )
+  .pipe( concat( 'sg-styles.css.sktl' ) )
 	.pipe( gulp.dest( './templates/' ) )
 	.pipe( browserSync.stream() );
 });
