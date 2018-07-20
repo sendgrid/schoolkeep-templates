@@ -1,0 +1,78 @@
+.school_website-courses-index {
+
+  .main-content {
+    padding-bottom: $scaleup-5;
+  }
+
+  .page-header__subtitle {
+    margin-top: 0;
+
+    &:after {
+      content: '';
+      background: $slate-10;
+      height: 2px;
+      width: 90%;
+      display: block;
+      margin: $scaleup-1 auto;
+    }
+
+  }
+
+}
+
+.course__index {
+  margin: $scale-0 auto;
+
+  &__row {
+    margin: 0;
+    max-width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  &__tile {
+    flex: 1 1 30%;
+    margin: $scale-0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card__content {
+    padding: $scaleup-3;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-size: $scaleup-2;
+      margin-bottom: $scaleup-5;
+      flex: 1;
+
+      a {
+        color: inherit;
+      }
+
+    }
+
+    p {
+      margin: 0;
+      flex: 0;
+    }
+
+    .btn {
+      margin-top: $scaleup-1;
+    }
+
+  }
+}
+
+.course__category {
+  font-size: $scaledown-1;
+  text-transform: uppercase;
+  color: $kiwi;
+}
+
+.course__progress {
+  text-transform: uppercase;
+}

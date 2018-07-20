@@ -112,8 +112,10 @@ gulp.task( 'sync', function () {
 	// Compile & lint SASS on change
 	gulp.watch( './assets/styles/**/**/*.scss', { interval: 500 }, [
 		'sass',
-		'scss-lint'
+		//'scss-lint'
 	] );
+
+	gulp.watch( './templates/**/*.sktl', browserSync.reload);
 
 } )
 

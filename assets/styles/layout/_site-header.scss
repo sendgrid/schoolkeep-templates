@@ -181,6 +181,20 @@
 			z-index: $z-index--site-sub-nav;
 		}
 	}
+
+	&-link {
+		font-family: $colfax-light;
+		font-size: $scale-0;
+		line-height: $scaleup-2;
+
+		@include breakpoint(large) {
+			font-family: $colfax-medium;
+			font-size: $scaledown-1;
+			letter-spacing: 1px;
+			text-align: center;
+			text-transform: uppercase;
+		}
+	}
 }
 .primary-site-nav__profilelink {
 
@@ -189,7 +203,7 @@
 			max-height: 320px;
 			z-index: $z-index--site-header;
 			box-shadow: $box-shadow--site-header;
-			padding-top: 0.625rem;
+			// padding-top: 0.625rem;
 		}
 	}
 
@@ -437,4 +451,8 @@
 
 .app-logged-in .header-account-overview:hover .header-account-options {
 	display: block;
+}
+
+.page__header {
+	text-align: center;
 }

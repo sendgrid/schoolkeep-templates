@@ -4,6 +4,12 @@
 	margin-top: 0;
 	color: $white-transparent-80;
 	background-color: $slate;
+
+	&__header {
+		padding-top: 1.75rem;
+		padding-bottom: 1.75rem;
+		font-size: $scaledown-1;
+	}
 }
 
 .site-footer--landing .site-footer__bottom {
@@ -20,7 +26,6 @@
 }
 
 .site-footer__title {
-	margin: 0 0 $scaledown-2;
 	font-family: $colfax-medium;
 	font-size: $scaledown-2;
 	letter-spacing: 0.85px;
@@ -29,7 +34,7 @@
 }
 
 .site-footer__link-wrapper {
-	margin: 0 0 $scaledown-2;
+	margin: 0.3125rem 0;
 }
 
 .site-footer__link {
@@ -53,7 +58,7 @@
 .site-footer__link-wrapper--try-for-free {
 	padding: 0.05rem $scaledown-5 0;
 	margin-left: 4px;
-	font-size: $scaledown-2;
+	font-size: $scaledown-1;
 	line-height: $scaleup-1;
 	white-space: nowrap;
 	background: $sg-blue;

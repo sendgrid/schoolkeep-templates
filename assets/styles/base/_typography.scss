@@ -127,6 +127,10 @@ h6 {
 	font-family: $colfax-medium;
 }
 
+p {
+	font-family: $colfax-regular;
+}
+
 h1 {
 	margin-bottom: $scaleup-3;
 
@@ -358,6 +362,18 @@ a {
 
 .p {
 	@extend p;
+}
+
+.is-size-18 {
+	font-size: 1.125rem;
+}
+
+.is-size-20 {
+	font-size: $scaleup-1;
+}
+
+.is-size-45 {
+	font-size: $scaleup-5;
 }
 
 // Fonts by Class

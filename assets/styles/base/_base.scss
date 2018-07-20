@@ -9,10 +9,13 @@ html {
 }
 
 body {
-	-webkit-font-smoothing: subpixel-antialiased;
 	color: $slate-80;
 	background-color: $white;
 	box-shadow: 0 1px 3px 0 rgba($slate, 0.2);
+	font-family: $colfax-regular;
+	text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 main {
@@ -38,6 +41,10 @@ body {
 
 .site-content {
 	padding-top: 75px;
+}
+
+.main-content {
+	background: $sg-blue-2;
 }
 
 a,

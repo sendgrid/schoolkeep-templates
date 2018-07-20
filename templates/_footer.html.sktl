@@ -1,14 +1,14 @@
 <!--     {{ website_footer.school_customer_service_email }}
  -->
 
-      <div class="row p-small">
+      <div class="row expanded constrain-large site-footer__header">
         <div class="column medium-2">
           <a href="https://sendgrid.com/">sendgrid.com</a>
         </div>
         <div class="column medium-5">
           We respect your privacy. Learn more <a href="https://sendgrid.com/policies/privacy/">here</a>.
         </div>
-        <div class="column medium-5">
+        <div class="column medium-5 t-a-right">
           Need Help? Email us at
           <a href="mailto:{{ website_footer.school_customer_service_email }}">
             {{ website_footer.school_customer_service_email }}
