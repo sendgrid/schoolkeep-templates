@@ -312,3 +312,17 @@
 	}
 
 }
+
+a:not(.uk-button) {
+	color: $sg-blue-80;
+}
+
+.site-footer {
+	a:not(.uk-button) {
+		color: $white;
+	}
+}
+
+a.btn-primary {
+	color: $white;
+}

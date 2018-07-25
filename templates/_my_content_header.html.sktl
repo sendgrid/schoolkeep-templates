@@ -1,4 +1,4 @@
-<div class="uk-padding-large-vertical uk-padding-horizontal uk-border-bottom">
-  <h2>{{ my_content.headline }}</h2>
-  <h3 class="uk-margin-top-remove">{{ my_content.subheadline }}</h3>
+<div class="uk-padding-large-vertical uk-padding-horizontal page__header">
+  <h1 class="page-header__title">{{ my_content.headline }}</h1>
+  <sub class="page-header__subtitle">{{ my_content.subheadline }}</sub>
 </div>

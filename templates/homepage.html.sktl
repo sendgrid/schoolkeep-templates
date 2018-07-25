@@ -2,10 +2,10 @@
 
     <!-- <img src="{{ homepage.artwork_url }}"> -->
 
-     <img src="img/header-illustration-desktop.svg" class="header__home__image only-large" />
-     <img src="img/header-illustration-desktop-small.svg" class="header__home__image only-desktop" />
-     <img src="img/header-illustration-tablet.svg" class="header__home__image only-tablet" />
-     <img src="img/header-illustration-mobile.svg" class="header__home__image header__home__image--mobile only-mobile" />
+     <img src="https://sendgrid.com/wp-content/uploads/2018/07/header-illustration-desktop.svg" class="header__home__image only-large" />
+     <img src="https://sendgrid.com/wp-content/uploads/2018/07/header-illustration-desktop-small.svg" class="header__home__image only-desktop" />
+     <img src="https://sendgrid.com/wp-content/uploads/2018/07/header-illustration-tablet.svg" class="header__home__image only-tablet" />
+     <img src="https://sendgrid.com/wp-content/uploads/2018/07/header-illustration-mobile.svg" class="header__home__image header__home__image--mobile only-mobile" />
 
 
 
@@ -112,7 +112,7 @@
   </section>
 
   <section class="home__skills p-top-5 p-bottom-5 p-relative">
-    <img src="img/hand-illustration.svg" class="home__skills__illustration"/>
+    <img src="https://sendgrid.com/wp-content/uploads/2018/07/hand-illustration.svg" class="home__skills__illustration"/>
     <div class="row p-bottom-4 p-top-8 p-relative">
       <header class="column t-a-center small-12">
         <h2 class="is-size-45">

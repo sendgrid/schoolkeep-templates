@@ -108,3 +108,25 @@ hr {
 	border-top: 1px solid $border-color-gray;
 	border-bottom: 1px solid $white;
 }
+
+.uk-button-primary, .uk-form input.uk-button-primary[type="submit"] {
+	color: $white;
+	background: $sg-blue-80;
+	border-color: $sg-blue;
+
+	&:hover {
+		background: $sg-blue;
+	}
+}
+
+.school_website-accounts-edit {
+	.uk-panel-box, .uk-panel-box-secondary {
+		background: transparent;
+	}
+}
+
+.filter-list {
+	li {
+		line-height: 1.5;
+	}
+}

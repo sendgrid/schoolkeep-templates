@@ -1,18 +1,17 @@
 {{ if current_school.filtering_enabled? & current_person.filterable_categories.any? }}
-  <div class="uk-width-medium-1-6 uk-block uk-padding">
-    {{ t('.filter_by_category') }}:
-    <ul class="uk-list uk-list-space">
-      <li class="uk-margin-top">
-        <a href="{{ routes.my_content_path }}" class="{{ no_filter_selected_class }}">
-          {{ t('.all') }}
-        </a>
+  <div class="course__filters">
+    <ul>
+      <li class="course__filter">
+          <a href="{{ routes.my_content_path }}" class="{{ no_filter_selected_class }}">
+            {{ t('.all') }}
+          </a>
       </li>
       {{ current_person.filterable_categories.each 'filterable_category' }}
-        <li>
-          <a href="{{ filterable_category.link }}" class="{{ if filterable_category.active? }}uk-text-bold{{ end }}">
+      <li>
+          <a href="{{ filterable_category.link }}" class="{{ if filterable_category.active? }}course__filter--active{{ end }}">
             {{ filterable_category.name }}
           </a>
-        </li>
+      </li>
       {{ end }}
     </ul>
   </div>

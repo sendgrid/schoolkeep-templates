@@ -63,7 +63,7 @@
         <h3>{{ course.about_label }}</h3>
         <p>{{ course.full_description }}</p>
       </article>
-      {{ if course.show_events? }} 
+      {{ if course.show_events? }}
         <article class="uk-article cover-virtual-events">
           <h3>{{ course.virtual_events_title }}</h3>
           {{ course.upcoming_event_sessions.each 'session' }}
@@ -96,7 +96,7 @@
       {{ end }}
 
       <article class="uk-article">
-        {{ upcoming_events }}
+
       </article>
 
       {{ if course.discover_events_path }}

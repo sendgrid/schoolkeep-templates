@@ -14,8 +14,8 @@
 			line-height: 1.25;
 
 			@include breakpoint(xxlarge) {
-				padding-left: $scaleup-9;
-				padding-right: $scaleup-9;
+				padding-left: $scaleup-7;
+				padding-right: $scaleup-7;
 			}
 		}
 	}
@@ -354,7 +354,7 @@ header.p-relative {
 			height: auto;
 
 			@include breakpoint(large) {
-				flex-basis: 35%;
+				flex-basis: 38%;
 			}
 		}
 
