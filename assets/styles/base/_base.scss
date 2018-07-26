@@ -111,11 +111,11 @@ hr {
 
 .uk-button-primary, .uk-form input.uk-button-primary[type="submit"] {
 	color: $white;
-	background: $sg-blue-80;
-	border-color: $sg-blue;
+	background: $sg-blue-80 !important;
+	border-color: $sg-blue !important;
 
 	&:hover {
-		background: $sg-blue;
+		background: $sg-blue !important;
 	}
 }
 
