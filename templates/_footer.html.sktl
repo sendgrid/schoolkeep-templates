@@ -93,3 +93,20 @@
 
   </div> <!-- site-content -->
 </div> <!-- site-wrapper -->
+
+<script>
+  var mobileMenu = document.getElementById('js-site-menu');
+
+  document.getElementById('js-site-header-toggle').addEventListener('click', function () {
+    // Using an if statement to check the class
+    if (mobileMenu.classList.contains('nav-open')) {
+      // The box that we clicked has a class of bad so let's remove it and add the good class
+      mobileMenu.classList.remove('nav-open');
+      mobileMenu.classList.add('nav-closed');
+    } else {
+      // The user obviously can't follow instructions so let's alert them of what is supposed to happen next
+      mobileMenu.classList.add('nav-open');
+      mobileMenu.classList.remove('nav-closed');
+    }
+  });
+</script>

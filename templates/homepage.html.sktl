@@ -206,7 +206,7 @@
                         </div>
                       {{ end }}
 
-                      {{ course.go_to_label }}
+                      <p class="blue-text-80">{{ course.go_to_label }}</p>
 
 
                   </div>
@@ -241,7 +241,7 @@
                       {{ if app('commerce').active? }}
                         {{ course.formatted_price }}
                       {{ else }}
-                        {{ course.view_label }}
+                        <p class="blue-text-80">{{ course.go_to_label }}</p>
                       {{ end }}
 
                   </div>

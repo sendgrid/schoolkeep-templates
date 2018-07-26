@@ -130,3 +130,12 @@ hr {
 		line-height: 1.5;
 	}
 }
+
+::selection {
+	background: $sg-blue-40;
+	color: inherit;
+}
+::-moz-selection {
+	background: $sg-blue-40;
+	color: inherit;
+}
