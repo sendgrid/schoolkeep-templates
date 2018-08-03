@@ -10,7 +10,7 @@
 
         <h2>{{ course.name }}</h2>
 
-        <p class="course__description">{{ course.short_description }} Learn about how your reputation can keep emails from reaching the inbox.</p>
+        <p class="course__description">{{ course.short_description }}</p>
 
         {{ if current_person.enrolled_in_course?(course) }}
           <a href="{{ course.cover_path }}" class="uk-button uk-button-primary uk-button-large">{{ course.go_to_label }}</a>

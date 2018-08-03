@@ -17,7 +17,7 @@
             <i class="uk-icon-calendar-o"></i>
           </a>
         </li>
-       {{ end }}
+        {{ end }}
     </ul>
   </div>
 
@@ -30,121 +30,124 @@
   </div>
 </header>
 
-{{ if preview_banner }}
-  {{ preview_banner }}
-{{ end }}
+<section class="course__header">
+  <div class="row align-middle p-top-6 p-bottom-6">
+    <div class="column small-12 medium-6">
 
-<div class="uk-container uk-container-center uk-padding-large uk-margin-large-top">
-  <h4 class="uk-text-muted uk-margin-remove">{{ course.superscript }}</h4>
-  {{ if course.learner_can_retake? }}
-    <form action="{{ course.course_attempts_path }}" method="POST">
-      <button type="submit" class="uk-button uk-float-right completion-button">{{ course.retake_course }}</button>
-    </form>
-  {{ else }}
-    <a href="{{ course.outline_path }}" class="uk-button uk-float-right completion-button">{{ course.start_or_continue }}</a>
-  {{ end }}
+      {{ if current_school.filtering_enabled? }}
+          <p class="course__category">
+            {{ course.course_category_names }}
+          </p>
+        {{ end }}
 
-  {{ if course.show_events? }}
-    <a href="{{ course.virtual_events_path }}" class="uk-button uk-button-white uk-float-right uk-margin-right">
-      {{ course.register_for_events }}
-    </a>
-  {{ end }}
+        <h2>{{ course.name }}</h2>
 
-  {{ if current_school.filtering_enabled? }}
-    <h3 class="uk-margin-remove">{{ course.course_category_names }}</h3>
-  {{ end }}
-  <h1 class="uk-margin-remove">{{ course.name }}</h1>
-  <hr class="uk-article-divider uk-margin-top">
+        <p class="course__description">{{ course.short_description }}</p>
 
-  <div{{ if course.has_outline? }} class="uk-grid uk-grid-large"{{ end }}>
-    <div class="uk-width-medium-1-2 uk-margin-bottom{{ unless course.has_outline? }} uk-container-center{{ end }}">
-      <article class="uk-article">
-        <img src="{{ course.featured_image_url }}" />
-        <h3>{{ course.about_label }}</h3>
-        <p>{{ course.full_description }}</p>
-      </article>
-      {{ if course.show_events? }}
-        <article class="uk-article cover-virtual-events">
-          <h3>{{ course.virtual_events_title }}</h3>
-          {{ course.upcoming_event_sessions.each 'session' }}
-            {{ partial 'virtual_event_session' }}
-          {{ end }}
-
-          <a href="{{ course.virtual_events_path }}" class="uk-button uk-button-primary">
-            {{ t('.show_virtual_events') }}
-          </a>
-        </article>
-      {{ end }}
-      {{ if course.instructors }}
-        <article class="uk-article">
-          <h3>{{ course.instructors_title }}</h3>
-          {{ course.instructors.each 'instructor' }}
-            <div>
-              <div class="uk-comment-header">
-                <img
-                  src="{{ instructor.image_url }}"
-                  alt="{{instructor.name}}"
-                  class="uk-comment-avatar"
-                  width="80">
-                <h4 class="uk-comment-title">{{ instructor.name }}</h4>
-                <div class="uk-comment-meta">{{ instructor.title }}</div>
-              </div>
-              <div class="wysiwyg">{{ instructor.bio }}</div>
-            </div>
-          {{ end }}
-        </article>
-      {{ end }}
-
-      <article class="uk-article">
-
-      </article>
-
-      {{ if course.discover_events_path }}
-        <a href="{{ course.discover_events_path }}" class="uk-padding-left-remove">{{ t('.see_all_events') }}</a>
-      {{ end }}
-    </div>
-
-    {{ if course.has_outline? }}
-      <div class="uk-width-medium-1-2">
-        <h3>{{ course.progress_title }}</h3>
+        <h4>{{ course.progress_title }}</h4>
         {{ course.progress_bar }}
 
-        <h3>{{ course.outline_label }}</h3>
-        <ol class="uk-list cover-outline">
-          {{ learner_syllabus.sections.each 'section' }}
-            <li class="uk-margin-large-bottom">
-              <h3><strong>{{ section.name }}</strong></h3>
-              {{ if section.will_be_published? }}
-                <div class="uk-margin-top">
-                  {{ t('.scheduled_info') }} {{ section.published_at }}
-                </div>
-              {{ else }}
-                <ol class="uk-list cover-outline-section-activities">
-                  {{ section.activities.each 'activity' }}
-                    <li class="{{ if activity.completed? }}completed {{ end }}{{ if activity.locked? }}locked{{ end }}" >
-                      {{ if activity.locked? }}
-                        <span>
-                          {{ if activity.milestone? }}
-                            <i class="uk-icon-flag"></i>
-                          {{ end }}
-                          {{ activity.title }}
-                        </span>
-                      {{ else }}
-                        <a href="{{ activity.path }}">
-                          {{ if activity.milestone? }}
-                            <i class="uk-icon-flag"></i>
-                          {{ end }}
-                          {{ activity.title }}
-                        </a>
-                      {{ end }}
-                    </li>
-                  {{ end }}
-                </ol>
+        {{ if course.learner_can_retake? }}
+          <form action="{{ course.course_attempts_path }}" method="POST">
+            <button type="submit" class="uk-button uk-float-right completion-button">{{ course.retake_course }}</button>
+          </form>
+        {{ else }}
+          <a href="{{ course.outline_path }}" class="uk-button uk-button-primary uk-button-large">{{ course.start_or_continue }}</a>
+        {{ end }}
+
+        {{ if course.show_events? }}
+          <a href="{{ course.virtual_events_path }}" class="uk-button uk-button-primary uk-button-large">
+            {{ course.register_for_events }}
+          </a>
+        {{ end }}
+
+    </div>
+    <div class="column small-12 medium-6 p-bottom-2 p-top-2">
+        {{ if course.promo_video_embed }}
+          <div class="video-container course-promo-video" data-behavior="scaleEmbed">
+            {{ course.promo_video_embed }}
+          </div>
+        {{ else }}
+          <img src="{{ course.featured_image_url }}" alt="{{ course.name }}" class="course-image uk-responsive-width uk-width-1-1">
+        {{ end }}
+    </div>
+</section>
+<section class="course__content p-top-6">
+  <div class="row">
+    <div class="column small-12 medium-8 medium-offset-2">
+
+      <h2>{{ course.about_label }}</h2>
+      {{ course.full_description }}
+
+      {{ if course.has_outline? }}
+
+        <div class="course__outline">
+            <h2>
+            {{ course.outline_label }}
+            </h2>
+            {{ learner_syllabus.sections.each 'section' }}
+            <div class="course__outline__subheader">
+              {{ section.name }}
+            </div>
+            <ul class="course__outline__list">
+              {{ section.activities.each 'activity' }}
+                <li>{{ activity.title }}</li>
               {{ end }}
-            </li>
+            </ul>
           {{ end }}
-        </ol>
-      </div>
-    {{ end }}
+        </div>
+
+      {{ end }}
+
+      {{ course.social_links }}
+
+    </div>
   </div>
-</div>
+</section>
+<section class="course__signup p-top-6 p-bottom-6 t-a-center">
+  <div class="row">
+    <div class="column small-12">
+      <p>Interested? Enroll in <br>
+          <span>Protect Your Sender Reputation From the Start!</span>
+          <img src="https://sendgrid.com/wp-content/uploads/2018/07/Airplane-01.svg"/>
+        </p>
+
+      {{ if course.learner_can_retake? }}
+        <form action="{{ course.course_attempts_path }}" method="POST">
+          <button type="submit" class="uk-button uk-float-right completion-button">{{ course.retake_course }}</button>
+        </form>
+
+      {{ else }}
+        <a href="{{ course.outline_path }}" class="uk-button uk-button-primary uk-button-large">{{ course.start_or_continue }}</a>
+      {{ end }}
+
+      {{ if course.show_events? }}
+      <a href="{{ course.virtual_events_path }}" class="uk-button uk-button-primary uk-button-large">
+        {{ course.register_for_events }}
+      </a>
+
+      {{ end }}
+    </div>
+  </div>
+</section>
+<section class="course__authors p-top-6 p-bottom-6">
+  <div class="row">
+    <div class="column small-12">
+      {{ if course.instructors }}
+        {{ course.instructors.each 'instructor' }}
+          <div class="course__author__profile">
+            <figure class="course__author__image">
+              <img src="{{ instructor.image_url }}" alt="{{ instructor.name }}">
+            </figure>
+            <div class="course__author__bio">
+              {{ if instructor.name | instructor.title }}
+                <h4>{{ if instructor.name }}About {{ instructor.name }}{{ end }}</h4>
+              {{ end }}
+              {{ instructor.bio }}
+            </div>
+          </div>
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</section>
