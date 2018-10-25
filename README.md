@@ -10,7 +10,7 @@ If you know how to use git, clone this repository.
 
 If not install https://mac.github.com/ and clone this repository by clicking
 [here](github-mac://openRepo/https://github.com/SchoolKeep/schoolkeep-templates) or using the `Clone in Desktop` on the right.
-To open up the terminal in the `schoolkeep-templates` folder press Command+T or clicking the menu item `Repository -> Open in Terminal`.
+To open up the terminal in the `schoolkeep-templates` folder press <kbd>Command</kbd>+<kbd>T</kbd> or clicking the menu item `Repository -> Open in Terminal`.
 
 In the terminal and in the `schoolkeep-templates` directory:
 
@@ -25,8 +25,8 @@ In the terminal and in the `schoolkeep-templates` directory:
 ## Edit Templates
 
 All templates are in the templates folder. You can edit the files using any text editor.
-If you don't know how to edit the files you can download the Atom editor https://atom.io/
-then inside the github app you can press Command+Shift+A or clicking the menu item `Repository -> Open in Atom`
+If you don't know how to edit the files you can download the [Atom Text Editor](https://atom.io/)
+then inside the GitHub app you can press <kbd>Command</kbd>+<kbd>Shift</kbd>+<kbd>A</kbd>or clicking the menu item `Repository -> Open in Atom`
 
 ## Usage
 
@@ -50,7 +50,7 @@ To upload all templates and deploy local template changes to our server:
 SK_API_KEY=your-api-key bundle exec sk upload --all
 ```
 
-To reset all all changes and use SchoolKeep's default templates:
+To reset all changes and use SchoolKeep's default templates:
 ```sh
 SK_API_KEY=your-api-key bundle exec sk reset --all
 ```
