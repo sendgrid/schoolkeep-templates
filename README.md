@@ -26,7 +26,7 @@ In the terminal and in the `schoolkeep-templates` directory:
 
 All templates are in the templates folder. You can edit the files using any text editor.
 If you don't know how to edit the files you can download the Atom editor https://atom.io/
-then inside the github app you can press Command+Shift+A or clicking the menu item `Repository -> Open in Atom`
+then inside the GitHub app you can press Command+Shift+A or clicking the menu item `Repository -> Open in Atom`
 
 ## Usage
 
@@ -50,7 +50,7 @@ To upload all templates and deploy local template changes to our server:
 SK_API_KEY=your-api-key bundle exec sk upload --all
 ```
 
-To reset all all changes and use SchoolKeep's default templates:
+To reset all changes and use SchoolKeep's default templates:
 ```sh
 SK_API_KEY=your-api-key bundle exec sk reset --all
 ```
