@@ -55,7 +55,7 @@
     <dl class="site-footer__section support column small-12 medium-6 large-expand">
       <dt class="site-footer__title">Support</dt>
       <dd class="site-footer__link-wrapper site-footer__link-wrapper--contact-support"><a href="https://support.sendgrid.com/" rel="nofollow" class="site-footer__link site-footer__link--contact-support" data-gtm-outbound="footer_link">Contact Support</a></dd>
-      <dd class="site-footer__link-wrapper site-footer__link-wrapper--documentation"><a href="https://sendgrid.com/docs" class="site-footer__link site-footer__link--documentation" data-gtm-outbound="footer_link">Documentation</a></dd>
+      <dd class="site-footer__link-wrapper site-footer__link-wrapper--documentation"><a href="https://sendgrid.com/docs" class="site-footer__link site-footer__link--documentation" data-gtm-outbound="footer_link">Knowledge Center</a></dd>
       <dd class="site-footer__link-wrapper site-footer__link-wrapper--report-spam"><a href="https://sendgrid.com/report-spam/" class="site-footer__link site-footer__link--report-spam" data-gtm-outbound="footer_link">Report Spam</a></dd>
     </dl>
     <dl class="site-footer__section community column small-12 medium-6 large-expand">
