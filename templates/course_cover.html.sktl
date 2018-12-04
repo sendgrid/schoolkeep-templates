@@ -49,7 +49,7 @@
 
         {{ if course.learner_can_retake? }}
           <form action="{{ course.course_attempts_path }}" method="POST">
-            <button type="submit" class="uk-button uk-float-right completion-button">{{ course.retake_course }}</button>
+            <button type="submit" class="uk-button-primary uk-button-large completion-button">{{ course.retake_course }}</button>
           </form>
         {{ else }}
           <a href="{{ course.outline_path }}" class="uk-button uk-button-primary uk-button-large">{{ course.start_or_continue }}</a>
@@ -79,26 +79,6 @@
       <h2>{{ course.about_label }}</h2>
       {{ course.full_description }}
 
-      {{ if course.has_outline? }}
-
-        <div class="course__outline">
-            <h2>
-            {{ course.outline_label }}
-            </h2>
-            {{ learner_syllabus.sections.each 'section' }}
-            <div class="course__outline__subheader">
-              {{ section.name }}
-            </div>
-            <ul class="course__outline__list">
-              {{ section.activities.each 'activity' }}
-                <li>{{ activity.title }}</li>
-              {{ end }}
-            </ul>
-          {{ end }}
-        </div>
-
-      {{ end }}
-
       {{ course.social_links }}
 
     </div>
@@ -108,13 +88,13 @@
   <div class="row">
     <div class="column small-12">
       <p>Interested? Enroll in <br>
-          <span>Protect Your Sender Reputation From the Start!</span>
+          <span>{{ course.name }}</span>
           <img src="https://sendgrid.com/wp-content/uploads/2018/07/Airplane-01.svg"/>
         </p>
 
       {{ if course.learner_can_retake? }}
         <form action="{{ course.course_attempts_path }}" method="POST">
-          <button type="submit" class="uk-button uk-float-right completion-button">{{ course.retake_course }}</button>
+          <button type="submit" class="uk-button-primary uk-button-large completion-button">{{ course.retake_course }}</button>
         </form>
 
       {{ else }}

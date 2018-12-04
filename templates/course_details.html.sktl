@@ -48,22 +48,6 @@
       <h2>{{ course.about_label }}</h2>
       {{ course.full_description }}
 
-      <div class="course__outline">
-          <h2>
-          {{ course.outline_label }}
-          </h2>
-        {{ course.published_sections.each 'section' }}
-          <div class="course__outline__subheader">
-            {{ section.name }}
-          </div>
-          <ul class="course__outline__list">
-            {{ section.activities.each 'activity' }}
-              <li>{{ activity.title }}</li>
-            {{ end }}
-          </ul>
-        {{ end }}
-      </div>
-
       {{ course.social_links }}
 
     </div>
@@ -73,7 +57,7 @@
   <div class="row">
     <div class="column small-12">
       <p>Interested? Enroll in <br>
-          <span>Protect Your Sender Reputation From the Start!</span>
+          <span>{{ course.name }}</span>
           <img src="https://sendgrid.com/wp-content/uploads/2018/07/Airplane-01.svg"/>
         </p>
 
