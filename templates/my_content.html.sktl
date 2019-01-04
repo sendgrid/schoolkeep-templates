@@ -13,14 +13,14 @@
     {{ end }}
 
     {{ partial 'my_content_header' }}
-    <div class="uk-grid uk-grid-flex uk-margin-left-remove">
+    <div class="row expanded constrain-large course__index m-top-none">
       {{ partial 'filters' }}
        {{ if current_school.filtering_enabled? & current_person.filterable_categories.any? }}
-         <div class="uk-width-medium-5-6 uk-padding">
+         <div class="course__index__row">
        {{ else }}
          <div class="uk-width-1-1 uk-padding">
        {{ end }}
-        <ul class="uk-grid uk-grid-medium school-website-course-list uk-grid-match" data-uk-grid-match="{target:'.uk-panel'}">
+        <ul class="course__index__row" data-uk-grid-match="{target:'.uk-panel'}">
           {{ my_content.courses.each 'course' }}
             {{ partial 'course' }}
           {{ end }}

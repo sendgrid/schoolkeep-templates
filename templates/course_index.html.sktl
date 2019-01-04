@@ -1,22 +1,25 @@
-<div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+<div class="row page__header">
   {{ if course_catalog.headline | course_catalog.subheadline }}
-    <div class="uk-text-center uk-padding-large-vertical uk-padding-horizontal">
+    <div class="column small-12 m-top-5">
       {{ if courses }}
-        <h2>{{ course_catalog.headline }}</h2>
-        <h3 class="page-header uk-margin-top-remove">{{ course_catalog.subheadline }}</h3>
+        <h1 class="page-header__title">{{ course_catalog.headline }}</h1>
+        <sub class="page-header__subtitle">{{ course_catalog.subheadline }}</sub>
       {{ else }}
-        <h1>{{ course_catalog.headline_empty_collection }}</h1>
-        <h2 class="page-header">
+        <h1 class="page-header__title">{{ course_catalog.headline_empty_collection }}</h1>
+        <sub class="page-header__subtitle">
           {{ course_catalog.subheadline_empty_collection }}
-        </h2>
+        </sub>
       {{ end }}
     </div>
   {{ end }}
-  <div class="uk-width-small-1-1 uk-width-medium-1-1 uk-padding-horizontal uk-container-center uk-padding-top uk-margin-large-bottom">
-    <ul class="uk-grid school-website-course-list" data-behavior="listResize">
-      {{ courses.each 'course' }}
-        {{ partial 'course' }}
-      {{ end }}
-    </ul>
-  </div>
+</div>
+<div class="row expanded constrain-large course__index">
+    <!-- data-behavior="listResize" -->
+    <div class="column">
+      <div class="course__index__row">
+        {{ courses.each 'course' }}
+          {{ partial 'course' }}
+        {{ end }}
+      </div>
+    </div>
 </div>

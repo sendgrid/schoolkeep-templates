@@ -5,7 +5,7 @@
 
       <div class="row expanded constrain-large align-middle">
 
-        <button class="site-header__toggle js-site-header-toggle">
+        <button class="site-header__toggle js-site-header-toggle" id="js-site-header-toggle">
           <span class="site-header__menu"></span>
         </button>
 
@@ -29,15 +29,13 @@
 
         </ul>
 
-        <ul class="column small-12 large-5 t-a-right-large m-left-5-large show-for-large menu align-right">
+        <ul class="column small-12 large-5 t-a-right-large m-left-5-large mobile-converted-menu nav-closed menu align-right" id="js-site-menu">
 
-          {{ header_navigations.each 'website_navigation' }}
-            <li class="primary-site-nav__link">
-              <a href="{{ website_navigation.path }}" {{if website_navigation.external?}} target="_blank" {{end}}>
-                {{ website_navigation.name }}
-              </a>
-            </li>
-          {{ end }}
+          <li class="primary-site-nav__link">
+            <a href="/courses">
+              All Courses
+            </a>
+          </li>
 
           {{ if current_person }}
 

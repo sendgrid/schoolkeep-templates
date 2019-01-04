@@ -65,14 +65,20 @@ gulp.task('sass', function () {
 			})
   .on('error', sass.logError))
   .pipe( autoprefixer( { browsers: [ 'last 3 versions' ] } ) )
-  .pipe( gulpif( process.env.NODE_ENV === 'production',
-  				cssnano( {
-							safe: true, // Use safe optimizations.
-							keepSpecialComments: 1
-						}
-					)
-				)
-  )
+  // .pipe( gulpif( process.env.NODE_ENV === 'production',
+  // 				cssnano( {
+	// 						safe: true, // Use safe optimizations.
+	// 						keepSpecialComments: 1
+	// 					}
+	// 				)
+	// 			)
+	// )
+	.pipe( cssnano( {
+				safe: true, // Use safe optimizations.
+				keepSpecialComments: 1
+			}
+		)
+	)
   .pipe( gulpif( process.env.NODE_ENV === 'development',
   				sourcemaps.write()
 				)
@@ -112,8 +118,10 @@ gulp.task( 'sync', function () {
 	// Compile & lint SASS on change
 	gulp.watch( './assets/styles/**/**/*.scss', { interval: 500 }, [
 		'sass',
-		'scss-lint'
+		//'scss-lint'
 	] );
+
+	gulp.watch( './templates/**/*.sktl', browserSync.reload);
 
 } )
 

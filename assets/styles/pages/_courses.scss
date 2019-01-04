@@ -1,0 +1,295 @@
+.school_website-courses-index, .school_website-catalog-index, .school_website-my_content-index {
+
+  .main-content {
+    padding-bottom: $scaleup-5;
+  }
+
+  .page-header__subtitle {
+    margin-top: 0;
+
+    &:after {
+      content: '';
+      background: $slate-10;
+      height: 2px;
+      width: 90%;
+      display: block;
+      margin: $scaleup-1 auto;
+    }
+
+  }
+
+}
+
+.course__index {
+  margin: $scale-0 auto;
+
+  &__row {
+    margin: 0;
+    max-width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  &__tile {
+    flex: 1 1 29%;
+    margin: $scaleup-1;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    @include breakpoint(large) {
+      max-width: 30.5%;
+    }
+  }
+
+}
+
+.course__index__tile {
+  border-color: $sg-blue-10;
+
+  .card__content {
+    padding: $scaleup-3;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-size: $scaleup-2;
+      margin-bottom: $scaleup-4;
+      flex: 1;
+
+      a {
+        color: inherit;
+      }
+
+    }
+
+    p {
+      margin: 0;
+      flex: 0;
+
+      &.course__category {
+        font-size: $scaledown-1;
+        line-height: 1.7;
+        text-transform: uppercase;
+        font-family: $colfax-medium;
+        color: $slate-40;
+        margin-bottom: $scaledown-2;
+      }
+
+    }
+
+    .btn {
+      margin-top: $scaleup-1;
+    }
+
+  }
+
+}
+
+.course__progress {
+  text-transform: uppercase;
+}
+
+.course {
+
+  &__header {
+    background: $sg-blue-5;
+  }
+
+  &__category {
+    font-family: $colfax-medium;
+    color: $sg-blue-40;
+    font-size: $scaledown-1;
+    line-height: 1.7;
+    text-transform: uppercase;
+    margin-bottom: $scaledown-2;
+  }
+
+  &__description {
+    margin-bottom: $scaleup-2;
+  }
+
+  &__outline {
+
+    &__subheader {
+      border: 1px solid $sg-blue-20;
+      background: $sg-blue-5;
+      border-radius: 2px 2px 0 0;
+      padding: $scaleup-1 $scale-0;
+      font-family: $colfax-medium;
+    }
+
+    &__list {
+      margin: 0;
+      padding: 0;
+
+      li {
+        background: $sg-blue-2;
+        padding: $scaleup-1 $scale-0 $scaleup-1 $scaleup-4;
+        border-left: 1px solid $sg-blue-20;
+        border-right: 1px solid $sg-blue-20;
+        border-bottom: 1px solid $sg-blue-20;
+        list-style: none;
+
+        &:last-of-type {
+          border-radius: 0 0 2px 2px;
+        }
+
+      }
+
+    }
+
+  }
+
+  &__authors {
+    background: $sg-blue-5;
+  }
+
+  &__author {
+
+    &__profile {
+      display: flex;
+      flex-direction: column;
+      margin: $scaleup-1 0;
+      align-items: center;
+
+      @include breakpoint(medium) {
+        flex-direction: row;
+      }
+    }
+
+    &__image {
+      flex: 0 1 125px;
+      min-width: 125px;
+      max-width: 125px;
+      height: 125px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: $scaleup-2 0;
+
+      @include breakpoint(medium) {
+        margin: 0 $scaleup-6 0;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+
+    }
+
+    &__bio {
+
+      h4 {
+        font-size: $scaleup-1;
+        margin-bottom: $scaledown-2;
+      }
+
+    }
+  }
+
+  &__signup {
+    color: $slate;
+
+    p {
+      position: relative;
+      font-size: $scaleup-1;
+      margin-bottom: $scaleup-4;
+
+      span {
+        font-family: $colfax-medium;
+        font-style: italic;
+      }
+
+      img {
+        position: absolute;
+        top: -40px;
+        display: none;
+        max-width: 105px;
+        height: auto;
+
+        @include breakpoint(medium) {
+          display: inline;
+        }
+      }
+
+    }
+
+  }
+
+  &__filters {
+    padding: 0 15px;
+    width: 100%;
+    text-align: center;
+
+     ul {
+       margin: 0;
+       padding: 0;
+       text-align: center;
+     }
+
+     li {
+       margin: 0;
+       padding: 0 15px;
+       list-style: none;
+       display: inline-block;
+       font-size: $scaledown-1;
+     }
+
+     a {
+      padding: 0 $scaledown-6 $scaledown-6;
+      font-family: $colfax-medium;
+      color: $slate-60;
+
+      &:hover {
+        color: $sg-blue;
+      }
+
+      &.uk-text-bold {
+        color: $slate;
+        font-weight: normal;
+        border-bottom: 3px solid $sg-blue;
+      }
+    }
+  }
+}
+
+a.course__filter--active {
+  color: $slate;
+  font-weight: normal;
+  border-bottom: 3px solid $sg-blue;
+}
+
+.social-links {
+  margin: $scaleup-8 0;
+  text-align: center;
+
+  p {
+    font-size: $scaleup-1;
+    text-transform: capitalize;
+    color: $slate;
+  }
+
+  .social-link {
+    background: $slate-10;
+    color: $slate-80;
+    padding: $scaledown-1 $scaleup-1;
+    margin: 0 $scale-0 $scale-0;
+    font-size: $scale-0;
+    border-radius: 2px;
+
+    i, &.uk-button [class*='-icon-']:first-child, &.uk-button [class*='-icon-']:last-child {
+      background: $slate-80;
+      color: $slate-10;
+      margin-right: $scaledown-2;
+      padding: 0;
+      min-width: 24px;
+      min-height: 24px;
+      border-radius: 50%;
+      line-height: 24px;
+    }
+
+  }
+
+}

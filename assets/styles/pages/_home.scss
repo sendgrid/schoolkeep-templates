@@ -1,3 +1,34 @@
+.school_website-homepages {
+
+	.main-content {
+		background: transparent;
+	}
+
+}
+
+.header {
+
+	&--home {
+
+		.page-header__title {
+			line-height: 1.25;
+
+			@include breakpoint(xxlarge) {
+				padding-left: $scaleup-7;
+				padding-right: $scaleup-7;
+			}
+		}
+	}
+}
+
+.header__home__image {
+	width: 100%;
+
+	&--mobile {
+		padding-top: 430px;
+	}
+}
+
 .home {
 
 	main {
@@ -135,13 +166,9 @@
 
 header.p-relative {
 
-	img {
-		margin-left: -1px;
-	}
-
 	&::after {
 	  content: '';
-	  height: 18.06rem;
+	  height: 200px;
 	  position: relative;
 	  bottom: 0;
 	  margin-top: -0.5rem;
@@ -151,30 +178,68 @@ header.p-relative {
 
 }
 
-.section-1 {
+.home__confidence {
 	position: relative;
-  z-index: 8;
+	z-index: 8;
+
+	&:before {
+		content: '';
+		width: 100%;
+		height: 85%;
+		display: block;
+		background: url('data:image/svg+xml;utf8,<svg width="635px" height="528px" viewBox="0 0 635 528" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> <defs> <linearGradient x1="136.703297%" y1="3.30288124%" x2="70.3296703%" y2="77.3717498%" id="linearGradient-1"> <stop stop-color="%23489BE9" offset="0%"></stop> <stop stop-color="%23489BE9" stop-opacity="0" offset="100%"></stop> </linearGradient> <linearGradient x1="0%" y1="49.979716%" x2="100%" y2="49.979716%" id="linearGradient-2"> <stop stop-color="%2370AFED" offset="0%"></stop> <stop stop-color="%2365AAEC" offset="36%"></stop> <stop stop-color="%23499BE9" offset="98%"></stop> <stop stop-color="%23489BE9" offset="100%"></stop> </linearGradient> <linearGradient x1="169.086909%" y1="5.55780933%" x2="66.9966997%" y2="71.2778905%" id="linearGradient-3"> <stop stop-color="%23489BE9" offset="0%"></stop> <stop stop-color="%23489BE9" stop-opacity="0" offset="100%"></stop> </linearGradient> </defs> <g id="UI" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Home-Desktop-HD" transform="translate(0.000000, -1281.000000)"> <g id="Section-1" transform="translate(0.000000, 1044.000000)"> <g id="Illustration" transform="translate(0.000000, 237.000000)"> <rect id="Bkgd" fill="%23D1E6F9" x="0" y="119" width="635" height="409" rx="2"></rect> <rect id="Rectangle-path" fill="%23FFFFFF" fill-rule="nonzero" x="102" y="0" width="21" height="119"></rect> <rect id="Rectangle-path" fill="%23D1E6F9" fill-rule="nonzero" x="140" y="50" width="32" height="70"></rect> <rect id="Rectangle-path" fill="%231A82E2" fill-rule="nonzero" x="36" y="0" width="33" height="119"></rect> <circle id="Oval" fill="%2397CBF7" fill-rule="nonzero" cx="53.5" cy="37.5" r="11.5"></circle> <rect id="Rectangle-path" fill="%23A3CDF2" fill-rule="nonzero" x="172" y="18" width="33" height="101"></rect> <circle id="Oval" fill="%23FBFDFF" fill-rule="nonzero" cx="188" cy="39" r="7"></circle> <rect id="Rectangle-path" fill="%23FBFDFF" fill-rule="nonzero" x="177" y="56" width="24" height="57"></rect> <rect id="Rectangle-path" fill="%2397CBF7" fill-rule="nonzero" x="123" y="18" width="17" height="101"></rect> <circle id="Oval" fill="%2376B4EF" fill-rule="nonzero" cx="132" cy="42" r="5"></circle> <rect id="Rectangle-path" fill="%2376B4EF" fill-rule="nonzero" x="140" y="70" width="32" height="7"></rect> <rect id="Rectangle-path" fill="%2397CBF7" fill-rule="nonzero" x="140" y="77" width="32" height="20"></rect> <polygon id="Shape" fill="url(%23linearGradient-1)" fill-rule="nonzero" style="mix-blend-mode: multiply;" points="140 120 172 70 172 120"></polygon> <rect id="Rectangle-path" fill="url(%23linearGradient-2)" fill-rule="nonzero" x="69" y="31" width="33" height="88"></rect> <rect id="Rectangle-path" fill="%2397CBF7" fill-rule="nonzero" x="69" y="52" width="33" height="17"></rect> <polygon id="Shape" fill="url(%23linearGradient-3)" fill-rule="nonzero" style="mix-blend-mode: multiply;" points="70 118 102 30 102 118"></polygon> </g> </g> </g> </g> </svg>') no-repeat bottom left $sg-blue-5;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
 
 	.row {
 
-		padding: 3.5rem 1rem;
+		padding: 5rem 1rem 0;
 
-		&.p-absolute {
-		  top: -17rem;
-		  right: 0;
-		  padding-right: 2rem;
+		// &.p-absolute {
+		//   top: -17rem;
+		//   right: 0;
+		//   padding-right: 2rem;
+		// }
+
+	}
+
+	.card-shelf {
+		margin-top: -300px;
+		margin-bottom: $scaleup-6;
+
+		@include breakpoint(medium) {
+			margin-bottom: 0;
 		}
-
 	}
 
 	.book-shelf {
+		position: absolute;
+		left: 0;
 		max-width: 635px;
 	}
 
+	&__callout {
+
+		@include breakpoint(medium) {
+			max-width: 467px;
+		}
+
+		h2 {
+			line-height: 1.25;
+		}
+
+		p {
+			font-size: 1.125rem;
+		}
+	}
+
 	.floating-tile--blue-border {
-	  max-width: 360px;
-	  float: right;
-	  box-shadow: 0 0 0 0 #E8F2FC, 8px 8px 3px #E8F2FC;
+		max-width: 360px;
+		margin: 0 auto 1.563rem;
+	  // float: right;
+	  // box-shadow: 0 0 0 0 #E8F2FC, 8px 8px 3px #E8F2FC;
 
 	  svg {
 	  	margin-bottom: 1rem;
@@ -187,20 +252,35 @@ header.p-relative {
 
 	  p {
 	  	margin-bottom: 0
-	  }
+		}
 
 	}
 
 }
 
-.section-2 {
-	background: $sg-blue-2;
+.home__skills {
+
+	&:before {
+		content: '';
+		width: 100%;
+		height: 115%;
+		display: block;
+		background: $sg-blue-2;
+		position: absolute;
+		top: -7rem;
+		left: 0;
+	}
 
 	.floating-tile {
 		max-width: 700px;
-		margin-bottom: 0.5rem;
+		margin-bottom: 1.563rem;
 		position: relative;
 		padding-left: 2rem;
+
+		&:hover {
+			transform: translateY(0);
+			box-shadow: 0 2px 3px 0 rgba(41,70,97,.1);
+		}
 
 		&::before {
 		  content: '';
@@ -240,9 +320,20 @@ header.p-relative {
 
 	}
 
-	.svg-hand {
-		top: 0;
-		right: 0
+	&__illustration {
+		position: absolute;
+		right: 0;
+		bottom: -210px;
+		max-width: inherit;
+		display: none;
+
+		@include breakpoint(medium) {
+			display: block;
+		}
+	}
+
+	h2 {
+		line-height: 1.25;
 	}
 
 }
@@ -252,6 +343,44 @@ header.p-relative {
 
 	h2{
 		color: $white
+	}
+
+}
+
+.home__featured {
+	position: relative;
+}
+
+.resource-tile--featured {
+
+	&.resource-tile--academy {
+
+		.resource-tile__thumbnail {
+			height: auto;
+
+			@include breakpoint(large) {
+				flex-basis: 38%;
+			}
+		}
+
+		a {
+			color: inherit;
+		}
+
+		span {
+			margin-left: 0.5rem;
+			margin-right: 0.5rem;
+		}
+
+	}
+
+	.main-link {
+		display: flex;
+		flex-direction: column;
+
+		@include breakpoint(medium) {
+			flex-direction: row;
+		}
 	}
 
 }
