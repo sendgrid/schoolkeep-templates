@@ -6,12 +6,12 @@
       </div>
     {{ end }}
     {{ if current_person.enrolled_in_course?(course) }}
-      <a href="{{ course.cover_path }}" class="main-link">
+      <a href="{{ course.cover_path }}" class="main-link" onclick="ga('send', 'event', 'Course Catalog', 'Click', '{{ course.name }}');">
         <img src="{{ course.list_image_url }}" class="uk-responsive-width uk-width-1-1">
       </a>
     {{ else }}
       <a href="{{ course.details_path }}" class="main-link">
-        <img src="{{ course.list_image_url }}" class="uk-responsive-width uk-width-1-1">
+        <img src="{{ course.list_image_url }}" class="uk-responsive-width uk-width-1-1" onclick="ga('send', 'event', 'Course Catalog', 'Click', '{{ course.name }}');">
       </a>
     {{ end }}
   </div>
@@ -23,18 +23,18 @@
     {{ end }}
     <h3 class="card-title">
       {{ if current_person.enrolled_in_course?(course) }}
-        <a href="{{ course.cover_path }}" class="colfax-medium">{{ course.name }}</a>
+        <a href="{{ course.cover_path }}" class="colfax-medium" onclick="ga('send', 'event', 'Course Catalog', 'Click', '{{ course.name }}');">{{ course.name }}</a>
       {{ else }}
-        <a href="{{ course.details_path }}" class="colfax-medium">{{ course.name }}</a>
+        <a href="{{ course.details_path }}" class="colfax-medium" onclick="ga('send', 'event', 'Course Catalog', 'Click', '{{ course.name }}');">{{ course.name }}</a>
       {{ end }}
     </h3>
     <p>{{ course.instructor_names }}</p>
     <div class="btn-list">
       {{ if current_person.enrolled_in_course?(course) }}
         <p class="course__progress">{{ course.progress_text(current_person) }}</p>
-        <a href="{{ course.cover_path }}" class="btn btn-primary">{{ course.go_to_label }}</a>
+        <a href="{{ course.cover_path }}" class="btn btn-primary" onclick="ga('send', 'event', 'Course Catalog', 'Click', '{{ course.name }}');">{{ course.go_to_label }}</a>
       {{ else }}
-        <a href="{{ course.details_path }}" class="btn btn-primary">
+        <a href="{{ course.details_path }}" class="btn btn-primary" onclick="ga('send', 'event', 'Course Catalog', 'Click', '{{ course.name }}');">
           {{ if app('commerce').active? }}
             {{ course.formatted_price }}
           {{ else }}

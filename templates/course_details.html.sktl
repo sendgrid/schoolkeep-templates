@@ -13,14 +13,14 @@
         <p class="course__description">{{ course.short_description }}</p>
 
         {{ if current_person.enrolled_in_course?(course) }}
-          <a href="{{ course.cover_path }}" class="uk-button uk-button-primary uk-button-large">{{ course.go_to_label }}</a>
+          <a href="{{ course.cover_path }}" class="uk-button uk-button-primary uk-button-large" onclick="ga('send', 'event', '{{ course.name }}', 'Click', 'Go To Course');">{{ course.go_to_label }}</a>
         {{ elsif course.payment_required? }}
           <a href="{{ course.new_order_path }}" class="uk-button uk-button-primary uk-button-large">
             {{ course.buy_label }} - {{ course.formatted_price }}
           </a>
         {{ else }}
           <form action="{{ course.enrollment_url }}" method="POST">
-            <button class="enroll-button uk-button uk-button-primary uk-button-large">
+            <button class="enroll-button uk-button uk-button-primary uk-button-large" onclick="ga('send', 'event', '{{ course.name }}', 'Click', 'Enroll');">
               {{ if app('commerce').active? }}
                 {{ course.buy_label }} - {{ course.formatted_price }}
               {{ else }}
@@ -62,14 +62,14 @@
         </p>
 
       {{ if current_person.enrolled_in_course?(course) }}
-        <a href="{{ course.cover_path }}" class="uk-button uk-button-primary uk-button-large">{{ course.go_to_label }}</a>
+        <a href="{{ course.cover_path }}" class="uk-button uk-button-primary uk-button-large" onclick="ga('send', 'event', '{{ course.name }}', 'Click', 'Go To Course');">{{ course.go_to_label }}</a>
       {{ elsif course.payment_required? }}
         <a href="{{ course.new_order_path }}" class="uk-button uk-button-primary uk-button-large">
           {{ course.buy_label }} - {{ course.formatted_price }}
         </a>
       {{ else }}
         <form action="{{ course.enrollment_url }}" method="POST">
-          <button class="enroll-button uk-button uk-button-primary uk-button-large">
+          <button class="enroll-button uk-button uk-button-primary uk-button-large" onclick="ga('send', 'event', '{{ course.name }}', 'Click', 'Enroll');">
             {{ if app('commerce').active? }}
               {{ course.buy_label }} - {{ course.formatted_price }}
             {{ else }}

@@ -49,10 +49,10 @@
 
         {{ if course.learner_can_retake? }}
           <form action="{{ course.course_attempts_path }}" method="POST">
-            <button type="submit" class="uk-button-primary uk-button-large completion-button">{{ course.retake_course }}</button>
+            <button type="submit" class="uk-button-primary uk-button-large completion-button" onclick="ga('send', 'event', '{{ course.name }}', 'Click', 'Retake Course');">{{ course.retake_course }}</button>
           </form>
         {{ else }}
-          <a href="{{ course.outline_path }}" class="uk-button uk-button-primary uk-button-large">{{ course.start_or_continue }}</a>
+          <a href="{{ course.outline_path }}" class="uk-button uk-button-primary uk-button-large" onclick="ga('send', 'event', '{{ course.name }}', 'Click', 'Start/Continue');">{{ course.start_or_continue }}</a>
         {{ end }}
 
         {{ if course.show_events? }}
@@ -94,11 +94,11 @@
 
       {{ if course.learner_can_retake? }}
         <form action="{{ course.course_attempts_path }}" method="POST">
-          <button type="submit" class="uk-button-primary uk-button-large completion-button">{{ course.retake_course }}</button>
+          <button type="submit" class="uk-button-primary uk-button-large completion-button" onclick="ga('send', 'event', '{{ course.name }}', 'Click', 'Retake Course');">{{ course.retake_course }}</button>
         </form>
 
       {{ else }}
-        <a href="{{ course.outline_path }}" class="uk-button uk-button-primary uk-button-large">{{ course.start_or_continue }}</a>
+        <a href="{{ course.outline_path }}" class="uk-button uk-button-primary uk-button-large" onclick="ga('send', 'event', '{{ course.name }}', 'Click', 'Start/Continue');">{{ course.start_or_continue }}</a>
       {{ end }}
 
       {{ if course.show_events? }}
