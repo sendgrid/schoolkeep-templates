@@ -2,13 +2,13 @@
   <div class="course__filters m-bottom-small">
     <ul>
       <li class="course__filter">
-          <a href="{{ routes.my_content_path }}" class="{{ no_filter_selected_class }}">
+          <a href="{{ routes.my_content_path }}" class="{{ no_filter_selected_class }}" onclick="ga('send', 'event', 'Filter', 'Click', 'All Courses');">
             {{ t('.all') }}
           </a>
       </li>
       {{ current_person.filterable_categories.each 'filterable_category' }}
       <li>
-          <a href="{{ filterable_category.link }}" class="{{ if filterable_category.active? }}course__filter--active{{ end }}">
+          <a href="{{ filterable_category.link }}" class="{{ if filterable_category.active? }}course__filter--active{{ end }}" onclick="ga('send', 'event', 'Filter', 'Click', '{{ filterable_category.name }}');">
             {{ filterable_category.name }}
           </a>
       </li>
