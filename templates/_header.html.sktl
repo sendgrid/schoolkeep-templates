@@ -32,7 +32,7 @@
         <ul class="column small-12 large-5 t-a-right-large m-left-5-large mobile-converted-menu nav-closed menu align-right" id="js-site-menu">
 
           <li class="primary-site-nav__link">
-            <a href="/courses">
+            <a href="/courses" onclick="ga('send', 'event', 'Main Menu', 'Click', 'All Courses');">
               All Courses
             </a>
           </li>
@@ -49,7 +49,7 @@
                   <div class="site-sub-nav__row row small-up-1 large-up-6 align-center">
                     <div class="column">
                       <li class="site-sub-nav-link">
-                        <a href="{{ routes.my_content_path }}">
+                        <a href="{{ routes.my_content_path }}"  onclick="ga('send', 'event', 'Secondary Menu', 'Click', 'My Courses');">
                           <span class="site-sub-nav-link__title">
                             {{ if current_school.my_content_label }}
                             {{ current_school.my_content_label }}
@@ -63,7 +63,7 @@
                     {{ unless current_school.sso_enabled? }}
                     <div class="column">
                       <li class="site-sub-nav-link">
-                        <a href="{{ routes.my_profile_path }}">
+                        <a href="{{ routes.my_profile_path }}" onclick="ga('send', 'event', 'Secondary Menu', 'Click', 'Profile');">
                           <div class="site-sub-nav-link__title">{{ t('.my_profile') }}</div>
                         </a>
                       </li>
@@ -71,7 +71,7 @@
                     {{ end }}
                     <div class="column">
                       <li class="site-sub-nav-link">
-                        <a href="{{ routes.log_out_path }}" data-method="delete" rel="nofollow">
+                        <a href="{{ routes.log_out_path }}" data-method="delete" rel="nofollow" onclick="ga('send', 'event', 'Secondary Menu', 'Click', 'Log Out');">
                           <div class="site-sub-nav-link__title">{{ t('.log_out') }}</div>
                         </a>
                       </li>
@@ -86,7 +86,7 @@
           {{ else }}
 
             <li class="">
-              <a href="{{ routes.log_in_path }}" class="btn btn-secondary" >{{ t('.log_in') }}</a>
+              <a href="{{ routes.log_in_path }}" class="btn btn-secondary" onclick="ga('send', 'event', 'Main Menu', 'Click', 'Log In');">{{ t('.log_in') }}</a>
             </li>
 
           {{ end }}
